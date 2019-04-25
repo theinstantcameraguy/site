@@ -1,9 +1,9 @@
 <template>
   <section class="section">
-    <div class="container">
-      <h1 class="title">The List</h1>
+    <h1 class="title">Repairs</h1>
 
-      <div class="block content">
+    <div class="container">
+      <div class="content">
         <h2 id="one" class="title">One</h2>
         <p>
           Lorem ipsum sit dolor aset glouwsLorem ipsum sit dolor aset

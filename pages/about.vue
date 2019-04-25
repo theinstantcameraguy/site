@@ -1,8 +1,9 @@
 <template>
   <section class="section">
+    <h1 class="title">About</h1>
+
     <div class="container">
       <div class="content">
-        <h1 class="title is-1">About</h1>
         <h2 id="one" class="title">One</h2>
         <p>
           Lorem ipsum sit dolor aset glouwsLorem ipsum sit dolor aset
