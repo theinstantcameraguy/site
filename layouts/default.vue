@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar />
+    <NavBar v-if="dev" />
     <nuxt />
   </div>
 </template>
@@ -61,6 +61,11 @@ import NavBar from '../components/NavBar'
 export default {
   components: {
     NavBar
+  },
+  data: function() {
+    return {
+      dev: false
+    }
   }
 }
 </script>
