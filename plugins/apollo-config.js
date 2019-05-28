@@ -1,6 +1,8 @@
+require('dotenv').config()
+
 export default function() {
   return {
     httpEndpoint: 'https://graphql.datocms.com',
-    getAuth: () => 'Bearer 94a255bc3ffa2fac4ebeb83c126b74'
+    getAuth: () => `Bearer ${process.env.DATOCMS_API}`
   }
 }

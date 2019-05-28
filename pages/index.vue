@@ -6,15 +6,15 @@
     <section
       id="hero"
       class="hero is-fullheight"
-      :style="{ backgroundImage: `url(${index.heroImage.url})` }"
+      :style="{ backgroundImage: `url(${home.heroimage.url})` }"
     >
       <div class="hero-body">
         <div class="container">
           <h1 class="title has-text-centered has-text-warning">
-            {{ index.title }}
+            {{ home.title }}
           </h1>
           <h2 class="subtitle has-text-centered has-text-danger">
-            {{ index.subtitle }}
+            {{ home.subtitle }}
           </h2>
         </div>
       </div>
@@ -25,7 +25,7 @@
           <em class="has-text-primary"># </em>About
         </h1>
         <vue-markdown>
-          {{ index.about }}
+          {{ home.introText }}
         </vue-markdown>
       </div>
     </section>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import index from '~/queries/fetchIndex'
+import home from '~/queries/fetchIndex'
 // import gql from 'graphql-tag'
 
 export default {
@@ -42,8 +42,8 @@ export default {
   }),
   apollo: {
     $loadingKey: 'loading',
-    index: {
-      query: index
+    home: {
+      query: home
     }
   }
 }

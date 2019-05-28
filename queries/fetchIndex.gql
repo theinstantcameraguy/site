@@ -1,10 +1,28 @@
 {
-  index {
-    title
-    subtitle
-    heroImage {
-      url
+  home {
+    copyright
+    heroimage {
+    	url
+  	}
+    introText
+    pagelocation {
+      latitude
+      longitude
     }
-    about
+    seoSettings {
+      description
+      image {
+        url
+        alt
+        size
+        height
+        width
+      }
+      title
+      twitterCard
+    }
+    subtitle
+    title
+    updatedAt
   }
 }
