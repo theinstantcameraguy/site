@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 export default function() {
   return {
     httpEndpoint: 'https://graphql.datocms.com',
