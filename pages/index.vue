@@ -1,5 +1,26 @@
 <template>
-  <h2 v-if="loading > 0">
+  <div v-if="!dev">
+    <section id="hero-prod" class="hero is-fullheight">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-centered">
+            The Instant Camera Guy
+          </h1>
+          <h2 class="subtitle has-text-centered">
+            Coming Soon
+          </h2>
+        </div>
+      </div>
+    </section>
+    <section class="section is-fullheight">
+      <div class="content">
+        <b-button type="is-dark" @click="dev = !dev">
+          Enter 🚧 Site
+        </b-button>
+      </div>
+    </section>
+  </div>
+  <h2 v-else-if="dev && loading > 0">
     Loading...
   </h2>
   <div v-else>
@@ -34,11 +55,14 @@
 
 <script>
 import home from '~/queries/fetchIndex'
+import BButton from 'buefy/src/components/button/Button'
 // import gql from 'graphql-tag'
 
 export default {
+  components: { BButton },
   data: () => ({
-    loading: 0
+    loading: 0,
+    dev: false
   }),
   apollo: {
     $loadingKey: 'loading',
