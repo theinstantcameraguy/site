@@ -41,15 +41,27 @@ export default {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     '@nuxtjs/pwa',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/apollo'
   ],
+  /*
+  Apollo Config
+  */
+  apollo: {
+    clientConfigs: {
+      default: '~/plugins/apollo-config.js'
+    }
+  },
   /*
    ** Axios module configuration
    */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
+  manifest: {
+    name: 'TICG',
+    lang: 'en'
+  },
   /*
    ** Build configuration
    */

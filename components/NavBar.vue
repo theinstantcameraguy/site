@@ -18,10 +18,10 @@
       </a>
     </div>
 
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start">
-        <nuxt-link to="/about" class="navbar-item">About</nuxt-link>
-        <nuxt-link to="/repairs" class="navbar-item">Repairs</nuxt-link>
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-end">
+        <a data-menuanchor="about" class="navbar-item" href="#about">About</a>
+        <!--        <nuxt-link to="/repairs" class="navbar-item">Repairs</nuxt-link>-->
       </div>
     </div>
   </nav>

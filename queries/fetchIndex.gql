@@ -1,0 +1,10 @@
+{
+  index {
+    title
+    subtitle
+    heroImage {
+      url
+    }
+    about
+  }
+}

@@ -64,7 +64,7 @@ export default {
   },
   data: function() {
     return {
-      dev: false
+      dev: true
     }
   }
 }

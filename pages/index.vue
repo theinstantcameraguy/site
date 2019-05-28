@@ -1,48 +1,74 @@
 <template>
-  <section class="container">
-    <div>
-      <h1 class="title">
-        The Instant Camera Guy
-      </h1>
-      <h2 class="subtitle">
-        Coming Soon
-      </h2>
-    </div>
-  </section>
+  <h2 v-if="loading > 0">
+    Loading...
+  </h2>
+  <div v-else>
+    <section
+      id="hero"
+      class="hero is-fullheight"
+      :style="{ backgroundImage: `url(${index.heroImage.url})` }"
+    >
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title has-text-centered has-text-warning">
+            {{ index.title }}
+          </h1>
+          <h2 class="subtitle has-text-centered has-text-danger">
+            {{ index.subtitle }}
+          </h2>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="section is-fullheight">
+      <div class="content">
+        <h1 class="is-medium has-text-danger has-text-left title">
+          <em class="has-text-primary"># </em>About
+        </h1>
+        <vue-markdown>
+          {{ index.about }}
+        </vue-markdown>
+      </div>
+    </section>
+  </div>
 </template>
 
-<!--<script>-->
+<script>
+import index from '~/queries/fetchIndex'
+// import gql from 'graphql-tag'
 
-<!--// export default {-->
-<!--//   components: {-->
-<!--//   }-->
-<!--// }-->
-<!--</script>-->
+export default {
+  data: () => ({
+    loading: 0
+  }),
+  apollo: {
+    $loadingKey: 'loading',
+    index: {
+      query: index
+    }
+  }
+}
+</script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+#hero {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #999;
 }
-
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
-  color: #35495e;
   letter-spacing: 1px;
 }
 
 .subtitle {
   font-weight: 300;
   font-size: 42px;
-  color: #526488;
   word-spacing: 5px;
   padding-bottom: 15px;
 }
