@@ -42,7 +42,8 @@ export default {
     '@nuxtjs/bulma',
     '@nuxtjs/pwa',
     '@nuxtjs/dotenv',
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
+    'nuxt-buefy'
   ],
   /*
   Apollo Config
