@@ -60,7 +60,9 @@
             <em class="has-text-primary"># </em>Location
           </h1>
         </div>
-        <Map :coordinates="coordinates" />
+        <div id="map" class="tile is-parent">
+          <Map :coordinates="coordinates" />
+        </div>
       </div>
     </section>
     <section id="instaposts" class="section is-fullheight">
@@ -131,5 +133,8 @@ export default {
   word-spacing: 5px;
   padding-bottom: 15px;
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+}
+#map {
+  height: 500px;
 }
 </style>

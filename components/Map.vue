@@ -1,17 +1,41 @@
 <template>
-  <MglMap :access-token="accessToken" :map-style="mapStyle">
-    <MglMarker :coordinates="coordinates" color="blue" />
+  <MglMap
+    :access-token="accessToken"
+    :map-style="mapStyle"
+    :center="coordinates"
+    :zoom="12"
+  >
+    <MglMarker :coordinates="coordinates">
+      <b-icon
+        slot="marker"
+        icon="camera-enhance"
+        size="is-large"
+        type="is-danger"
+      >
+      </b-icon>
+      <MglPopup :coordinates="coordinates" anchor="top">
+        <div class="card is-8">
+          <div class="card-content">
+            <p class="subtitle">
+              Get in contact with me for fixing things. I will provide you with
+              my address and detailed instructions.
+            </p>
+          </div>
+        </div>
+      </MglPopup>
+    </MglMarker>
   </MglMap>
 </template>
 
 <script>
 import Mapbox from 'mapbox-gl'
-import { MglMap, MglMarker } from 'vue-mapbox'
+import { MglMap, MglMarker, MglPopup } from 'vue-mapbox'
 export default {
   name: 'Map',
   components: {
     MglMap,
-    MglMarker
+    MglMarker,
+    MglPopup
   },
   props: { coordinates: { type: Array, default: () => [0, 0] } },
   head() {
