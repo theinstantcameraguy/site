@@ -1,4 +1,5 @@
 import pkg from './package'
+
 require('dotenv').config()
 
 export default {
@@ -46,6 +47,11 @@ export default {
     '@nuxtjs/apollo',
     'nuxt-buefy'
   ],
+  env: {
+    DATOCMS_API: process.env.DATOCMS_API,
+    INSTATOKEN: process.env.INSTATOKEN,
+    MAPBOX_ACCESS_TOKEN: process.env.MAPBOX_ACCESS_TOKEN
+  },
   /*
   Apollo Config
   */
@@ -78,7 +84,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
+    extend (config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
