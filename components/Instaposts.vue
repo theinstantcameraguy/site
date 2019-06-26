@@ -5,6 +5,7 @@
       :key="post.id"
       class="column is-4-desktop is-6-tablet is-6-mobile"
     >
+      <!--      Todo Replace with buefy cards and improve layout-->
       <div class="card">
         <div class="card-image">
           <figure class="image is-square">
@@ -73,7 +74,7 @@ export default {
     }
   },
   beforeMount() {
-    this.$store.dispatch('getUserFeed', 6)
+    this.$store.dispatch('getUserFeed', 6, 'image')
   }
 }
 </script>

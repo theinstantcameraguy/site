@@ -78,11 +78,11 @@
 </template>
 
 <script>
-import home from '~/queries/fetchIndex'
+import VueMarkdown from 'vue-markdown'
 import BButton from 'buefy/src/components/button/Button'
 import Map from '../components/Map'
 import Instaposts from '../components/Instaposts'
-import VueMarkdown from 'vue-markdown'
+import home from '~/queries/fetchIndex'
 // import gql from 'graphql-tag'
 
 export default {
