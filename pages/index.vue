@@ -68,15 +68,10 @@
       </div>
     </section>
     <section id="instaposts" class="section is-fullheight">
-      <div class="container">
-        <div class="content">
-          <h1 class="is-medium has-text-danger has-text-left title">
-            <em class="has-text-primary"># </em>Photos
-          </h1>
-          <instaposts />
-        </div>
-        <Map :coordinates="coordinates" />
-      </div>
+      <h1 class="is-medium has-text-danger has-text-left title">
+        <em class="has-text-primary"># </em>Photos
+      </h1>
+      <instaposts />
     </section>
     <footer class="footer level">
       <div class="level-left">

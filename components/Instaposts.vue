@@ -1,10 +1,6 @@
 <template>
-  <div class="columns is-multiline is-mobile">
-    <div
-      v-for="post in feeds"
-      :key="post.id"
-      class="column is-3-mobile is-4-desktop"
-    >
+  <div class="columns is-multiline">
+    <div v-for="post in feeds" :key="post.id" class="column">
       <!--      Todo Replace with buefy cards and improve layout-->
       <div class="card">
         <div class="card-image">
@@ -45,11 +41,20 @@ export default {
     }
   },
   beforeMount() {
-    this.$store.dispatch('getUserFeed', 6, 'image')
+    this.$store.dispatch('getUserFeed', 9, 'image')
   }
 }
 </script>
 
 <style scoped lang="scss">
 $card-shadow: 0 !important;
+.card {
+  min-height: 160px;
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+}
+.column .card-footer {
+  margin-top: auto;
+}
 </style>
