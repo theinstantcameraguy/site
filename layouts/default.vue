@@ -57,6 +57,8 @@ html {
 
 <script>
 import NavBar from '../components/NavBar'
+import seo from '~/queries/fetchSEO'
+import repair from '~/queries/fetchRepair'
 
 export default {
   components: {
@@ -65,6 +67,38 @@ export default {
   data: function() {
     return {
       dev: true
+    }
+  },
+  head: {
+    meta: [
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'cool'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        // Need to figure out how to do this
+        href: '~/assets/favicon.ico' || this._site.favicon.url
+      }
+    ]
+  },
+  // See https://developers.google.com/search/docs/data-types/local-business#definitions
+  jsonld: {
+    '@context': 'http://schema.org',
+    '@type': 'LocalBusiness',
+    email: 'jake@theinstantcameraguy.com',
+    image: []
+  },
+  apollo: {
+    $loadingKey: 'loading',
+    // fetchPolicy: 'cache-and-network',
+    _site: {
+      query: seo
+    },
+    repairPage: {
+      query: repair
     }
   }
 }

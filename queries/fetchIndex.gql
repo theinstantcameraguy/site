@@ -24,5 +24,6 @@
     subtitle
     title
     updatedAt
+    phoneNumber
   }
 }

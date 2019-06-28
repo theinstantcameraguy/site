@@ -20,3 +20,11 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+
+
+# Extensions
+For Consideration
+https://wikiki.github.io/elements
+  - https://github.com/Wikiki/bulma-timeline
+  - https://github.com/Wikiki/bulma-steps
+  - https://github.com/Wikiki/bulma-pricingtable

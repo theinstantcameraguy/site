@@ -1,3 +1,31 @@
-/*! bulmaswatch v0.7.2 | MIT License */
-@import "variables";
-@import "overrides";
+@import "~bulma/sass/utilities/_all";
+
+$grey-darker:  #363636;
+$grey-dark:    #373a3c;
+$grey:         #55595c;
+$grey-light:   #818a91;
+$grey-lighter: #d9dee2;
+
+$orange:       #f0ad4e;
+$yellow:       #ffd500;
+$green:        #02B875;
+$blue:         #45b2d3;
+$red:          #d9534f;
+
+$link: #4582EC ;
+$danger: $orange;
+
+$subtitle-color: $green;
+
+$family-heading: "Raleway", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+
+$family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+
+$navbar-height: 5rem;
+
+$bulmaswatch-import-font: true !default;
+
+$navbar-background-color: $orange;
+
+@import "~bulma";
+@import "~buefy/src/scss/buefy";

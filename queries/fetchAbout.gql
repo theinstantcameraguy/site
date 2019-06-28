@@ -1,0 +1,10 @@
+{
+  aboutPage {
+    bio
+    photo {
+      url
+    }
+    subtitle
+    title
+  }
+}

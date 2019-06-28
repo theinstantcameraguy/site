@@ -1,0 +1,17 @@
+{
+  _site {
+    globalSeo{
+      fallbackSeo {
+        title
+        twitterCard
+        description
+      }
+      facebookPageUrl
+      siteName
+      titleSuffix
+    }
+    favicon {
+      url
+    }
+  }
+}

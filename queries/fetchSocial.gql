@@ -1,0 +1,8 @@
+{
+  allSocialProfiles {
+    position
+    profileType
+    slug
+    url
+  }
+}
