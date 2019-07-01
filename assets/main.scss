@@ -6,14 +6,35 @@ $grey:         #55595c;
 $grey-light:   #818a91;
 $grey-lighter: #d9dee2;
 
-$orange:       #f0ad4e;
+$black:        hsl(0, 0%, 4%) !default
+$black-bis:    hsl(0, 0%, 7%) !default
+$black-ter:    hsl(0, 0%, 14%) !default
+
+$grey-darker:  hsl(0, 0%, 21%) !default
+$grey-dark:    hsl(0, 0%, 29%) !default
+$grey:         hsl(0, 0%, 48%) !default
+$grey-light:   hsl(0, 0%, 71%) !default
+$grey-lighter: hsl(0, 0%, 86%) !default
+
+$white-ter:    hsl(0, 0%, 96%) !default
+$white-bis:    hsl(0, 0%, 98%) !default
+$white:        hsl(0, 0%, 100%) !default
+
+$turquoise:    hsl(171, 100%, 41%) !default
+$cyan:         hsl(204, 86%,  53%) !default
+
+
+$orange: #fdd28e;
 $yellow:       #ffd500;
 $green:        #02B875;
 $blue:         #45b2d3;
 $red:          #d9534f;
+$tan: #dccdbf;
+$tan2: hsl(37, 25%,  74%) !default;
 
 $link: #4582EC ;
-$danger: $orange;
+$danger: $green;
+$primary: $red;
 
 $subtitle-color: $green;
 
@@ -25,7 +46,24 @@ $navbar-height: 5rem;
 
 $bulmaswatch-import-font: true !default;
 
-$navbar-background-color: $orange;
+$navbar-background-color: $tan;
+
+$apple: $tan2 !default
+$apple-invert: findColorInvert($apple) !default
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+  "white": ($tan, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($primary, $primary-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $warning-invert),
+  "danger": ($danger, $danger-invert),
+  "apple": ($apple, $apple-invert),
+);
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";

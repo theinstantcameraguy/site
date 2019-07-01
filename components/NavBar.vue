@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar is-danger" role="navigation" aria-label="main navigation">
+  <nav class="navbar is-apple" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <nuxt-link to="/" class="navbar-item has-text-weight-bold">
         The Instant 📷 Guy
@@ -32,3 +32,7 @@ export default {
   name: 'NavBar'
 }
 </script>
+
+<style scoped lang="scss">
+$navbar-background-color: #f0ad4e;
+</style>

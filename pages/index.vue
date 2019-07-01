@@ -16,7 +16,7 @@
           >
             {{ home.title }}
           </h1>
-          <h2 id="subtitle" class="subtitle has-text-centered has-text-danger">
+          <h2 id="subtitle" class="subtitle has-text-centered">
             {{ home.subtitle }}
           </h2>
         </div>
@@ -25,7 +25,7 @@
     <section id="about" class="section is-fullheight section-feature-grey">
       <div class="container">
         <div class="content">
-          <h1 class="is-medium has-text-danger has-text-left title">
+          <h1 class="is-medium has-text-info has-text-left title">
             <em class="has-text-primary"># </em>About
           </h1>
           <div class="columns">
@@ -44,7 +44,7 @@
     <section id="repairs" class="section is-fullheight section-feature-grey">
       <div class="container">
         <div class="content">
-          <h1 class="is-medium has-text-danger has-text-left title">
+          <h1 class="is-medium has-text-info has-text-left title">
             <em class="has-text-primary"># </em>Repairs
           </h1>
           <div class="columns">
@@ -68,7 +68,7 @@
       </div>
     </section>
     <section id="instaposts" class="section is-fullheight">
-      <h1 class="is-medium has-text-danger has-text-left title">
+      <h1 class="is-medium has-text-info has-text-left title">
         <em class="has-text-primary"># </em>Photos
       </h1>
       <instaposts />
