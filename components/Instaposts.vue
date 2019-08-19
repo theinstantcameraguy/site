@@ -4,7 +4,7 @@
       <!--      Todo Replace with buefy cards and improve layout-->
       <div class="card">
         <div class="card-image">
-          <figure class="image">
+          <figure class="image is-square">
             <img :src="post.images.standard_resolution.url" alt="Image" />
           </figure>
         </div>
@@ -49,10 +49,12 @@ export default {
 <style scoped lang="scss">
 $card-shadow: 0 !important;
 .card {
-  min-height: 160px;
-  min-width: 160px;
+  min-height: 200px;
+  min-width: 200px;
   display: flex;
   flex-direction: column;
+  margin-left: 0;
+  margin-right: 0;
 }
 .column .card-footer {
   margin-top: auto;

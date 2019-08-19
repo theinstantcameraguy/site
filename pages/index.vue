@@ -3,30 +3,11 @@
     Loading...
   </h2>
   <div v-else>
-    <section
-      id="hero"
-      class="hero is-fullheight-with-navbar"
-      :style="{ backgroundImage: `url(${home.heroimage.url})` }"
-    >
-      <div class="hero-body">
-        <div class="container">
-          <h1
-            id="title"
-            class="title has-text-centered has-text-dark is-family-primary has-text-primary has-text-weight-medium"
-          >
-            {{ home.title }}
-          </h1>
-          <h2 id="subtitle" class="subtitle has-text-centered">
-            {{ home.subtitle }}
-          </h2>
-        </div>
-      </div>
-    </section>
     <section id="about" class="section is-fullheight section-feature-grey">
       <div class="container">
         <div class="content">
-          <h1 class="is-medium has-text-info has-text-left title">
-            <em class="has-text-primary"># </em>About
+          <h1 class="is-medium has-text-info title">
+            About Me
           </h1>
           <div class="columns">
             <div class="column">
@@ -44,8 +25,8 @@
     <section id="repairs" class="section is-fullheight section-feature-grey">
       <div class="container">
         <div class="content">
-          <h1 class="is-medium has-text-info has-text-left title">
-            <em class="has-text-primary"># </em>Repairs
+          <h1 class="is-medium has-text-info title">
+            Repairs
           </h1>
           <div class="columns">
             <div class="column is-three-quarters">
@@ -68,10 +49,14 @@
       </div>
     </section>
     <section id="instaposts" class="section is-fullheight">
-      <h1 class="is-medium has-text-info has-text-left title">
-        <em class="has-text-primary"># </em>Photos
-      </h1>
-      <instaposts />
+      <div class="container">
+        <div class="content">
+          <h1 class="is-medium has-text-info title">
+            Photos
+          </h1>
+          <instaposts />
+        </div>
+      </div>
     </section>
     <footer class="footer level">
       <div class="level-left">
