@@ -2,18 +2,25 @@
   <nav class="navbar my-navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a
-        class="navbar-burger burger"
+        @click="showNav = !showNav"
+        :class="{ 'is-active': showNav }"
         role="button"
+        class="navbar-burger burger"
         aria-label="menu"
         aria-expanded="false"
-        data-target="my-navbar-menu"
-      ></a>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
+        data-target="my-nav-bar"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
-    <div id="my-navbar-menu" class="navbar-menu ">
+    <div
+      id="my-navbar-menu"
+      :class="{ 'is-active': showNav }"
+      class="navbar-menu"
+    >
       <div class="navbar-start">
         <a
           id="about-nav"
@@ -66,9 +73,11 @@
 </template>
 <script>
 import home from '~/queries/fetchIndex'
-
 export default {
   name: 'NavBar',
+  data() {
+    return { showNav: false }
+  },
   computed: {
     hrefPhone() {
       return 'tel:+61431 845 455'
