@@ -71,12 +71,16 @@
         </div>
       </section>
       <section id="instaposts" class="section is-fullheight">
-        <h1 class="is-medium has-text-info has-text-left title">
-          <em class="has-text-primary"># </em>Photos
-        </h1>
-        <instaposts />
+        <div class="container">
+          <div class="content">
+            <h1 class="is-medium has-text-info has-text-left title">
+              <em class="has-text-primary"># </em>Photos
+            </h1>
+          </div>
+          <instaposts />
+        </div>
       </section>
-      <footer class="footer level">
+      <footer id="contact" class="footer level">
         <div class="level-left">
           <div class="level-item">
             <div>

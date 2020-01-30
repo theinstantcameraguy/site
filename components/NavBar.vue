@@ -30,8 +30,9 @@
           >Repairs</a
         >
         <span class="navbar-item force-center">
-          <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
-          <a :href="hrefPhone"></a>
+          <a :href="hrefPhone">
+            <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
+          </a>
         </span>
         <nuxt-link
           id="brand-nav"
@@ -41,14 +42,15 @@
           The Instant 📷 Guy
         </nuxt-link>
         <span class="navbar-item force-center">
-          <b-icon slot="marker" icon="email" type="is-danger"></b-icon>
-          <a href="mailto:jake@theinstantcameraguy.com"></a>
+          <a href="mailto:jake@theinstantcameraguy.com">
+            <b-icon slot="marker" icon="email" type="is-danger"></b-icon>
+          </a>
         </span>
         <a
           id="photos-nav"
           data-menuanchor="photos"
           class="navbar-item"
-          href="#photos"
+          href="#instaposts"
           >Photos</a
         >
         <a
@@ -69,7 +71,7 @@ export default {
   name: 'NavBar',
   computed: {
     hrefPhone() {
-      return '0431 845 455'
+      return 'tel:+61431 845 455'
       // if (!this.home) {
       //   return ''
       // }
