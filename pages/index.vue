@@ -28,7 +28,7 @@
       <section id="about" class="section is-fullheight section-feature-grey">
         <div class="container">
           <div class="content">
-            <h1 class="is-medium has-text-info has-text-left title">
+            <h1 id="about" class="is-medium has-text-left title">
               <em class="has-text-primary"># </em>About
             </h1>
             <div class="columns">
@@ -47,7 +47,7 @@
       <section id="repairs" class="section is-fullheight section-feature-grey">
         <div class="container">
           <div class="content">
-            <h1 class="is-medium has-text-info has-text-left title">
+            <h1 id="repair" class="is-medium has-text-left title">
               <em class="has-text-primary"># </em>Repairs
             </h1>
             <div class="columns">
@@ -73,7 +73,7 @@
       <section id="instaposts" class="section is-fullheight">
         <div class="container">
           <div class="content">
-            <h1 class="is-medium has-text-info has-text-left title">
+            <h1 id="photos" class="is-medium has-text-left title">
               <em class="has-text-primary"># </em>Photos
             </h1>
           </div>
@@ -230,6 +230,18 @@ img {
 }
 #map {
   height: 260px;
+}
+#about {
+  color: $eggplant;
+}
+#repair {
+  color: $gold;
+}
+#photos {
+  color: $fuschia;
+}
+#contact {
+  color: $cyan;
 }
 
 $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',

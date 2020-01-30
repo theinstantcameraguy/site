@@ -51,7 +51,7 @@ export default {
         rel: 'icon',
         type: 'image/png',
         // Need to figure out how to do this
-        href: '~/assets/favicon.ico' || this._site.favicon.url
+        href: '~/static/favicon.ico' || this._site.favicon.url
       }
     ]
   },
