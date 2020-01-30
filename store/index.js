@@ -15,7 +15,7 @@ export const actions = {
   getUserFeed({ commit }, count, mediaType = '', tags = []) {
     axios
       .get(`https://api.instagram.com/v1/users/self/media/recent`, {
-        params: { access_token: process.env.INSTATOKEN, count: count }
+        params: { access_token: process.env.INSTATOKEN, count }
       })
       .then(response => {
         let feeds = []
@@ -24,7 +24,7 @@ export const actions = {
           if (response.data.meta.code === 200) {
             let { data } = response.data
             const types = ['image', 'video']
-            if (mediaType && types.indexOf(mediaType) > -1) {
+            if (mediaType && types.includes(mediaType)) {
               data = _.filter(data, item => mediaType === item.type)
             }
             if (tags.length) {

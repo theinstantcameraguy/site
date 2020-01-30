@@ -1,38 +1,128 @@
 <template>
-  <nav class="navbar is-apple" role="navigation" aria-label="main navigation">
+  <nav class="navbar my-navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <nuxt-link to="/" class="navbar-item has-text-weight-bold">
-        The Instant 📷 Guy
-      </nuxt-link>
-
       <a
-        role="button"
         class="navbar-burger burger"
+        role="button"
         aria-label="menu"
         aria-expanded="false"
-        data-target="navbarBasicExample"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+        data-target="my-navbar-menu"
+      ></a>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
     </div>
 
-    <div id="navbar" class="navbar-menu">
-      <div class="navbar-end">
-        <a data-menuanchor="about" class="navbar-item" href="#about">About</a>
-        <!--        <nuxt-link to="/repairs" class="navbar-item">Repairs</nuxt-link>-->
+    <div id="my-navbar-menu" class="navbar-menu ">
+      <div class="navbar-start">
+        <a
+          id="about-nav"
+          data-menuanchor="about"
+          class="navbar-item"
+          href="#about"
+          >About</a
+        >
+        <a
+          id="repair-nav"
+          data-menuanchor="repairs"
+          class="navbar-item"
+          href="#repairs"
+          >Repairs</a
+        >
+        <span class="navbar-item force-center">
+          <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
+          <a :href="hrefPhone"></a>
+        </span>
+        <nuxt-link
+          id="brand-nav"
+          to="/"
+          class="navbar-item has-text-weight-bold has-text-white force-center brand-nav"
+        >
+          The Instant 📷 Guy
+        </nuxt-link>
+        <span class="navbar-item force-center">
+          <b-icon slot="marker" icon="email" type="is-danger"></b-icon>
+          <a href="mailto:jake@theinstantcameraguy.com"></a>
+        </span>
+        <a
+          id="photos-nav"
+          data-menuanchor="photos"
+          class="navbar-item"
+          href="#photos"
+          >Photos</a
+        >
+        <a
+          id="contact-nav"
+          data-menuanchor="contact"
+          class="navbar-item"
+          href="#contact"
+          >Contact</a
+        >
       </div>
     </div>
   </nav>
 </template>
-
 <script>
+import home from '~/queries/fetchIndex'
+
 export default {
-  name: 'NavBar'
+  name: 'NavBar',
+  computed: {
+    hrefPhone() {
+      return '0431 845 455'
+      // if (!this.home) {
+      //   return ''
+      // }
+      // return this.home?.phoneNumber?.startsWith('0')
+      //   ? 'tel:+61' + this.home?.phoneNumber.replace(/^0/, '')
+      //   : this.home.phoneNumber | ''
+    }
+  },
+  apollo: {
+    // fetchPolicy: 'cache-and-network',
+    home: {
+      prefetch: true,
+      query: home
+    }
+  }
 }
 </script>
 
-<style scoped lang="scss">
-$navbar-background-color: #f0ad4e;
+<style lang="scss">
+#about-nav {
+  color: $eggplant;
+}
+#repair-nav {
+  color: $gold;
+}
+#photos-nav {
+  color: $fuschia;
+}
+#contact-nav {
+  color: $cyan;
+}
+.brand-nav {
+  font-family: Righteous, $family-heading;
+}
+@media screen and (min-width: 1088px) {
+  .my-navbar {
+    display: block !important;
+  }
+  .my-navbar .navbar-brand {
+    display: none;
+  }
+  #my-navbar-menu {
+    width: 37.5rem;
+    margin: 0 auto;
+    padding-top: 1.25em;
+  }
+  #my-navbar-menu > div {
+    flex: 1;
+  }
+  #my-navbar-menu > div > div {
+    flex: 1;
+    justify-content: center;
+    align-content: center;
+  }
+}
 </style>

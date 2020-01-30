@@ -44,8 +44,21 @@ export default {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/pwa',
     '@nuxtjs/apollo',
-    'nuxt-buefy'
+    'nuxt-buefy',
+    '@nuxtjs/style-resources',
+    'nuxt-webfontloader'
   ],
+  styleResources: {
+    scss: [
+      './assets/*.scss'
+      // './assets/abstracts/_mixins.scss' // use underscore "_" & also file extension ".scss"
+    ]
+  },
+  webfontloader: {
+    google: {
+      families: ['Righteous:400']
+    }
+  },
   env: {
     DATOCMS_API: process.env.DATOCMS_API,
     INSTATOKEN: process.env.INSTATOKEN,

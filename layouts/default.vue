@@ -35,7 +35,7 @@ export default {
   components: {
     NavBar
   },
-  data: function() {
+  data() {
     return {
       dev: true
     }
@@ -74,3 +74,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+body {
+  background: $blanc-brown;
+}
+.footer {
+  background-color: $blanc-brown !important;
+}
+</style>

@@ -1,111 +1,115 @@
 <template>
-  <h2 v-if="loading > 0">
-    Loading...
-  </h2>
-  <div v-else>
-    <section
-      id="hero"
-      class="hero is-fullheight-with-navbar"
-      :style="{ backgroundImage: `url(${home.heroimage.url})` }"
-    >
-      <div class="hero-body">
-        <div class="container">
-          <h1
-            id="title"
-            class="title has-text-centered has-text-dark is-family-primary has-text-primary has-text-weight-medium"
-          >
-            {{ home.title }}
-          </h1>
-          <h2 id="subtitle" class="subtitle has-text-centered">
-            {{ home.subtitle }}
-          </h2>
+  <div>
+    <h2 v-if="loading > 0">
+      Loading...
+    </h2>
+    <div v-else>
+      <section
+        id="hero"
+        :style="{
+          backgroundImage: `url(${home.heroimage.url}?blend-mode=lighten&bg=d4ccb9&fill=solid&fill-color=d4ccb9)`
+        }"
+        class="hero is-fullheight-with-navbar"
+      >
+        <div class="hero-body">
+          <div class="container">
+            <h1
+              id="title"
+              class="title has-text-centered has-text-weight-medium"
+            >
+              {{ home.title }}
+            </h1>
+            <h2 id="subtitle" class="subtitle has-text-centered">
+              {{ home.subtitle }}
+            </h2>
+          </div>
         </div>
-      </div>
-    </section>
-    <section id="about" class="section is-fullheight section-feature-grey">
-      <div class="container">
-        <div class="content">
-          <h1 class="is-medium has-text-info has-text-left title">
-            <em class="has-text-primary"># </em>About
-          </h1>
-          <div class="columns">
-            <div class="column">
-              <figure class="image is-1by1 is-rounded">
-                <img :src="aboutImage" />
-              </figure>
-            </div>
-            <div class="column is-three-quarters">
-              <vue-markdown>{{ aboutText }}</vue-markdown>
+      </section>
+      <section id="about" class="section is-fullheight section-feature-grey">
+        <div class="container">
+          <div class="content">
+            <h1 class="is-medium has-text-info has-text-left title">
+              <em class="has-text-primary"># </em>About
+            </h1>
+            <div class="columns">
+              <div class="column">
+                <figure class="image is-1by1 is-rounded">
+                  <img :src="aboutImage" />
+                </figure>
+              </div>
+              <div class="column is-three-quarters">
+                <vue-markdown>{{ aboutText }}</vue-markdown>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="repairs" class="section is-fullheight section-feature-grey">
-      <div class="container">
-        <div class="content">
-          <h1 class="is-medium has-text-info has-text-left title">
-            <em class="has-text-primary"># </em>Repairs
-          </h1>
-          <div class="columns">
-            <div class="column is-three-quarters">
-              <vue-markdown>{{ repairText }}</vue-markdown>
-            </div>
-            <div class="column">
-              <div class="tile is-ancestor">
-                <div class="tile is-vertical">
-                  <figure class="image">
-                    <img :src="repairImage1" />
-                  </figure>
-                  <figure class="image">
-                    <img :src="repairImage2" />
-                  </figure>
+      </section>
+      <section id="repairs" class="section is-fullheight section-feature-grey">
+        <div class="container">
+          <div class="content">
+            <h1 class="is-medium has-text-info has-text-left title">
+              <em class="has-text-primary"># </em>Repairs
+            </h1>
+            <div class="columns">
+              <div class="column is-three-quarters">
+                <vue-markdown>{{ repairText }}</vue-markdown>
+              </div>
+              <div class="column">
+                <div class="tile is-ancestor">
+                  <div class="tile is-vertical">
+                    <figure class="image">
+                      <img :src="repairImage1" />
+                    </figure>
+                    <figure class="image">
+                      <img :src="repairImage2" />
+                    </figure>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section id="instaposts" class="section is-fullheight">
-      <h1 class="is-medium has-text-info has-text-left title">
-        <em class="has-text-primary"># </em>Photos
-      </h1>
-      <instaposts />
-    </section>
-    <footer class="footer level">
-      <div class="level-left">
-        <div class="level-item">
-          <div>
-            <p class="heading is-size-3">
-              Contact
-            </p>
-            <p>
-              <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
-              {{ home.phoneNumber }}
-            </p>
-            <p>
-              <b-icon slot="marker" icon="email" type="is-danger"></b-icon>
-              <a href="mailto:jake@theinstantcameraguy.com"
-                >jake@theinstantcameraguy.com</a
-              >
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="level-right">
-        <div class="level-item">
-          <div>
-            <p class="heading is-size-3">
-              Location
-            </p>
-            <div id="map">
-              <Map :coordinates="coordinates" />
+      </section>
+      <section id="instaposts" class="section is-fullheight">
+        <h1 class="is-medium has-text-info has-text-left title">
+          <em class="has-text-primary"># </em>Photos
+        </h1>
+        <instaposts />
+      </section>
+      <footer class="footer level">
+        <div class="level-left">
+          <div class="level-item">
+            <div>
+              <p class="heading is-size-3">
+                Contact
+              </p>
+              <p>
+                <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
+                {{ home.phoneNumber }}
+              </p>
+              <p>
+                <b-icon slot="marker" icon="email" type="is-danger"></b-icon>
+                <a href="mailto:jake@theinstantcameraguy.com"
+                  >jake@theinstantcameraguy.com</a
+                >
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
+        <div class="level-right">
+          <div class="level-item">
+            <div>
+              <p class="heading is-size-3">
+                Location
+              </p>
+              <div id="map">
+                <Map :coordinates="coordinates" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </div>
 </template>
 
@@ -128,31 +132,36 @@ export default {
     loading: 0
   }),
   computed: {
-    coordinates: function() {
+    coordinates() {
       return [this.home.pagelocation.longitude, this.home.pagelocation.latitude]
     },
-    aboutText: function() {
+    hrefPhone() {
+      return this.home.phoneNumber.startsWith('0')
+        ? 'tel:+61' + this.home.phoneNumber.replace(/^0/, '')
+        : this.home.phoneNumber
+    },
+    aboutText() {
       return dedent(this.home.introText)
     },
-    aboutImage: function() {
+    aboutImage() {
       return (
         this.aboutPage.photo.url +
-        '?fp-y=.18&fit=crop&w=200&h=200&mask=ellipse&w=480&h=480'
+        '?fp-y=.18&fit=crop&w=200&h=200&mask=ellipse&w=480&h=480&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
       )
     },
-    repairText: function() {
+    repairText() {
       return dedent(this.repairPage.repair[0].description)
     },
-    repairImage1: function() {
+    repairImage1() {
       return (
         this.repairPage.repair[0].examples[0].url +
-        '?fp-x=.35&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300'
+        '?fp-x=.35&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
       )
     },
-    repairImage2: function() {
+    repairImage2() {
       return (
         this.repairPage.repair[0].examples[1].url +
-        '?fp-x=.65&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300'
+        '?fp-x=.65&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
       )
     }
   },
@@ -167,59 +176,57 @@ export default {
     $loadingKey: 'loading',
     // fetchPolicy: 'cache-and-network',
     home: {
+      prefetch: true,
       query: home
     },
     repairPage: {
+      prefetch: true,
       query: repair
     },
     allSocialProfiles: {
+      prefetch: true,
       query: social
     },
     aboutPage: {
+      prefetch: true,
       query: about
     }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #hero {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #999;
+}
+img {
+  background-color: $bison-hide-grey;
 }
 
-#prebuildtitle,
 #title {
   letter-spacing: 1px;
   font-size: 5rem !important;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.82);
+  background: $header-text-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*text-shadow: 0 0 8px rgba(255, 255, 255, 0.82);*/
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-#prebuildsubtitle,
 #subtitle {
+  background: $header-text-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   word-spacing: 5px;
   font-size: 3rem !important;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.77);
+  text-shadow: 0px 4px 4px rgba(56, 56, 56, 0.25);
 }
 #map {
   height: 260px;
 }
-</style>
-
-<style lang="scss">
-$orange: #f0ad4e;
-$yellow: #ffd500;
-$green: #02b875;
-$blue: #45b2d3;
-$red: #d9534f;
-
-$link: #4582ec;
-$danger: $orange;
-
-$subtitle-color: $green;
 
 $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
   'Lucida Sans', Geneva, Arial, sans-serif;
@@ -227,6 +234,4 @@ $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
 $family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
 $navbar-height: 5rem;
-
-$navbar-background-color: $orange;
 </style>
