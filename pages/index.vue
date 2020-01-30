@@ -7,7 +7,7 @@
       <section
         id="hero"
         :style="{
-          backgroundImage: `url(${home.heroimage.url}?blend-mode=lighten&bg=d4ccb9&fill=solid&fill-color=d4ccb9)`
+          backgroundImage: `url(${home.heroimage.url}?blend-mode=lighten&bg=d4ccb9&fill=solid&fill-color=d4ccb9&duotone=d4ccb9,484d4b&duotone-alpha=50)`
         }"
         class="hero is-fullheight-with-navbar"
       >
@@ -28,7 +28,7 @@
       <section id="about" class="section is-fullheight section-feature-grey">
         <div class="container">
           <div class="content">
-            <h1 id="about" class="is-medium has-text-left title">
+            <h1 id="about-text" class="is-medium has-text-left title">
               <em class="has-text-primary"># </em>About
             </h1>
             <div class="columns">
@@ -206,6 +206,7 @@ export default {
   background-attachment: fixed;
   background-size: cover;
 }
+
 img {
   background-color: $bison-hide-grey;
 }
@@ -231,7 +232,7 @@ img {
 #map {
   height: 260px;
 }
-#about {
+#about-text {
   color: $eggplant;
 }
 #repair {

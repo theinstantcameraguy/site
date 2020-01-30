@@ -8,7 +8,7 @@
         class="navbar-burger burger"
         aria-label="menu"
         aria-expanded="false"
-        data-target="my-nav-bar"
+        data-target="my-navbar-menu"
       >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
