@@ -79,7 +79,4 @@ export default {
 body {
   background: $blanc-brown;
 }
-.footer {
-  background-color: $blanc-brown !important;
-}
 </style>

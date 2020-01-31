@@ -36,23 +36,12 @@
           href="#repairs"
           >Repairs</a
         >
-        <span class="navbar-item force-center">
-          <a :href="hrefPhone">
-            <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
-          </a>
-        </span>
-        <nuxt-link
+        <h1
           id="brand-nav"
-          to="/"
-          class="navbar-item has-text-weight-bold has-text-white force-center brand-nav"
+          class="navbar-item  has-text-weight-bold has-text-white force-center navbar-brand"
         >
           The Instant 📷 Guy
-        </nuxt-link>
-        <span class="navbar-item force-center">
-          <a href="mailto:jake@theinstantcameraguy.com">
-            <b-icon slot="marker" icon="email" type="is-danger"></b-icon>
-          </a>
-        </span>
+        </h1>
         <a
           id="photos-nav"
           data-menuanchor="photos"

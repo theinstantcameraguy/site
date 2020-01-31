@@ -80,34 +80,63 @@
           <instaposts />
         </div>
       </section>
-      <footer id="contact" class="footer level">
-        <div class="level-left">
-          <div class="level-item">
-            <div>
-              <p class="heading is-size-3">
-                Contact
-              </p>
-              <p>
-                <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
-                {{ home.phoneNumber }}
-              </p>
-              <p>
-                <b-icon slot="marker" icon="email" type="is-danger"></b-icon>
-                <a href="mailto:jake@theinstantcameraguy.com"
-                  >jake@theinstantcameraguy.com</a
-                >
-              </p>
+      <footer id="contact" class="footer">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <div>
+                <p class="heading is-size-3">
+                  Contact
+                </p>
+                <p>
+                  <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
+                  {{ home.phoneNumber }}
+                </p>
+                <p>
+                  <a href="mailto:theinstantcameraguy@hotmail.com">
+                    <b-icon
+                      slot="marker"
+                      icon="email"
+                      type="is-danger"
+                    ></b-icon>
+                    theinstantcameraguy@hotmail.com</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="level-right">
-          <div class="level-item">
-            <div>
-              <p class="heading is-size-3">
-                Location
-              </p>
-              <div id="map">
-                <Map :coordinates="coordinates" />
+          <div class="level-right">
+            <div class="level-item">
+              <div>
+                <p class="heading is-size-3">
+                  Socials
+                </p>
+                <a href="https://www.facebook.com/instantcameraguy/">
+                  <b-icon slot="marker" icon="facebook" type="is-info"> </b-icon
+                ></a>
+                <a
+                  href="https://www.youtube.com/playlist?list=PLwtSwDOf9bZr7eI1SN6eN2rorTG-W8pV8"
+                  ><b-icon slot="marker" icon="youtube" type="is-info"></b-icon>
+                </a>
+                <a href="https://www.instagram.com/theinstantcameraguy/?hl=en"
+                  ><b-icon
+                    slot="marker"
+                    icon="instagram"
+                    type="is-info"
+                  ></b-icon
+                ></a>
+                <a
+                  href="http://www.gumtree.com.au/s-seller/Instant%20Camera%20Guy/56661163"
+                  ><b-icon slot="marker" icon="tree" type="is-info"></b-icon
+                ></a>
+                <a href="https://m.me/instantcameraguy">
+                  <b-icon
+                    slot="marker"
+                    icon="facebook-messenger"
+                    type="is-info"
+                  >
+                  </b-icon
+                ></a>
               </div>
             </div>
           </div>
