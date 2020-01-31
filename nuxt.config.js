@@ -46,7 +46,8 @@ export default {
     '@nuxtjs/apollo',
     'nuxt-buefy',
     '@nuxtjs/style-resources',
-    'nuxt-webfontloader'
+    'nuxt-webfontloader',
+    '@nuxtjs/robots'
   ],
   styleResources: {
     scss: [
@@ -87,7 +88,14 @@ export default {
     icon: {
       /* icon options */
       iconSrc: '~/static/icon.png'
+    },
+    meta: {
+      name: 'TICG'
     }
+  },
+  robots: {
+    UserAgent: '*',
+    Disallow: '/'
   },
   /*
    ** Build configuration

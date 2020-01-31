@@ -25,6 +25,59 @@
           </div>
         </div>
       </section>
+      <section
+        id="about-level"
+        class="section is-fullheight section-feature-grey"
+      >
+        <div id="post-hero" class="container is-flex ">
+          <div id="post-content" class="item columns">
+            <div class="column is-3 has-text-centered">
+              <div class="is-centered">
+                <figure class="image is-128x128 has-image-centered">
+                  <img
+                    class="is-rounded"
+                    src="~/assets/undraw_photos_1nui.svg"
+                  />
+                </figure>
+                <p class="title">Experience</p>
+                <p class="heading">
+                  Over 10 years servicing, restorating and modifying classic
+                  cameras.
+                </p>
+              </div>
+            </div>
+            <div class="column is-3 has-text-centered">
+              <div class="is-centered">
+                <figure class="image is-128x128 has-image-centered">
+                  <img
+                    class="is-rounded"
+                    src="~/assets/undraw_camera_mg5h.svg"
+                  />
+                </figure>
+                <p class="title">Repair Service Modify</p>
+                <p class="heading">
+                  Specialise in Polaroid cameras and Graflex 4x5 cameras. Also
+                  occasionally restore other film cameras
+                </p>
+              </div>
+            </div>
+            <div class="column is-3 has-text-centered">
+              <figure class="image is-128x128 has-image-centered">
+                <img
+                  class="is-rounded"
+                  src="~/assets/undraw_delivery_address_03n0.svg"
+                />
+              </figure>
+              <p class="title">Ship Australia Wide</p>
+              <p class="heading">
+                I ship Australia wide. If you are overseas, no worries! I ship
+                pretty much anywhere! Just ask me for a quote!
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="about" class="section is-fullheight section-feature-grey">
         <div class="container">
           <div class="content">
@@ -204,6 +257,16 @@ img {
   color: $fuschia;
 }
 
+#post-content {
+  justify-content: space-between;
+  align-content: center;
+  flex-flow: row wrap;
+  align-self: center;
+}
+.has-image-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
 $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
   'Lucida Sans', Geneva, Arial, sans-serif;
 

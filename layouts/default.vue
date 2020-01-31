@@ -43,11 +43,6 @@ export default {
   head: {
     meta: [
       {
-        hid: 'description',
-        name: 'description',
-        content: 'cool'
-      },
-      {
         rel: 'icon',
         type: 'image/png',
         // Need to figure out how to do this

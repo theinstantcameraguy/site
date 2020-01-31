@@ -35,19 +35,6 @@ $tan: #dccdbf;
 $tan2: hsl(37, 25%,  74%) !default;
 
 
-$apple: $tan2 !default
-$apple-invert: findColorInvert($apple) !default
-
-$fuschia: #CC3D7A;
-$fuschia-invert: findColorInvert($fuschia);
-
-$gold : #cca33d;
-$gold-invert: findColorInvert($gold);
-$cyan : #00b8e6;
-$cyan-invert: findColorInvert($cyan);
-$beige : #F0B67F;
-$beige-invert: findColorInvert($beige);
-
 $link: #4582EC ;
 $danger: $green;
 $primary: $red;
@@ -65,19 +52,18 @@ $bulmaswatch-import-font: true !default;
 
 
 
-// Setup $colors to use as bulma classes (e.g. 'is-twitter')
-$colors: (
-  "white": ($tan, $black),
-  "black": ($black, $white),
-  "light": ($light, $light-invert),
-  "dark": ($dark, $dark-invert),
-  "primary": ($primary, $primary-invert),
-  "info": ($info, $info-invert),
-  "success": ($success, $success-invert),
-  "warning": ($warning, $warning-invert),
-  "danger": ($danger, $danger-invert),
+$apple: $tan2 !default
+$apple-invert: findColorInvert($apple) !default
 
-);
+$fuschia: #CC3D7A;
+$fuschia-invert: findColorInvert($fuschia);
+
+$gold : #cca33d;
+$gold-invert: findColorInvert($gold);
+$cyan : #00b8e6;
+$cyan-invert: findColorInvert($cyan);
+$beige : #F0B67F;
+$beige-invert: findColorInvert($beige);
 
 $cape-cod-grey: #484d4b;
 $blanc-brown: #d4ccb9;
@@ -102,6 +88,18 @@ $custom-colors: (
 
 $header-text-gradient: linear-gradient($fuschia 20%, $gold 40%, $cyan 60%, $eggplant 80%);
 
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+  "white": ($tan, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($primary, $primary-invert),
+  "info": ($info, $info-invert),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $warning-invert),
+  "danger": ($danger, $danger-invert),
+);
 
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
