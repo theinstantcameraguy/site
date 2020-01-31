@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar my-navbar" role="navigation" aria-label="main navigation">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a
         @click="showNav = !showNav"
@@ -24,35 +24,32 @@
       <div class="navbar-start">
         <a
           id="about-nav"
+          class="has-text-weight-bold navbar-item"
           data-menuanchor="about"
-          class="navbar-item"
           href="#about"
           >About</a
         >
         <a
           id="repair-nav"
+          class="has-text-weight-bold navbar-item"
           data-menuanchor="repairs"
-          class="navbar-item"
           href="#repairs"
           >Repairs</a
         >
-        <h1
-          id="brand-nav"
-          class="navbar-item  has-text-weight-bold has-text-white force-center navbar-brand"
-        >
+        <a class="has-text-weight-bold has-text-white nav-item force-center">
           The Instant 📷 Guy
-        </h1>
+        </a>
         <a
           id="photos-nav"
+          class="has-text-weight-bold nav-item"
           data-menuanchor="photos"
-          class="navbar-item"
           href="#instaposts"
           >Photos</a
         >
         <a
           id="contact-nav"
+          class="has-text-weight-bold nav-item"
           data-menuanchor="contact"
-          class="navbar-item"
           href="#contact"
           >Contact</a
         >
@@ -104,25 +101,30 @@ export default {
 .brand-nav {
   font-family: Righteous, $family-heading;
 }
-@media screen and (min-width: 1088px) {
-  .my-navbar {
-    display: block !important;
-  }
-  .my-navbar .navbar-brand {
+.navbar-start {
+  flex-grow: 1;
+  justify-content: center;
+  text-align: center;
+}
+
+@media screen and (max-width: $desktop - 1px) {
+  #logo {
     display: none;
   }
-  #my-navbar-menu {
-    width: 37.5rem;
-    margin: 0 auto;
-    padding-top: 1.25em;
+  .force-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
-  #my-navbar-menu > div {
-    flex: 1;
-  }
-  #my-navbar-menu > div > div {
-    flex: 1;
+  .navbar-end {
+    display: flex;
     justify-content: center;
-    align-content: center;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .navbar-brand {
+    display: none;
   }
 }
 </style>
