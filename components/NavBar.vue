@@ -1,9 +1,11 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
+      <a class="navbar-item force-center brand-nav mobile-brand">
+        The Instant 📷 Guy
+      </a>
       <a
         @click="showNav = !showNav"
-        :class="{ 'is-active': showNav }"
         role="button"
         class="navbar-burger burger"
         aria-label="menu"
@@ -36,19 +38,21 @@
           href="#repairs"
           >Repairs</a
         >
-        <a class="has-text-weight-bold has-text-white nav-item force-center">
+        <a
+          class="has-text-weight-bold has-text-white navbar-item force-center brand-nav"
+        >
           The Instant 📷 Guy
         </a>
         <a
           id="photos-nav"
-          class="has-text-weight-bold nav-item"
+          class="has-text-weight-bold navbar-item"
           data-menuanchor="photos"
           href="#instaposts"
           >Photos</a
         >
         <a
           id="contact-nav"
-          class="has-text-weight-bold nav-item"
+          class="has-text-weight-bold navbar-item"
           data-menuanchor="contact"
           href="#contact"
           >Contact</a
@@ -101,30 +105,31 @@ export default {
 .brand-nav {
   font-family: Righteous, $family-heading;
 }
+
 .navbar-start {
-  flex-grow: 1;
-  justify-content: center;
-  text-align: center;
+  flex-grow: 1 !important;
+  justify-content: center !important;
+  text-align: center !important;
 }
 
-@media screen and (max-width: $desktop - 1px) {
+@media screen and (max-width: 1024px - 1px) {
   #logo {
-    display: none;
+    display: none !important;
   }
   .force-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
   .navbar-end {
-    display: flex;
-    justify-content: center;
+    display: flex !important;
+    justify-content: center !important;
   }
 }
 
-@media screen and (min-width: $desktop) {
+@media screen and (min-width: 1024px) {
   .navbar-brand {
-    display: none;
+    display: none !important;
   }
 }
 </style>
