@@ -79,9 +79,15 @@ export default {
     // See https://github.com/nuxt-community/axios-module#options
   },
   buefy: { css: false },
-  manifest: {
-    name: 'TICG',
-    lang: 'en'
+  pwa: {
+    manifest: {
+      name: 'TICG',
+      lang: 'en'
+    },
+    icon: {
+      /* icon options */
+      iconSrc: '~/static/icon.png'
+    }
   },
   /*
    ** Build configuration
