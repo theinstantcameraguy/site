@@ -1,7 +1,9 @@
 <template>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item force-center brand-nav mobile-brand">
+      <a
+        class="navbar-item force-center brand-nav mobile-brand is-size-4 has-text-centered"
+      >
         The Instant 📷 Guy
       </a>
       <a
@@ -39,7 +41,8 @@
           >Repairs</a
         >
         <a
-          class="has-text-weight-bold has-text-white navbar-item force-center brand-nav"
+          id="logo"
+          class="has-text-weight-bold has-text-white navbar-item force-center brand-nav is-size-4 has-text-centered"
         >
           The Instant 📷 Guy
         </a>

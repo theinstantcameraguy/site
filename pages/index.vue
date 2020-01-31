@@ -80,68 +80,7 @@
           <instaposts />
         </div>
       </section>
-      <footer id="contact" class="footer">
-        <div class="level">
-          <div class="level-left">
-            <div class="level-item">
-              <div>
-                <p class="heading is-size-3">
-                  Contact
-                </p>
-                <p>
-                  <b-icon slot="marker" icon="phone" type="is-danger"></b-icon>
-                  {{ home.phoneNumber }}
-                </p>
-                <p>
-                  <a href="mailto:theinstantcameraguy@hotmail.com">
-                    <b-icon
-                      slot="marker"
-                      icon="email"
-                      type="is-danger"
-                    ></b-icon>
-                    theinstantcameraguy@hotmail.com</a
-                  >
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="level-right">
-            <div class="level-item">
-              <div>
-                <p class="heading is-size-3">
-                  Socials
-                </p>
-                <a href="https://www.facebook.com/instantcameraguy/">
-                  <b-icon slot="marker" icon="facebook" type="is-info"> </b-icon
-                ></a>
-                <a
-                  href="https://www.youtube.com/playlist?list=PLwtSwDOf9bZr7eI1SN6eN2rorTG-W8pV8"
-                  ><b-icon slot="marker" icon="youtube" type="is-info"></b-icon>
-                </a>
-                <a href="https://www.instagram.com/theinstantcameraguy/?hl=en"
-                  ><b-icon
-                    slot="marker"
-                    icon="instagram"
-                    type="is-info"
-                  ></b-icon
-                ></a>
-                <a
-                  href="http://www.gumtree.com.au/s-seller/Instant%20Camera%20Guy/56661163"
-                  ><b-icon slot="marker" icon="tree" type="is-info"></b-icon
-                ></a>
-                <a href="https://m.me/instantcameraguy">
-                  <b-icon
-                    slot="marker"
-                    icon="facebook-messenger"
-                    type="is-info"
-                  >
-                  </b-icon
-                ></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <footer-bar />
     </div>
   </div>
 </template>
@@ -153,6 +92,7 @@ import dedent from 'graphql/jsutils/dedent'
 import BIcon from 'buefy/src/components/icon/Icon'
 import Map from '../components/Map'
 import Instaposts from '../components/Instaposts'
+import FooterBar from '../components/FooterBar'
 import home from '~/queries/fetchIndex'
 import repair from '~/queries/fetchRepair'
 import about from '~/queries/fetchAbout'
@@ -160,7 +100,7 @@ import social from '~/queries/fetchSocial'
 
 export default {
   // eslint-disable-next-line vue/no-unused-components
-  components: { BIcon, Map, BButton, VueMarkdown, Instaposts },
+  components: { FooterBar, BIcon, Map, BButton, VueMarkdown, Instaposts },
   data: () => ({
     loading: 0
   }),
@@ -198,13 +138,6 @@ export default {
       )
     }
   },
-  // head(): {
-  //   meta: [
-  //     { hid: 'description',
-  //       name: 'description',
-  //       content: 'About our company Nuxt.js ' }
-  //     ]
-  // },
   apollo: {
     $loadingKey: 'loading',
     // fetchPolicy: 'cache-and-network',
@@ -269,9 +202,6 @@ img {
 }
 #photos {
   color: $fuschia;
-}
-#contact {
-  color: $cyan;
 }
 
 $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
