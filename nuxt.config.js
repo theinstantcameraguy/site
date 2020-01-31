@@ -57,7 +57,12 @@ export default {
   },
   webfontloader: {
     google: {
-      families: ['Righteous:400']
+      families: [
+        'Righteous:400',
+        'Source Sans Pro:400,700',
+        'Roboto:400,700',
+        'Helvetica Neue:400,700'
+      ]
     }
   },
   env: {

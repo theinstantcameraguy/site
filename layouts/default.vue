@@ -7,8 +7,6 @@
 
 <style>
 html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
@@ -23,6 +21,24 @@ html {
 *:after {
   box-sizing: border-box;
   margin: 0;
+}
+body,
+p,
+.content {
+  font-family: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
+    Geneva, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+.title,
+.subtitle {
+  font-family: 'Righteous', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 </style>
 
