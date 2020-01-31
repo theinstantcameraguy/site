@@ -57,7 +57,7 @@
           id="contact-nav"
           class="has-text-weight-bold navbar-item"
           data-menuanchor="contact"
-          href="#contact"
+          href="#footer"
           >Contact</a
         >
       </div>
