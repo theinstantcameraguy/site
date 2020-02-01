@@ -181,17 +181,17 @@ export default {
       )
     },
     repairText() {
-      return dedent(this.repairPage.repair[0].description)
+      return dedent(this.repairPage.description)
     },
     repairImage1() {
       return (
-        this.repairPage.repair[0].examples[0].url +
+        this.repairPage.example[0].photo.url +
         '?fp-x=.35&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
       )
     },
     repairImage2() {
       return (
-        this.repairPage.repair[0].examples[1].url +
+        this.repairPage.example[1].photo.url +
         '?fp-x=.65&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
       )
     }

@@ -1,13 +1,18 @@
 {
   repairPage {
-    repair
-    {
-      description
-      examples
-      {
+    description
+    headings
+    example {
+      photo {
         url
+        responsiveImage {
+          srcSet
+          src
+          height
+          sizes
+          alt
+        }
       }
-      steps
     }
   }
 }
