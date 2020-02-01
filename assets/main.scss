@@ -39,7 +39,6 @@ $link: #4582EC ;
 $danger: $green;
 $primary: $red;
 
-$subtitle-color: $green;
 
 $family-heading: "Raleway", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 
@@ -86,7 +85,7 @@ $custom-colors: (
   "cyan": ($cyan, $cyan-invert),
 );
 
-$header-text-gradient: linear-gradient($fuschia 20%, $gold 40%, $cyan 60%, $eggplant 80%);
+$header-text-gradient: linear-gradient($fuschia 30%, $gold 45%, $cyan 60%, $eggplant 75%);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
 $colors: (

@@ -7,7 +7,7 @@
       <section
         id="hero"
         :style="{
-          backgroundImage: `url(${home.heroimage.url}?blend-mode=lighten&bg=d4ccb9&fill=solid&fill-color=d4ccb9&duotone=d4ccb9,484d4b&duotone-alpha=50)`
+          backgroundImage: `url(${home.heroimage.url}?blend-mode=lighten&bg=d4ccb9&fill=solid&fill-color=d4ccb9&duotone=d4ccb9,484d4b&duotone-alpha=63)`
         }"
         class="hero is-fullheight-with-navbar"
       >
@@ -15,11 +15,16 @@
           <div class="container">
             <h1
               id="title"
-              class="title has-text-centered has-text-weight-medium"
+              :data-text="home.title"
+              class="has-text-centered is-1"
             >
               {{ home.title }}
             </h1>
-            <h2 id="subtitle" class="subtitle has-text-centered">
+            <h2
+              id="subtitle"
+              :data-text="home.subtitle"
+              class="has-text-centered has-text-weight-light is-3"
+            >
               {{ home.subtitle }}
             </h2>
           </div>
@@ -41,7 +46,7 @@
                 </figure>
                 <p class="title">Experience</p>
                 <p class="heading">
-                  Over 10 years servicing, restorating and modifying classic
+                  Over 10 years servicing, restoring and modifying classic
                   cameras.
                 </p>
               </div>
@@ -54,7 +59,7 @@
                     src="~/assets/undraw_camera_mg5h.svg"
                   />
                 </figure>
-                <p class="title">Repair Service Modify</p>
+                <p class="title">Repair, Service, Modify</p>
                 <p class="heading">
                   Specialise in Polaroid cameras and Graflex 4x5 cameras. Also
                   occasionally restore other film cameras
@@ -65,7 +70,7 @@
               <figure class="image is-128x128 has-image-centered">
                 <img
                   class="is-rounded"
-                  src="~/assets/undraw_delivery_address_03n0.svg"
+                  src="~/assets/undraw_drone_delivery_5vrm.svg"
                 />
               </figure>
               <p class="title">Ship Australia Wide</p>
@@ -232,8 +237,7 @@ img {
   background: $header-text-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /*text-shadow: 0 0 8px rgba(255, 255, 255, 0.82);*/
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  position: relative;
 }
 
 #subtitle {
@@ -242,8 +246,10 @@ img {
   -webkit-text-fill-color: transparent;
   word-spacing: 5px;
   font-size: 3rem !important;
-  text-shadow: 0px 4px 4px rgba(56, 56, 56, 0.25);
+  position: relative;
+  z-index: 10;
 }
+
 #map {
   height: 260px;
 }

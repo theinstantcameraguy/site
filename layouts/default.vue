@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
 html {
   font-size: 16px;
   word-spacing: 1px;
@@ -39,6 +39,9 @@ h7,
 .subtitle {
   font-family: 'Righteous', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+body {
+  background: $blanc-brown;
 }
 </style>
 
@@ -85,9 +88,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-body {
-  background: $blanc-brown;
-}
-</style>
