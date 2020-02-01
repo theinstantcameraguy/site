@@ -16,14 +16,14 @@
             <h1
               id="title"
               :data-text="home.title"
-              class="has-text-centered is-1"
+              class="title has-text-centered is-1"
             >
               {{ home.title }}
             </h1>
             <h2
               id="subtitle"
               :data-text="home.subtitle"
-              class="has-text-centered has-text-weight-light is-3"
+              class="subtitle has-text-centered has-text-weight-light is-3"
             >
               {{ home.subtitle }}
             </h2>
