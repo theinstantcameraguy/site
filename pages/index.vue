@@ -106,7 +106,7 @@
         <div class="container">
           <div class="content">
             <h1 id="repair" class="is-medium has-text-left title">
-              <em class="has-text-primary"># </em>Repairs
+              <em class="has-text-primary"># </em>Repairs & Modification
             </h1>
             <div class="columns">
               <div class="column is-three-quarters">
