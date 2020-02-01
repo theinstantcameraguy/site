@@ -95,7 +95,7 @@
                   <img :src="aboutImage" />
                 </figure>
               </div>
-              <div class="column is-three-quarters">
+              <div class="column is-three-quarters has-text-justified">
                 <vue-markdown>{{ aboutText }}</vue-markdown>
               </div>
             </div>
@@ -109,7 +109,7 @@
               <em class="has-text-primary"># </em>Repairs & Modification
             </h1>
             <div class="columns">
-              <div class="column is-three-quarters">
+              <div class="column is-three-quarters has-text-justified">
                 <vue-markdown>{{ repairText }}</vue-markdown>
               </div>
               <div class="column">
