@@ -259,7 +259,11 @@ export default {
 .hero {
   background: no-repeat $grey-dark center/35% url('~assets/polaroid600.png');
 }
-
+@media screen and (max-width: 1024px - 1px) {
+  .hero {
+    background: no-repeat $grey-dark center/80% url('~assets/polaroid600.png');
+  }
+}
 .card,
 #repairs-accord {
   background-color: $blanc-brown;
