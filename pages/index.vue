@@ -257,7 +257,7 @@ export default {
 
 <style lang="scss">
 .hero {
-  background: no-repeat $grey-dark center/25% url('~assets/polaroid600.png');
+  background: no-repeat $grey-dark center/35% url('~assets/polaroid600.png');
 }
 
 .card,
