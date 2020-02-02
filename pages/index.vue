@@ -110,18 +110,45 @@
             </h1>
             <div class="columns">
               <div class="column is-three-quarters has-text-justified">
-                <vue-markdown>{{ repairText }}</vue-markdown>
+                <!--                <vue-markdown>{{ repairText }}</vue-markdown>-->
+                <p>
+                  I offer expert restoration and repair of Polaroid cameras. If
+                  your camera has an issue, I can probably fix it. Some specific
+                  services I provide include:
+                </p>
+                <bulma-accordion id="repairs-accord" dropdown icon="plus-minus">
+                  <bulma-accordion-item
+                    v-for="(service, index) in allServices"
+                    :key="service.id"
+                  >
+                    <h4
+                      slot="title"
+                      v-bind:style="{ color: activeColor(index) }"
+                      class="title is-6 has-weight-lighter"
+                    >
+                      {{ service.heading }}
+                    </h4>
+                    <div slot="content">
+                      <p
+                        v-for="serviceItem in service.serviceItems"
+                        :key="serviceItem.id"
+                      >
+                        <vue-markdown>{{
+                          serviceItem.itemDescription
+                        }}</vue-markdown>
+                      </p>
+                    </div>
+                  </bulma-accordion-item>
+                </bulma-accordion>
               </div>
-              <div class="column">
-                <div class="tile is-ancestor">
-                  <div class="tile is-vertical">
-                    <figure class="image">
-                      <img :src="repairImage1" />
-                    </figure>
-                    <figure class="image">
-                      <img :src="repairImage2" />
-                    </figure>
-                  </div>
+              <div class="tile is-ancestor">
+                <div class="tile is-vertical">
+                  <figure class="image">
+                    <img :src="repairImage1" />
+                  </figure>
+                  <figure class="image">
+                    <img :src="repairImage2" />
+                  </figure>
                 </div>
               </div>
             </div>
@@ -145,20 +172,24 @@
 
 <script>
 import VueMarkdown from 'vue-markdown'
-import BButton from 'buefy/src/components/button/Button'
 import dedent from 'graphql/jsutils/dedent'
-import BIcon from 'buefy/src/components/icon/Icon'
-import Map from '../components/Map'
+import { BulmaAccordion, BulmaAccordionItem } from 'vue-bulma-accordion'
 import Instaposts from '../components/Instaposts'
 import FooterBar from '../components/FooterBar'
 import home from '~/queries/fetchIndex'
 import repair from '~/queries/fetchRepair'
+import service from '~/queries/fetchService'
 import about from '~/queries/fetchAbout'
 import social from '~/queries/fetchSocial'
 
 export default {
-  // eslint-disable-next-line vue/no-unused-components
-  components: { FooterBar, BIcon, Map, BButton, VueMarkdown, Instaposts },
+  components: {
+    FooterBar,
+    VueMarkdown,
+    Instaposts,
+    BulmaAccordion,
+    BulmaAccordionItem
+  },
   data: () => ({
     loading: 0
   }),
@@ -196,6 +227,20 @@ export default {
       )
     }
   },
+  methods: {
+    activeColor(index) {
+      const colors = [
+        '#862754',
+        '#cca33d',
+        '#00b8e6',
+        '#CC3D7A',
+        '#3D81DA',
+        '#9F1E17',
+        '#F4581F'
+      ]
+      return colors[index % colors.length]
+    }
+  },
   apollo: {
     $loadingKey: 'loading',
     // fetchPolicy: 'cache-and-network',
@@ -210,6 +255,10 @@ export default {
     allSocialProfiles: {
       prefetch: true,
       query: social
+    },
+    allServices: {
+      prefetch: true,
+      query: service
     },
     aboutPage: {
       prefetch: true,
@@ -227,8 +276,10 @@ export default {
   background-size: cover;
 }
 
-img {
-  background-color: $bison-hide-grey;
+img,
+.card,
+#repairs-accord {
+  background-color: $blanc-brown;
 }
 
 #title {
