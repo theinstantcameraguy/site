@@ -4,26 +4,13 @@
       Loading...
     </h2>
     <div v-else>
-      <section
-        id="hero"
-        :style="{
-          backgroundImage: `url(${home.heroimage.url}?blend-mode=lighten&bg=d4ccb9&fill=solid&fill-color=d4ccb9&duotone=d4ccb9,484d4b&duotone-alpha=63)`
-        }"
-        class="hero is-fullheight-with-navbar"
-      >
+      <section id="hero" class="hero is-fullheight is-dark">
         <div class="hero-body">
           <div class="container">
-            <h1
-              id="title"
-              :data-text="home.title"
-              class="title has-text-centered is-1"
-            >
-              {{ home.title }}
-            </h1>
             <h2
               id="subtitle"
               :data-text="home.subtitle"
-              class="subtitle has-text-centered has-text-weight-light is-3"
+              class="title has-text-centered has-text-weight-light is-1"
             >
               {{ home.subtitle }}
             </h2>
@@ -46,8 +33,8 @@
                 </figure>
                 <p class="title">Experience</p>
                 <p class="heading">
-                  Over 10 years servicing, restoring and modifying classic
-                  cameras.
+                  I have over 10 years servicing, restoring and modifying
+                  classic cameras.
                 </p>
               </div>
             </div>
@@ -61,8 +48,8 @@
                 </figure>
                 <p class="title">Repair, Service, Modify</p>
                 <p class="heading">
-                  Specialise in Polaroid cameras and Graflex 4x5 cameras. Also
-                  occasionally restore other film cameras
+                  I specialise in Polaroid cameras and Graflex 4x5 cameras.
+                  However I can also restore other film cameras
                 </p>
               </div>
             </div>
@@ -269,14 +256,10 @@ export default {
 </script>
 
 <style lang="scss">
-#hero {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+.hero {
+  background: no-repeat $grey-dark center/25% url('~assets/polaroid600.png');
 }
 
-img,
 .card,
 #repairs-accord {
   background-color: $blanc-brown;
@@ -296,9 +279,10 @@ img,
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   word-spacing: 5px;
-  font-size: 3rem !important;
+  font-size: 4rem !important;
   position: relative;
   z-index: 10;
+  text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.45);
 }
 
 #map {

@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
+  <nav
+    class="navbar is-transparent is-dark"
+    role="navigation"
+    aria-label="main navigation"
+  >
     <div class="navbar-brand">
       <a
         class="navbar-item force-center brand-nav mobile-brand is-size-4 has-text-centered"
