@@ -109,6 +109,6 @@ export default {
   }
 }
 #footer {
-  color: $cyan;
+  color: $polaroid_red;
 }
 </style>

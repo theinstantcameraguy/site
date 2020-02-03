@@ -6,7 +6,7 @@
     <div v-else>
       <section id="hero" class="hero is-fullheight is-dark">
         <div class="hero-body">
-          <div class="container">
+          <div id="hero-body" class="container">
             <h2
               id="subtitle"
               :data-text="home.subtitle"
@@ -217,13 +217,12 @@ export default {
   methods: {
     activeColor(index) {
       const colors = [
-        '#862754',
-        '#cca33d',
-        '#00b8e6',
-        '#CC3D7A',
-        '#3D81DA',
-        '#9F1E17',
-        '#F4581F'
+        '#3777b4',
+        '#00983c',
+        '#df9700',
+        '#e47200',
+        '#b92518',
+        '#b40070'
       ]
       return colors[index % colors.length]
     }
@@ -258,6 +257,8 @@ export default {
 <style lang="scss">
 .hero {
   background: no-repeat $grey-dark center/35% url('~assets/polaroid600.png');
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (max-width: 1024px - 1px) {
   .hero {
@@ -268,7 +269,11 @@ export default {
 #repairs-accord {
   background-color: $blanc-brown;
 }
-
+.hero-body {
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 #title {
   letter-spacing: 1px;
   font-size: 5rem !important;
@@ -278,28 +283,34 @@ export default {
   position: relative;
 }
 
+#hero-body {
+  align-self: center;
+  justify-self: center;
+}
 #subtitle {
-  background: $header-text-gradient;
+  background-image: $header-text-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   word-spacing: 5px;
   font-size: 4rem !important;
-  position: relative;
-  z-index: 10;
-  text-shadow: 0px 6px 8px rgba(0, 0, 0, 0.45);
+  z-index: 6;
+  stroke-width: 0.5px;
+  -webkit-text-stroke-color: $black;
+  -webkit-text-stroke-width: 0.5px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 #map {
   height: 260px;
 }
 #about-text {
-  color: $eggplant;
+  color: $polaroid_blue;
 }
 #repair {
-  color: $gold;
+  color: $polaroid_green;
 }
 #photos {
-  color: $fuschia;
+  color: $polaroid_red;
 }
 
 #post-content {

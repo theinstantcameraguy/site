@@ -98,16 +98,16 @@ export default {
 
 <style lang="scss">
 #about-nav {
-  color: $eggplant;
+  color: $polaroid_blue;
 }
 #repair-nav {
-  color: $gold;
+  color: $polaroid_green;
 }
 #photos-nav {
-  color: $fuschia;
+  color: $polaroid_gold;
 }
 #contact-nav {
-  color: $cyan;
+  color: $polaroid_red;
 }
 .brand-nav {
   font-family: Righteous, $family-heading;
