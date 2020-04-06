@@ -59,15 +59,17 @@ export default {
       dev: true
     }
   },
-  head: {
-    meta: [
-      {
-        rel: 'icon',
-        type: 'image/png',
-        // Need to figure out how to do this
-        href: '~/static/favicon.ico' || this._site.favicon.url
-      }
-    ]
+  head() {
+    return {
+      meta: [
+        {
+          rel: 'icon',
+          type: 'image/png',
+          // Need to figure out how to do this
+          href: '~/static/favicon.ico' || this._site.favicon.url
+        }
+      ]
+    }
   },
   // See https://developers.google.com/search/docs/data-types/local-business#definitions
   jsonld: {
