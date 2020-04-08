@@ -17,6 +17,7 @@ function addStyleResource (rule) {
 
 module.exports = {
   siteName: 'The Instant Camera Guy',
+  siteUrl: 'https://theinstantcameraguy.com',
   plugins: [
     'gridsome-plugin-robots-txt',
     {
