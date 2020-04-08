@@ -36,9 +36,9 @@
   "resolutions": {
     "vue-svg-inline-loader/core-js": "^2.6.11",
     "vue-svg-inline-loader/@babel/polyfill/core-js": "^2.6.11",
-    "gridsome-plugin-pwa/sharp": "0.25.2",
-    "sharp": "0.25.2",
-    "gridsome/sharp": "0.25.2"
+    "gridsome-plugin-pwa/sharp": "^0.25.2",
+    "sharp": "^0.25.2",
+    "gridsome/sharp": "^0.25.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

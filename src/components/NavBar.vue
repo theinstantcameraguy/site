@@ -69,7 +69,6 @@
   </nav>
 </template>
 <script>
-import home from '~/queries/fetchIndex'
 export default {
   name: 'NavBar',
   data() {
@@ -86,13 +85,6 @@ export default {
       //   : this.home.phoneNumber | ''
     }
   },
-  apollo: {
-    // fetchPolicy: 'cache-and-network',
-    home: {
-      prefetch: true,
-      query: home
-    }
-  }
 }
 </script>
 

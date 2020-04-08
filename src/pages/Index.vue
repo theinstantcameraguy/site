@@ -25,7 +25,7 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <img
+                  <g-image
                     class="is-rounded"
                     :src="photosSVG"
                   />
@@ -40,7 +40,7 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <img :src="cameraSVG" class="is-rounded"/>
+                  <g-image :src="cameraSVG" class="is-rounded"/>
                 </figure>
                 <p class="title">Repair, Service, Modify</p>
                 <p class="heading">
@@ -51,7 +51,7 @@
             </div>
             <div class="column is-3 has-text-centered">
               <figure class="image is-128x128 has-image-centered">
-                <img
+                <g-image
                   class="is-rounded"
                   :src="droneSVG"
                 />
@@ -78,7 +78,7 @@
             <div class="columns">
               <div class="column">
                 <figure class="image is-1by1 is-rounded">
-                  <img :src="aboutImage"/>
+                  <g-image :src="aboutImage"/>
                 </figure>
               </div>
               <div class="column is-three-quarters has-text-justified">
@@ -159,9 +159,41 @@
   import RepairList from './RepairList'
 
   export default {
-    metaInfo: {
-      title: 'The Instant Camera Guy'
+    metaInfo ()  {
+      const desc = 'Camera servicing and repairs by Jake Bright. Specializing in the sales, servicing, ' +
+        'restoration and modification of classic Polaroid cameras and Graflex 4x5 cameras.'
+      const og_image = "~@/assets/polaroid600.png"
+      return {
+        title: 'The Instant 📷 Guy',
+        meta: [
+          { key: 'description', name: 'description', content: this.home.seoSettings.description | desc},
+          {property: 'og:title', content: 'The Instant 📷 Guy'},
+          {property: 'og:site_name', content: 'The Instant 📷 Guy'},
+          // The list of types is available here: http://ogp.me/#types
+          {property: 'og:type', content: 'website'},
+          // Should the the same as your canonical link, see below.
+          {property: 'og:url', content: 'https://theinstantcameraguy.com'},
+          {property: 'og:image', content: this.home.seoSettings.image.url | og_image },
+          // Often the same as your meta description, but not always.
+          {property: 'og:description', content: this.home.seoSettings.description | desc },
+
+          // Twitter card
+          {name: 'twitter:card', content: 'summary'},
+          {name: 'twitter:site', content: 'https://theinstantcameraguy.com'},
+          {name: 'twitter:title', content: 'The Instant 📷 Guy'},
+          {name: 'twitter:description', content: this.home.seoSettings.description | desc },
+          // Your twitter handle, if you have one.
+          // {name: 'twitter:creator', content: '@jakebright'},
+          {name: 'twitter:image:src', content: this.home.seoSettings.image.url | og_image},
+
+          // Google / Schema.org markup:
+          {itemprop: 'name', content: 'The Instant 📷 Guy'},
+          {itemprop: 'description', content: this.home.seoSettings.description | desc },
+          {itemprop: 'image', content: this.home.seoSettings.image.url | og_image }
+        ]
+      }
     },
+
     components: {
       RepairList,
       FooterBar,
@@ -240,6 +272,9 @@
   seoSettings {
   description
   title
+  image {
+  url
+  }
   }
   subtitle
   title

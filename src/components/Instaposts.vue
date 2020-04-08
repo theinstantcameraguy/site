@@ -4,7 +4,7 @@
       <div class="card">
         <div class="card-image">
           <figure class="image">
-            <img :src="post.node.images.standard_resolution.url" alt="Image"/>
+            <img :src="post.node.images.standard_resolution.url" :alt="post.node.caption.text"/>
           </figure>
         </div>
         <!--        <div class="content">-->
