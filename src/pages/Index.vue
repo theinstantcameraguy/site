@@ -167,9 +167,38 @@
   import dedent from 'dedent'
 
   export default {
-    metaInfo: {
-      title: 'The Instant Camera Guy'
+    metaInfo ()  {
+      return {
+        title: 'The Instant 📷 Guy',
+        meta: [
+          { key: 'description', name: 'description', content: this.home.seoSettings.description },
+          {property: 'og:title', content: 'The Instant 📷 Guy'},
+          {property: 'og:site_name', content: 'The Instant 📷 Guy'},
+          // The list of types is available here: http://ogp.me/#types
+          {property: 'og:type', content: 'website'},
+          // Should the the same as your canonical link, see below.
+          {property: 'og:url', content: 'https://theinstantcameraguy.com'},
+          {property: 'og:image', content: this.home.seoSettings.image.url },
+          // Often the same as your meta description, but not always.
+          {property: 'og:description', content: this.home.seoSettings.description },
+
+          // Twitter card
+          {name: 'twitter:card', content: 'summary'},
+          {name: 'twitter:site', content: 'https://theinstantcameraguy.com'},
+          {name: 'twitter:title', content: 'The Instant 📷 Guy'},
+          {name: 'twitter:description', content: this.home.seoSettings.description},
+          // Your twitter handle, if you have one.
+          // {name: 'twitter:creator', content: '@jakebright'},
+          {name: 'twitter:image:src', content: this.home.seoSettings.image.url },
+
+          // Google / Schema.org markup:
+          {itemprop: 'name', content: 'The Instant 📷 Guy'},
+          {itemprop: 'description', content: this.home.seoSettings.description},
+          {itemprop: 'image', content: this.home.seoSettings.image.url}
+        ]
+      }
     },
+
     components: {
       FooterBar,
       VueMarkdown,
