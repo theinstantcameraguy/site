@@ -29,7 +29,6 @@ export default function (Vue, { router, head, isClient }) {
   head.meta.push(
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: "Classic Camera Repairs By Jake Bright" },
       { name: 'keywords', content: 'camera, servicing, repair, melbourne, polaroid, graflex' }
   );
     head.link.push({ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' });
