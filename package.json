@@ -5,6 +5,7 @@
   "author": "Cameron Poole",
   "private": true,
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "build": "gridsome build",
     "dev": "gridsome develop",
     "exp": "gridsome explore"
@@ -26,16 +27,18 @@
     "gridsome-plugin-pwa": "0.0.14",
     "gridsome-plugin-robots-txt": "^1.0.2",
     "lodash": "^4.17.15",
-    "sharp": "^0.25.2",
+    "npm-force-resolutions": "0.0.3",
     "vue-bulma-accordion": "^0.5.2",
     "vue-markdown": "^2.2.4",
-    "vue-svg-inline-loader": "^1.5.0"
+    "vue-svg-inline-loader": "^1.5.0",
+    "sharp": "^0.25.2"
   },
   "resolutions": {
     "vue-svg-inline-loader/core-js": "^2.6.11",
     "vue-svg-inline-loader/@babel/polyfill/core-js": "^2.6.11",
-    "core-js": "^3.6.4",
-    "sharp": "0.25.2"
+    "gridsome-plugin-pwa/sharp": "0.25.2",
+    "sharp": "0.25.2",
+    "gridsome/sharp": "0.25.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
