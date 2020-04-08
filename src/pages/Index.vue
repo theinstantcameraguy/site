@@ -95,7 +95,7 @@
               <em class="has-text-primary"># </em>Repairs & Modification
             </h1>
             <div class="columns">
-              <div class="column is-three-quarters has-text-justified">
+              <div class="column is-centered">
                 <!--                <vue-markdown>{{ repairText }}</vue-markdown>-->
                 <p>
                   I offer expert restoration and repair of Polaroid cameras. If
@@ -156,7 +156,7 @@
   import VueMarkdown from 'vue-markdown'
 
   import dedent from 'dedent'
-  import RepairList from './RepairList'
+  import RepairList from '../components/RepairList'
 
   export default {
     metaInfo ()  {
@@ -239,19 +239,6 @@
       },
 
     },
-    methods: {
-      activeColor(index) {
-        const colors = [
-          '#3777b4',
-          '#00983c',
-          '#df9700',
-          '#e47200',
-          '#b92518',
-          '#b40070'
-        ]
-        return colors[index % colors.length]
-      }
-    }
   }
 </script>
 
@@ -334,6 +321,50 @@
 </page-query>
 
 <style lang="scss">
+  #hero {
+    background: no-repeat $grey-dark center/35% url('~@/assets/polaroid600.png');
+    justify-content: center;
+    align-items: center;
+  }
+  @media screen and (max-width: 1024px - 1px) {
+    #hero {
+      background: no-repeat $grey-dark center/80% url('~@/assets/polaroid600.png');
+    }
+  }
+
+  .hero-body {
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  #title {
+    letter-spacing: 1px;
+    font-size: 5rem !important;
+    background: $header-text-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    font-family: Righteous, $family-heading;
+  }
+
+  #hero-body {
+    align-self: center;
+    justify-self: center;
+  }
+  #subtitle {
+    background-image: $header-text-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    word-spacing: 5px;
+    font-size: 4rem !important;
+    z-index: 6;
+    stroke-width: 0.5px;
+    -webkit-text-stroke-color: $black;
+    -webkit-text-stroke-width: 0.5px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    font-family: Righteous, $family-heading;
+  }
+
   .card,
   .hero-body {
     flex-flow: column nowrap;
