@@ -25,7 +25,7 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <img
+                  <g-image
                     class="is-rounded"
                     :src="photosSVG"
                   />
@@ -40,7 +40,7 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <img :src="cameraSVG" class="is-rounded"/>
+                  <g-image :src="cameraSVG" class="is-rounded"/>
                 </figure>
                 <p class="title">Repair, Service, Modify</p>
                 <p class="heading">
@@ -51,7 +51,7 @@
             </div>
             <div class="column is-3 has-text-centered">
               <figure class="image is-128x128 has-image-centered">
-                <img
+                <g-image
                   class="is-rounded"
                   :src="droneSVG"
                 />
@@ -75,7 +75,7 @@
             <div class="columns">
               <div class="column">
                 <figure class="image is-1by1 is-rounded">
-                  <img :src="aboutImage"/>
+                  <g-image :src="aboutImage"/>
                 </figure>
               </div>
               <div class="column is-three-quarters has-text-justified">

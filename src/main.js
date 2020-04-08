@@ -16,10 +16,7 @@ import '~/assets/main.scss'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
-  head.link.push({
-    rel: 'stylesheet',
-    href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
-  },
+  head.link.push(
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css?family=Roboto:400,700&family=Righteous:400&family=Helvetica+Neue:400,700&family=Source+Sans+Pro:400,700&display=swap'
