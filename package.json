@@ -20,7 +20,7 @@
     "axios": "^0.19.2",
     "buefy": "^0.8.15",
     "bulma-helpers": "^0.3.10",
-    "core-js": "3",
+    "core-js": "^3.6.4",
     "dedent": "^0.7.0",
     "gridsome": "^0.7.13",
     "gridsome-plugin-pwa": "0.0.14",
@@ -34,7 +34,8 @@
   "resolutions": {
     "vue-svg-inline-loader/core-js": "^2.6.11",
     "vue-svg-inline-loader/@babel/polyfill/core-js": "^2.6.11",
-    "core-js": "^3.6.4"
+    "core-js": "^3.6.4",
+    "sharp": "^0.25.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
