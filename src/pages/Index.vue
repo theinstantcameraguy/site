@@ -18,7 +18,7 @@
       </section>
       <section
         id="about-level"
-        class="section is-fullheight section-feature-grey"
+        class="section is-medium"
       >
         <div id="post-hero" class="container is-flex ">
           <div id="post-content" class="item columns">
@@ -66,12 +66,15 @@
         </div>
       </section>
 
-      <section id="about" class="section is-fullheight section-feature-grey">
+      <section id="background_section" class="section is-medium section-feature-grey">
         <div class="container">
           <div class="content">
             <h1 id="about-text" class="is-medium has-text-left title">
               <em class="has-text-primary"># </em>About
             </h1>
+            <h2 class="is-medium  title">
+              THE INSTANT CAMERA GUY
+            </h2>
             <div class="columns">
               <div class="column">
                 <figure class="image is-1by1 is-rounded">
@@ -85,7 +88,7 @@
           </div>
         </div>
       </section>
-      <section id="repairs" class="section is-fullheight section-feature-grey">
+      <section id="repairs" class="section is-medium">
         <div class="container">
           <div class="content">
             <h1 id="repair" class="is-medium has-text-left title">
@@ -99,47 +102,16 @@
                   your camera has an issue, I can probably fix it. Some specific
                   services I provide include:
                 </p>
-                <bulma-accordion id="repairs-accord" dropdown icon="plus-minus">
-                  <bulma-accordion-item
-                    v-for="(service, index) in $page.allService.edges"
-                    :key="service.id"
-                  >
-                    <h4
-                      slot="title"
-                      v-bind:style="{ color: activeColor(index) }"
-                      class="title is-6 has-weight-lighter"
-                    >
-                      {{ service.node.heading }}
-                    </h4>
-                    <div slot="content">
-                      <p
-                        v-for="serviceItem in service.node.serviceItems"
-                        :key="serviceItem.id"
-                      >
-                        <vue-markdown>{{
-                          serviceItem.itemDescription
-                          }}
-                        </vue-markdown>
-                      </p>
-                    </div>
-                  </bulma-accordion-item>
-                </bulma-accordion>
-              </div>
-              <div class="tile is-ancestor">
-                <div class="tile is-vertical">
-                  <figure class="image">
-                    <g-image :src="repairImage1"/>
-                  </figure>
-                  <figure class="image">
-                    <g-image :src="repairImage2"/>
-                  </figure>
-                </div>
               </div>
             </div>
+            <div class="container">
+              <RepairList />
+            </div>
           </div>
+
         </div>
       </section>
-      <section id="instaposts" class="section is-fullheight">
+      <section id="instaposts" class="section is-medium">
         <div class="container">
           <div class="content">
             <h1 id="photos" class="is-medium has-text-left title">
@@ -149,6 +121,26 @@
           <instaposts/>
         </div>
       </section>
+      <section id="coming-soon" class="section is-large">
+        <div class="container">
+          <div class="content">
+            <h1
+              id="coming-soon-title"
+              class="title has-text-centered  is-1"
+            >
+              More to Come ...
+            </h1>
+            <h2              id="coming-soon-subtitle"
+                             class="subtitle has-text-centered has-text-weight-light is-3"
+
+            >
+              Blog Posts, Previous Work and projects will be coming soon. Stay Tuned !
+            </h2>
+          </div>
+
+        </div>
+      </section>
+
       <footer-bar/>
     </div>
 
@@ -156,29 +148,25 @@
 </template>
 
 <script>
-  import FooterBar from "~/components/FooterBar";
-  import Instaposts from "~/components/Instaposts";
+  import FooterBar from '~/components/FooterBar'
+  import Instaposts from '~/components/Instaposts'
   import DroneDelivery from '~/assets/undraw_drone_delivery_5vrm.svg'
   import Camera from '~/assets/undraw_camera_mg5h.svg'
   import Photos from '~/assets/undraw_photos_1nui.svg'
   import VueMarkdown from 'vue-markdown'
-  import {BulmaAccordion, BulmaAccordionItem} from 'vue-bulma-accordion'
 
   import dedent from 'dedent'
+  import RepairList from './RepairList'
 
   export default {
     metaInfo: {
       title: 'The Instant Camera Guy'
     },
     components: {
+      RepairList,
       FooterBar,
       VueMarkdown,
-      DroneDelivery,
-      Camera,
-      Photos,
-      Instaposts,
-      BulmaAccordion,
-      BulmaAccordionItem,
+      Instaposts
 
     },
     data: () => ({
@@ -211,24 +199,13 @@
       aboutImage() {
         return (
           this.$page.aboutPage.edges[0].node.photo.url +
-          '?fp-y=.18&fit=crop&w=200&h=200&mask=ellipse&w=480&h=480&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
+          '?fp-y=.18&fit=crop&w=200&h=200&mask=ellipse&w=480&h=480'
         )
       },
       repairText() {
         return dedent(this.$page.repairPage.edges[0].node.description)
       },
-      repairImage1() {
-        return (
-          this.$page.repairPage.edges[0].node.example[0].photo.url +
-          '?fp-x=.35&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
-        )
-      },
-      repairImage2() {
-        return (
-          this.$page.repairPage.edges[0].node.example[1].photo.url +
-          '?fp-x=.65&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=d4ccb9&fill=solid&fill-color=d4ccb9'
-        )
-      }
+
     },
     methods: {
       activeColor(index) {
@@ -242,7 +219,7 @@
         ]
         return colors[index % colors.length]
       }
-    },
+    }
   }
 </script>
 
@@ -323,14 +300,12 @@
 
 <style lang="scss">
   .card,
-  #repairs-accord {
-    background-color: $blanc-brown;
-  }
   .hero-body {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
   }
+
   #title {
     letter-spacing: 1px;
     font-size: 5rem !important;
@@ -344,6 +319,7 @@
     align-self: center;
     justify-self: center;
   }
+
   #subtitle {
     background-image: $header-text-gradient;
     -webkit-background-clip: text;
@@ -360,15 +336,6 @@
   #map {
     height: 260px;
   }
-  #about-text {
-    color: $polaroid_blue;
-  }
-  #repair {
-    color: $polaroid_green;
-  }
-  #photos {
-    color: $polaroid_red;
-  }
 
   #post-content {
     justify-content: space-between;
@@ -376,14 +343,37 @@
     flex-flow: row wrap;
     align-self: center;
   }
+
   .has-image-centered {
     margin-left: auto;
     margin-right: auto;
   }
+
   $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
   'Lucida Sans', Geneva, Arial, sans-serif;
 
   $family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
   $navbar-height: 5rem;
+
+  #about-text {
+    color: $polaroid_blue;
+  }
+
+  #photos {
+    color: $polaroid_red;
+  }
+
+  #about-level {
+    background-color: $polaroid_blue;
+  }
+
+  #repairs {
+    background-color: $polaroid_green;
+  }
+
+
+  #coming-soon {
+    background-color: $polaroid_red;
+  }
 </style>

@@ -204,9 +204,7 @@ query {
     font-family: 'Righteous', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   }
-  body {
-    background: $blanc-brown;
-  }
+
   .hero {
     background: no-repeat $grey-dark center/35% url('~@/assets/polaroid600.png');
     justify-content: center;
@@ -217,10 +215,7 @@ query {
       background: no-repeat $grey-dark center/80% url('~@/assets/polaroid600.png');
     }
   }
-  .card,
-  #repairs-accord {
-    background-color: $blanc-brown;
-  }
+
   .hero-body {
     flex-flow: column nowrap;
     justify-content: center;
@@ -257,15 +252,8 @@ query {
   #map {
     height: 260px;
   }
-  #about-text {
-    color: $polaroid_blue;
-  }
-  #repair {
-    color: $polaroid_green;
-  }
-  #photos {
-    color: $polaroid_red;
-  }
+
+
   #about-nav {
     color: $polaroid_blue;
   }
@@ -324,6 +312,4 @@ query {
   $family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
   $navbar-height: 5rem;
-
-
 </style>
