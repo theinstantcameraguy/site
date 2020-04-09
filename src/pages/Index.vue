@@ -79,7 +79,7 @@
               <div class="column">
                   <datocms-image :data="aboutImage"
                                  class="is-square"
-                                 root-style="height: 480"
+                                 :root-style="rootStyle"
                                  />
               </div>
               <div class="column is-three-quarters has-text-justified">
@@ -169,7 +169,8 @@
       Instaposts,
     },
     data: () => ({
-      loading: 0
+      loading: 0,
+      rootStyle: { height: 480}
     }),
     computed: {
       home() {

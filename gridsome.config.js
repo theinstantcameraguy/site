@@ -74,12 +74,12 @@ module.exports = {
     svgRule.uses.clear()
     svgRule
       .oneOf('inline')
-      .resourceQuery(/inline/)
-      .use('babel-loader')
-      .loader('babel-loader')
-      .end()
+        .resourceQuery(/inline/)
+        .use('babel-loader')
+        .loader('babel-loader')
+        .end()
       .use('vue-svg-loader')
-      .loader('vue-svg-loader')
+        .loader('vue-svg-loader')
       .end()
       .end()
       .oneOf('external')
@@ -89,9 +89,16 @@ module.exports = {
         name: 'assets/[name].[hash:8].[ext]',
       });
 
-    const imgRule = config.module.rule('gif')
+    const imgRule = config.module.rule('image-processor')
     imgRule.uses.clear()
-    imgRule.test(/\.(gif|jpe?g)$/i).use('file-loader').loader('image-webpack-loader')
+    imgRule.test(/\.(gif|png|jpe?g)$/i)
+      .oneOf('inline')
+      .resourceQuery(/inline/)
+      .use('babel-loader')
+      .loader('babel-loader')
+      .end()
+      .oneOf('external')
+      .use('file-loader').loader('image-webpack-loader')
       .options({
         mozjpeg: {
           progressive: true,
@@ -112,7 +119,7 @@ module.exports = {
           quality: 75
         },
         name: 'assets/[name].[hash:8].[ext]',
-      }).end();
+      });
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
     // or if you use scss
