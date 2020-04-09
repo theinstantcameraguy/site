@@ -19,7 +19,31 @@ module.exports = {
   siteName: 'The Instant Camera Guy',
   siteUrl: 'https://theinstantcameraguy.com',
   plugins: [
-    'gridsome-plugin-robots-txt',
+    {
+      use: 'gridsome-plugin-robots-txt',
+      options: {
+        host: 'https://theinstantcameraguy.com',
+        sitemap: 'https://theinstantcameraguy.com/sitemap.xml',
+        policy: [
+          {
+            userAgent: "Googlebot",
+            allow: "/",
+            crawlDelay: 2
+          },
+          {
+            userAgent: "*",
+            allow: "/",
+            crawlDelay: 10,
+          }
+        ]
+      }
+    },
+    {
+      use: '@gridsome/plugin-sitemap',
+      options: {
+        cacheTime: 600000,
+      }
+    },
     {
       use: 'gridsome-source-graphql',
       options: {

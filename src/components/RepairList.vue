@@ -126,7 +126,7 @@
     }
   }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 
   .hero-body {
     flex-flow: column nowrap;

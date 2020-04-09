@@ -90,7 +90,7 @@ query {
 }
 </static-query>
 
-<style lang="scss">
+<style lang="scss" scoped>
   html {
     font-size: 16px;
     word-spacing: 1px;

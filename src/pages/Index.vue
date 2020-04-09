@@ -319,10 +319,17 @@
   }
   subtitle
   }
+  allPostheros(orderBy: _createdAt_ASC) {
+  title
+  heading
+  image {
+  url
+  }
+  }
   }
 </page-query>
 
-<style lang="scss">
+<style lang="scss" scoped>
   #hero {
     background: no-repeat $grey-dark center/35% url('https://www.datocms-assets.com/12178/1586437876-favicon.png?q=75&auto=format');
     justify-content: center;
