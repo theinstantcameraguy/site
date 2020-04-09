@@ -6,10 +6,12 @@
     :indicator-mode="indicatorMode"
     :indicator-position="indicatorPosition"
     :indicator-style="indicatorStyle"
+    :autoplay="autoPlay"
+    :pause-hover="pauseHover"
+    :pause-info="pauseInfo"
     :icon-prev="iconPrev"
     :icon-next="iconNext"
     :interval=5000
-    :pause-info="false"
   >
     <b-carousel-item v-for="(carousel, i) in carouselData" :key="i">
       <section id="repair-carousel" :class="`hero is-medium`">
@@ -77,10 +79,12 @@
         indicatorMode: 'click',
         indicatorPosition: 'is-top',
         indicatorStyle: 'is-lines',
+        autoPlay: true,
+        pauseHover: false,
+        pauseInfo: false,
         iconPack: 'fas',
         iconNext: 'chevron-right',
         iconPrev: 'chevron-left',
-        pauseText:''
       }
     },
     methods: {

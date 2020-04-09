@@ -90,7 +90,8 @@ module.exports = {
       });
 
     const imgRule = config.module.rule('gif')
-    imgRule.test('/\.(gif|jpe?g)$/i').oneOf('external').use('file-loader').loader('image-webpack-loader')
+    imgRule.uses.clear()
+    imgRule.test(/\.(gif|jpe?g)$/i).use('file-loader').loader('image-webpack-loader')
       .options({
         mozjpeg: {
           progressive: true,
@@ -111,7 +112,7 @@ module.exports = {
           quality: 75
         },
         name: 'assets/[name].[hash:8].[ext]',
-      });
+      }).end();
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
     // or if you use scss

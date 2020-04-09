@@ -77,9 +77,10 @@
             </h2>
             <div class="columns">
               <div class="column">
-                <figure class="image is-1by1 is-rounded">
-                  <g-image :src="aboutImage"/>
-                </figure>
+                  <datocms-image :data="aboutImage"
+                                 class="is-square"
+                                 root-style="height: 480"
+                                 />
               </div>
               <div class="column is-three-quarters has-text-justified">
                 <vue-markdown>{{ aboutText }}</vue-markdown>
@@ -130,17 +131,14 @@
             >
               More to Come ...
             </h1>
-            <h2              id="coming-soon-subtitle"
-                             class="subtitle has-text-centered has-text-weight-light is-3"
-
+            <h2 id="coming-soon-subtitle"
+                class="subtitle has-text-centered has-text-weight-light is-3"
             >
               Blog Posts, Previous Work and projects will be coming soon. Stay Tuned !
             </h2>
           </div>
-
         </div>
       </section>
-
       <footer-bar/>
     </div>
 
@@ -168,8 +166,7 @@
       RepairList,
       FooterBar,
       VueMarkdown,
-      Instaposts
-
+      Instaposts,
     },
     data: () => ({
       loading: 0
@@ -200,8 +197,7 @@
       },
       aboutImage() {
         return (
-          this.$page.aboutPage.edges[0].node.photo.url +
-          '?fp-y=.18&fit=crop&w=200&h=200&mask=ellipse&w=480&h=480'
+          this.$page.aboutPage.photo.responsiveImage
         )
       },
       repairText() {
@@ -291,17 +287,36 @@
   }
   }
   }
-  aboutPage: allDatoCmsAboutPage {
-  edges {
-  node {
+  aboutPage {
   bio
   photo {
   url
+  responsiveImage(
+  imgixParams: { fpY:0.18, mask:"ellipse" fit: crop, ar:"200:200", h:200, w:200, auto: format }
+  ) {
+  # HTML5 src/srcset/sizes attributes
+  srcSet
+  webpSrcSet
+  sizes
+  src
+
+  # size information (post-transformations)
+  width
+  height
+  aspectRatio
+
+  # SEO attributes
+  alt
+  title
+
+  # background color placeholder or...
+  bgColor
+
+  # blur-up placeholder, JPEG format, base64-encoded
+  base64
+  }
   }
   subtitle
-  title
-  }
-  }
   }
   }
 </page-query>

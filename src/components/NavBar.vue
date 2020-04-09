@@ -34,7 +34,7 @@
           id="about-nav"
           class="has-text-weight-bold navbar-item"
           data-menuanchor="about"
-          href="#about"
+          href="#background_section"
           >About</a
         >
         <a
