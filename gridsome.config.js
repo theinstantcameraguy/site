@@ -21,6 +21,18 @@ module.exports = {
   plugins: [
     'gridsome-plugin-robots-txt',
     {
+      use: 'gridsome-source-graphql',
+      options: {
+        url: 'https://graphql.datocms.com/',
+        fieldName: 'datoCMSGL',
+        typeName: 'datoGQL',
+
+        headers: {
+          Authorization: `Bearer ${process.env.DATOCMS_API}`,
+        },
+      },
+    },
+    {
       use: '@gridsome/source-datocms',
       options: {
         apiToken: 'ba33398bd4b097bda2e657817bea1b', // required
@@ -30,9 +42,17 @@ module.exports = {
       }
     },
     {
+      use: '@gridsome/plugin-critical',
+      options: {
+        paths: ['/'],
+        width: 1300,
+        height: 900
+      }
+    },
+    {
       use: 'gridsome-plugin-pwa',
       options: {
-        title: 'The Instant Camera Guy',
+        title: 'The Instant 📷 Guy',
         startUrl: '/',
         display: 'standalone',
         statusBarStyle: 'default',
@@ -40,12 +60,12 @@ module.exports = {
         disableServiceWorker: true,
         serviceWorkerPath: 'service-worker.js',
         cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
-        shortName: 'TICG',
-        themeColor: '#666600',
+        shortName: 'T.I.📷.G',
+        themeColor: '#00B140',
         backgroundColor: '#ffffff',
         icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
         msTileImage: '',
-        msTileColor: '#666600'
+        msTileColor: '#00B140'
       }
     }
   ],
@@ -66,6 +86,30 @@ module.exports = {
       .use('file-loader')
       .loader('file-loader')
       .options({
+        name: 'assets/[name].[hash:8].[ext]',
+      });
+
+    const imgRule = config.module.rule('gif')
+    imgRule.test('/\.(gif|jpe?g)$/i').oneOf('external').use('file-loader').loader('image-webpack-loader')
+      .options({
+        mozjpeg: {
+          progressive: true,
+          quality: 65
+        },
+        optipng: {
+          enabled: false,
+        },
+        pngquant: {
+          quality: [0.65, 0.90],
+          speed: 4
+        },
+        gifsicle: {
+          interlaced: false,
+        },
+        // the webp option will enable WEBP
+        webp: {
+          quality: 75
+        },
         name: 'assets/[name].[hash:8].[ext]',
       });
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']

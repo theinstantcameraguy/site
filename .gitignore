@@ -14,3 +14,6 @@ yarn-error.log*
 
 # Service worker
 sw.*
+
+# graphql config
+.graphqlconfig

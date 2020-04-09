@@ -11,7 +11,6 @@ const slice = require('lodash/slice');
 const values = require('lodash/values');
 const axios = require('axios');
 
-
 module.exports = function (api) {
 
   api.loadSource(async({ addCollection, addSchemaTypes }) => {

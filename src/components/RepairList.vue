@@ -6,12 +6,15 @@
     :indicator-mode="indicatorMode"
     :indicator-position="indicatorPosition"
     :indicator-style="indicatorStyle"
-    interval=5000
+    :icon-prev="iconPrev"
+    :icon-next="iconNext"
+    :interval=5000
+    :pause-info="false"
   >
     <b-carousel-item v-for="(carousel, i) in carouselData" :key="i">
-      <section :class="`hero is-medium`">
+      <section id="repair-carousel" :class="`hero is-medium`">
         <div class="hero-body">
-          <div class="container ">
+          <div class="container">
             <div class="columns is-mobile is-centered has-text-centered">
               <div class="column is-three-quarters">
                 <h1 class="title">{{carousel.title}}</h1>
@@ -71,9 +74,13 @@
         indicator: true,
         indicatorBackground: false,
         indicatorInside: false,
-        indicatorMode: 'hover',
+        indicatorMode: 'click',
         indicatorPosition: 'is-top',
-        indicatorStyle: 'is-lines'
+        indicatorStyle: 'is-lines',
+        iconPack: 'fas',
+        iconNext: 'chevron-right',
+        iconPrev: 'chevron-left',
+        pauseText:''
       }
     },
     methods: {
@@ -116,7 +123,7 @@
   }
 </script>
 <style lang="scss">
-  $carousel-indicator-color: $polaroid_green;
+
   .hero-body {
     flex-flow: column nowrap;
     justify-content: center;

@@ -1,10 +1,11 @@
 <template>
-  <div class="columns is-multiline">
-    <div v-for="post in $static.posts.edges" :key="post.id" class="column">
+  <div class="columns is-multiline" >
+    <div v-for="post in images" :key="post.id" class="column">
       <div class="card">
-        <div class="card-image">
+        <div class="card-image" >
           <figure class="image">
-            <img :src="post.node.images.standard_resolution.url" :alt="post.node.caption.text"/>
+            <img v-lazy="post.imageObj" :alt="post.alt"
+                 />
           </figure>
         </div>
         <!--        <div class="content">-->
@@ -54,6 +55,20 @@
 
   export default {
     name: 'Instaposts',
+    computed:{
+      images(){
+        return  this.$static.posts.edges.map(post => {
+          return {
+            id: post.id,
+            imageObj: {
+              src: post.node.images.standard_resolution.url,
+              loading: '~@/assets/760.gif',
+            },
+            alt: post.node.caption.text
+          }
+        })
+      }
+    }
   }
 </script>
 

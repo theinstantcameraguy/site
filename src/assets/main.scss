@@ -93,6 +93,9 @@ $custom-colors: (
   "gold": ($gold, $gold-invert),
   "cyan": ($cyan, $cyan-invert),
 );
+$carousel-indicator-color: $polaroid_green;
+$carousel-arrow-background: $polaroid_orange;
+$carousel-arrow-color: $polaroid_green;
 
 $header-text-gradient-atlantic: linear-gradient($fuschia 30%, $gold 45%, $cyan 60%, $eggplant 75%);
 $header-text-gradient: linear-gradient(to right, $polaroid_blue 20%, $polaroid_green 38%, $polaroid_gold 46%,

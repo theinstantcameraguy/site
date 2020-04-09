@@ -157,41 +157,11 @@
 
   import dedent from 'dedent'
   import RepairList from '../components/RepairList'
+  import { toHead } from 'vue-datocms'
 
   export default {
     metaInfo ()  {
-      const desc = 'Camera servicing and repairs by Jake Bright. Specializing in the sales, servicing, ' +
-        'restoration and modification of classic Polaroid cameras and Graflex 4x5 cameras.'
-      const og_image = "~@/assets/polaroid600.png"
-      return {
-        title: 'The Instant 📷 Guy',
-        meta: [
-          { key: 'description', name: 'description', content: this.home.seoSettings.description | desc},
-          {property: 'og:title', content: 'The Instant 📷 Guy'},
-          {property: 'og:site_name', content: 'The Instant 📷 Guy'},
-          // The list of types is available here: http://ogp.me/#types
-          {property: 'og:type', content: 'website'},
-          // Should the the same as your canonical link, see below.
-          {property: 'og:url', content: 'https://theinstantcameraguy.com'},
-          {property: 'og:image', content: this.home.seoSettings.image.url | og_image },
-          // Often the same as your meta description, but not always.
-          {property: 'og:description', content: this.home.seoSettings.description | desc },
-
-          // Twitter card
-          {name: 'twitter:card', content: 'summary'},
-          {name: 'twitter:site', content: 'https://theinstantcameraguy.com'},
-          {name: 'twitter:title', content: 'The Instant 📷 Guy'},
-          {name: 'twitter:description', content: this.home.seoSettings.description | desc },
-          // Your twitter handle, if you have one.
-          // {name: 'twitter:creator', content: '@jakebright'},
-          {name: 'twitter:image:src', content: this.home.seoSettings.image.url | og_image},
-
-          // Google / Schema.org markup:
-          {itemprop: 'name', content: 'The Instant 📷 Guy'},
-          {itemprop: 'description', content: this.home.seoSettings.description | desc },
-          {itemprop: 'image', content: this.home.seoSettings.image.url | og_image }
-        ]
-      }
+      return toHead(this.$page.site.seo, this.$page.site.favicon)
     },
 
     components: {
@@ -244,6 +214,22 @@
 
 <page-query>
   query {
+  site: _site {
+  seo: globalSeo {
+  facebookPageUrl
+  fallbackSeo {
+  description
+  title
+  }
+  siteName
+  titleSuffix
+  },
+  favicon: faviconMetaTags {
+  attributes
+  content
+  tag
+  }
+  }
   home: allDatoCmsHomePage {
   edges {
   node {
@@ -322,13 +308,13 @@
 
 <style lang="scss">
   #hero {
-    background: no-repeat $grey-dark center/35% url('~@/assets/polaroid600.png');
+    background: no-repeat $grey-dark center/35% url('https://www.datocms-assets.com/12178/1586437876-favicon.png?q=75&auto=format');
     justify-content: center;
     align-items: center;
   }
   @media screen and (max-width: 1024px - 1px) {
     #hero {
-      background: no-repeat $grey-dark center/80% url('~@/assets/polaroid600.png');
+      background: no-repeat $grey-dark center/80% url('https://www.datocms-assets.com/12178/1586437876-favicon.png?q=75&auto=format');
     }
   }
 
