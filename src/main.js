@@ -14,6 +14,7 @@ import 'buefy/dist/buefy.css'
 import '~/assets/main.scss'
 import { DatocmsImagePlugin, toHead } from 'vue-datocms'
 import VueLazyload from 'vue-lazyload'
+import VueMq from 'vue-mq'
 
 library.add(faYoutube, faFacebook, faFacebookMessenger, faInstagram, faTree, faEnvelope, faPhone,
   faChevronLeft, faChevronRight, faAngleRight, faAngleLeft)
@@ -48,4 +49,7 @@ export default function (Vue, { router, head, isClient }) {
     loading: '~/src/assets/760.gif',
   })
   Vue.use(DatocmsImagePlugin)
+
+
+  Vue.use(VueMq)
 }

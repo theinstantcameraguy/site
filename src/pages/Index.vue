@@ -4,7 +4,17 @@
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <div>
       <section id="hero" class="hero is-fullheight is-dark">
-        <div class="hero-body">
+        <vue-lazy-load-background-image
+          image-class="hero-body"
+          :datasrc="hero.url"
+          :lgSuffix="hero.lg"
+          :mdSuffix="hero.md"
+          :smSuffix="hero.sm"
+          background-size="auto"
+          :imageSource="hero.url"
+          loadingImage="~/assets/760.gif"
+          errorImage="~/assets/polaroid.jpg"
+        >
           <div id="hero-body" class="container">
             <h2
               id="subtitle"
@@ -14,7 +24,7 @@
               {{ home.subtitle }}
             </h2>
           </div>
-        </div>
+        </vue-lazy-load-background-image>
       </section>
       <section
         id="about-level"
@@ -148,6 +158,7 @@
 <script>
   import FooterBar from '~/components/FooterBar'
   import Instaposts from '~/components/Instaposts'
+  import VueLazyLoadBackgroundImage from '~/components/VueLazyLoadBackgroundImage'
   import DroneDelivery from '~/assets/undraw_drone_delivery_5vrm.svg'
   import Camera from '~/assets/undraw_camera_mg5h.svg'
   import Photos from '~/assets/undraw_photos_1nui.svg'
@@ -167,10 +178,18 @@
       FooterBar,
       VueMarkdown,
       Instaposts,
+      VueLazyLoadBackgroundImage
     },
     data: () => ({
       loading: 0,
-      rootStyle: { height: 480}
+      rootStyle: { height: 480},
+      hero: {
+        url:"https://www.datocms-assets.com/12178/1586437876-favicon.png",
+        lg: "?q=90&auto=format&&w=500&height=500",
+        md: "?q=80&auto=format&&w=300&height=300",
+        sm: "?q=60&auto=format&&w=250height=250",
+      }
+
     }),
     computed: {
       home() {
@@ -331,13 +350,13 @@
 
 <style lang="scss" scoped>
   #hero {
-    background: no-repeat $grey-dark center/35% url('https://www.datocms-assets.com/12178/1586437876-favicon.png?q=75&auto=format');
+    background-color: $grey-darker;
     justify-content: center;
     align-items: center;
   }
   @media screen and (max-width: 1024px - 1px) {
     #hero {
-      background: no-repeat $grey-dark center/80% url('https://www.datocms-assets.com/12178/1586437876-favicon.png?q=75&auto=format');
+      background-position: center/80%;
     }
   }
 
