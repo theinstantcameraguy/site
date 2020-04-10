@@ -6,6 +6,7 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.pug',
     './src/**/*.md',
+    './node_modules/buefy/**/*.@(vue|js)'
   ],
   whitelist: [
     'body',
@@ -21,7 +22,15 @@ module.exports = {
     'b-carousel',
     'b-carousel-item'
   ],
-  whitelistPatterns: [ /-(leave|enter|appear)(|-(to|from|active))$/, /^(?!(|.*?:)cursor-move).+-move$/, /^router-link(|-exact)-active$/, /data-v-.*/ ],
+  whitelistPatterns: [ /-(leave|enter|appear)(|-(to|from|active))$/,
+    /^(?!(|.*?:)cursor-move).+-move$/,
+    /^router-link(|-exact)-active$/,
+    /data-v-.*/,
+    /^navbar-/,
+    /^has-text-/,
+    /^fa-/,
+    /^has-numberinput-/
+  ],
   defaultExtractor (content) {
     const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
     return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
