@@ -113,15 +113,8 @@ module.exports = {
         name: 'assets/[name].[hash:8].[ext]',
       });
 
-    const imgRule = config.module.rule('image-processor')
-    imgRule.uses.clear()
+    const imgRule = config.module.rule('images')
     imgRule.test(/\.(gif|png|jpe?g)$/i)
-      .oneOf('inline')
-      .resourceQuery(/inline/)
-      .use('babel-loader')
-      .loader('babel-loader')
-      .end()
-      .oneOf('external')
       .use('file-loader').loader('image-webpack-loader')
       .options({
         mozjpeg: {

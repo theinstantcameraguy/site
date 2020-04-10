@@ -12,8 +12,8 @@
           :smSuffix="hero.sm"
           background-size="auto"
           :imageSource="hero.url"
-          loadingImage="~/assets/760.gif"
-          errorImage="~/assets/polaroid.jpg"
+          loadingImage="../assets/760.gif)"
+          errorImage="../assets/polaroid.jpg)"
         >
           <div id="hero-body" class="container">
             <h2
@@ -158,7 +158,6 @@
 <script>
   import FooterBar from '~/components/FooterBar'
   import Instaposts from '~/components/Instaposts'
-  import VueLazyLoadBackgroundImage from '~/components/VueLazyLoadBackgroundImage'
   import DroneDelivery from '~/assets/undraw_drone_delivery_5vrm.svg'
   import Camera from '~/assets/undraw_camera_mg5h.svg'
   import Photos from '~/assets/undraw_photos_1nui.svg'
@@ -177,8 +176,7 @@
       RepairList,
       FooterBar,
       VueMarkdown,
-      Instaposts,
-      VueLazyLoadBackgroundImage
+      Instaposts
     },
     data: () => ({
       loading: 0,

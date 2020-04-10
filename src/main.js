@@ -16,6 +16,8 @@ import { DatocmsImagePlugin, toHead } from 'vue-datocms'
 import VueLazyload from 'vue-lazyload'
 import VueMq from 'vue-mq'
 
+import VueLazyLoadBackgroundImage from '~/components/VueLazyLoadBackgroundImage'
+
 library.add(faYoutube, faFacebook, faFacebookMessenger, faInstagram, faTree, faEnvelope, faPhone,
   faChevronLeft, faChevronRight, faAngleRight, faAngleLeft)
 
@@ -45,6 +47,7 @@ export default function (Vue, { router, head, isClient }) {
     defaultIconPack: 'fas'
   })
 
+  Vue.use(VueLazyLoadBackgroundImage)
   Vue.use(VueLazyload, {
     loading: '~/src/assets/760.gif',
   })
