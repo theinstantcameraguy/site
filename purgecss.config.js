@@ -6,7 +6,8 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.pug',
     './src/**/*.md',
-    './node_modules/buefy/**/*.@(vue|js)'
+    './node_modules/buefy/src/components/icon/*.vue',
+    './node_modules/buefy/src/components/carousel/*.vue',
   ],
   whitelist: [
     'body',
