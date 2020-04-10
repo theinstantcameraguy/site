@@ -4,15 +4,38 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const path = require('path')
+function getAssetPath (filePath) {
+  return path.posix.join('./src/assets', filePath)
+}
 
 function addStyleResource (rule) {
   rule.use('style-resource')
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/main.scss'),
+        path.resolve(__dirname, './src/assets/scss/main.scss'),
       ],
     })
+}
+const inlineLimit = 4096
+
+const genAssetSubPath = dir => {
+  return getAssetPath(
+    `${dir}/[name].[hash:8]' : ''}.[ext]`
+  )
+}
+
+const genUrlLoaderOptions = dir => {
+  return {
+    limit: inlineLimit,
+    // use explicit fallback to avoid regression in url-loader>=1.1.0
+    fallback: {
+      loader: require.resolve('file-loader'),
+      options: {
+        name: genAssetSubPath(dir)
+      }
+    }
+  }
 }
 
 module.exports = {
@@ -110,11 +133,14 @@ module.exports = {
       .use('file-loader')
       .loader('file-loader')
       .options({
-        name: 'assets/[name].[hash:8].[ext]',
+        name: 'assets/img/[name].[hash:8].[ext]',
       });
 
     const imgRule = config.module.rule('images')
-    imgRule.test(/\.(gif|png|jpe?g)$/i)
+    imgRule.test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
+      .use('url-loader')
+      .loader('url-loader')
+      .options(genUrlLoaderOptions('img')).end()
       .use('file-loader').loader('image-webpack-loader')
       .options({
         mozjpeg: {
@@ -135,7 +161,7 @@ module.exports = {
         webp: {
           quality: 75
         },
-        name: 'assets/[name].[hash:8].[ext]',
+        name: 'assets/img/[name].[hash:8].[ext]',
       });
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
@@ -143,6 +169,13 @@ module.exports = {
     types.forEach(type => {
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
+  },
+  css: {
+    loaderOptions: {
+      sass: {
+        data: `@import "@/assets/scss/variables.scss";`
+      }
+    }
   }
 
 };

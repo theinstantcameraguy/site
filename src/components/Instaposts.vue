@@ -62,7 +62,7 @@
             id: post.id,
             imageObj: {
               src: post.node.images.standard_resolution.url,
-              loading: '/static/760.gif',
+              loading: '760.gif',
             },
             alt: post.node.caption.text
           }

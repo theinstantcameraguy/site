@@ -1,7 +1,7 @@
 <template>
-  <div :class="[imageClass, imageState]" :style="computedStyle" :data-width="imageWidth" :data-height="imageHeight" :data-state="imageState">
-    <slot />
-  </div>
+    <div :class="[imageClass, imageState]" :style="computedStyle" :data-width="imageWidth" :data-height="imageHeight" :data-state="imageState">
+      <slot />
+    </div>
 </template>
 
 <script>
@@ -83,11 +83,11 @@
       },
       computedStyle() {
         if (this.imageState === 'loading') {
-          return 'background-image: url(' + this.loadingImage + ');'
+          return 'background-image: url(' + this.loadingImage + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: center;'
         }
 
         if (this.imageState === 'error') {
-          return 'background-image: url(' + this.errorImage + ');'
+          return 'background-image: url(' + this.errorImage + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: center;'
         }
 
         if (this.imageState === 'loaded') {

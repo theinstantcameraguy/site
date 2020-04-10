@@ -11,7 +11,7 @@ import { faFacebook, faFacebookMessenger, faInstagram, faYoutube } from '@fortaw
 import VueMarkdown from 'vue-markdown'
 
 import 'buefy/dist/buefy.css'
-import '~/assets/main.scss'
+import '~/assets/scss/main.scss'
 import { DatocmsImagePlugin, toHead } from 'vue-datocms'
 import VueLazyload from 'vue-lazyload'
 import VueMq from 'vue-mq'
@@ -47,7 +47,7 @@ export default function (Vue, { router, head, isClient }) {
     defaultIconPack: 'fas'
   })
 
-  Vue.use(VueLazyLoadBackgroundImage)
+  Vue.component('vue-lazyload-bg-img', VueLazyLoadBackgroundImage)
   Vue.use(VueLazyload, {
     loading: '~/src/assets/760.gif',
   })

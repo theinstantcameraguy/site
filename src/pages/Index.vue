@@ -4,7 +4,8 @@
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <div>
       <section id="hero" class="hero is-fullheight is-dark">
-        <vue-lazy-load-background-image
+        <ClientOnly>
+        <vue-lazyload-bg-img
           image-class="hero-body"
           :datasrc="hero.url"
           :lgSuffix="hero.lg"
@@ -24,7 +25,8 @@
               {{ home.subtitle }}
             </h2>
           </div>
-        </vue-lazy-load-background-image>
+        </vue-lazyload-bg-img>
+        </ClientOnly>
       </section>
       <section
         id="about-level"
@@ -158,9 +160,9 @@
 <script>
   import FooterBar from '~/components/FooterBar'
   import Instaposts from '~/components/Instaposts'
-  import DroneDelivery from '~/assets/undraw_drone_delivery_5vrm.svg'
-  import Camera from '~/assets/undraw_camera_mg5h.svg'
-  import Photos from '~/assets/undraw_photos_1nui.svg'
+  import DroneDelivery from '~/assets/img/undraw_drone_delivery_5vrm.svg'
+  import Camera from '~/assets/img/undraw_camera_mg5h.svg'
+  import Photos from '~/assets/img/undraw_photos_1nui.svg'
   import VueMarkdown from 'vue-markdown'
 
   import dedent from 'dedent'
