@@ -77,12 +77,6 @@ export default {
   computed: {
     hrefPhone() {
       return 'tel:+61431 845 455'
-      // if (!this.home) {
-      //   return ''
-      // }
-      // return this.home?.phoneNumber?.startsWith('0')
-      //   ? 'tel:+61' + this.home?.phoneNumber.replace(/^0/, '')
-      //   : this.home.phoneNumber | ''
     }
   },
 }

@@ -40,6 +40,7 @@
                   <g-image
                     class="is-rounded"
                     :src="photosSVG"
+                    alt=" Picture of Photographs"
                   />
                 </figure>
                 <p class="title">Experience</p>
@@ -52,7 +53,7 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <g-image :src="cameraSVG" class="is-rounded"/>
+                  <g-image :src="cameraSVG" class="is-rounded" alt="Picture of a Camera"/>
                 </figure>
                 <p class="title">Repair, Service, Modify</p>
                 <p class="heading">
@@ -66,6 +67,7 @@
                 <g-image
                   class="is-rounded"
                   :src="droneSVG"
+                  alt="Picture of a drone delivering goods"
                 />
               </figure>
               <p class="title">Ship Australia Wide</p>
