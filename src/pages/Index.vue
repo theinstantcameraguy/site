@@ -12,8 +12,8 @@
           :smSuffix="hero.sm"
           background-size="auto"
           :imageSource="hero.url"
-          loadingImage="../assets/760.gif)"
-          errorImage="../assets/polaroid.jpg)"
+          loadingImage="760.gif"
+          errorImage="polaroid.jpg"
         >
           <div id="hero-body" class="container">
             <h2
