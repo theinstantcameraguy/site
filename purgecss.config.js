@@ -16,7 +16,10 @@ module.exports = {
     'g-image--lazy',
     'g-image--loaded',
     'vue-lazyload-bg-img',
-    'datocms-img'
+    'vue-markdown',
+    'datocms-img',
+    'b-carousel',
+    'b-carousel-item'
   ],
   extractors: [
     {
