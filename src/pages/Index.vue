@@ -6,6 +6,7 @@
       <section id="hero" class="hero is-fullheight is-dark">
         <ClientOnly>
         <vue-lazyload-bg-img
+          id="hero-img"
           image-class="hero-body"
           :datasrc="hero.url"
           :lgSuffix="hero.lg"
@@ -357,7 +358,7 @@
     align-items: center;
   }
   @media screen and (max-width: 1024px - 1px) {
-    #hero {
+    #hero-img {
       background-position: center/80%;
     }
   }

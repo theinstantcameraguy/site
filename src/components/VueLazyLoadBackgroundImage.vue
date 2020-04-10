@@ -81,17 +81,20 @@
           lg: this.lgSuffix,
         }[this.$mq]
       },
+      backgroundPos(){
+        return this.$mq === 'sm'? 'center/80%' : 'center'
+      },
       computedStyle() {
         if (this.imageState === 'loading') {
-          return 'background-image: url(' + this.loadingImage + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: center;'
+          return 'background-image: url(' + this.loadingImage + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: ' + this.backgroundPos +' ;'
         }
 
         if (this.imageState === 'error') {
-          return 'background-image: url(' + this.errorImage + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: center;'
+          return 'background-image: url(' + this.errorImage + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: '  + this.backgroundPos +' ;'
         }
 
         if (this.imageState === 'loaded') {
-          return 'background-image: url(' + this.asyncImage.src + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: center;'
+          return 'background-image: url(' + this.asyncImage.src + '); background-size: ' + this.backgroundSize + '; background-repeat: ' + this.backgroundRepeat + '; background-position: ' + this.backgroundPos +' ;'
         }
 
         return '';
