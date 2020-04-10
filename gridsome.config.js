@@ -104,6 +104,17 @@ module.exports = {
       }
     },
     {
+      use: "gridsome-plugin-service-worker",
+      options: {
+        networkFirst: {
+          routes: [
+            "/",
+            /\.(js|css|png|svg|gif)$/, // means "every JS, CSS, and PNG images"
+          ],
+        },
+      },
+    },
+    {
       use: 'gridsome-plugin-pwa',
       options: {
         title: 'The Instant 📷 Guy',
@@ -111,7 +122,7 @@ module.exports = {
         display: 'standalone',
         statusBarStyle: 'default',
         manifestPath: 'manifest.json',
-        disableServiceWorker: true,
+        disableServiceWorker: false,
         serviceWorkerPath: 'service-worker.js',
         cachedFileTypes: 'js,json,css,html,png,jpg,jpeg,svg',
         shortName: 'T.I.📷.G',
