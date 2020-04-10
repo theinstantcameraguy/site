@@ -14,7 +14,7 @@
     :interval=5000
   >
     <b-carousel-item v-for="(carousel, i) in carouselData" :key="i">
-      <section id="repair-carousel" :class="`hero is-medium`">
+      <section :class="`hero is-medium repair-carousel`">
         <div class="hero-body">
           <div class="container">
             <div class="columns is-mobile is-centered has-text-centered">
@@ -49,16 +49,11 @@
   }
   }
   }
-  allService: allDatoCmsService {
-  edges {
-  node {
-  id
+  allServices {
   heading
   serviceItems {
   id
   itemDescription
-  }
-  }
   }
   }
   }
@@ -67,6 +62,7 @@
 
 <script>
   import VueMarkdown from 'vue-markdown'
+  import { join } from 'lodash'
 
   export default {
     name: 'RepairList',
@@ -114,11 +110,10 @@
         )
       },
       carouselData () {
-        return this.$static.allService.edges.map((serviceNode, i) => {
+        return this.$static.allServices.map((serviceNode, i) => {
           return {
-            title: serviceNode.node.heading,
-            subtitle: serviceNode.node.serviceItems[0].itemDescription,
-            color: this.activeColor(i)
+            title: serviceNode.heading,
+            subtitle: join(serviceNode.serviceItems.map(item => item.itemDescription ),'\n')
           }
         })
       }
