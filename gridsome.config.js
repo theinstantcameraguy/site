@@ -4,6 +4,7 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const path = require('path')
+
 function getAssetPath (filePath) {
   return path.posix.join('./src/assets', filePath)
 }
@@ -13,10 +14,11 @@ function addStyleResource (rule) {
     .loader('style-resources-loader')
     .options({
       patterns: [
-        path.resolve(__dirname, './src/assets/scss/main.scss'),
-      ],
+        path.resolve(__dirname, './src/assets/scss/main.scss')
+      ]
     })
 }
+
 const inlineLimit = 4096
 
 const genAssetSubPath = dir => {
@@ -37,6 +39,11 @@ const genUrlLoaderOptions = dir => {
     }
   }
 }
+const purgecss = require('@fullhuman/postcss-purgecss')
+
+const postcssPlugins = []
+
+if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
   siteName: 'The Instant Camera Guy',
@@ -49,14 +56,14 @@ module.exports = {
         sitemap: 'https://theinstantcameraguy.com/sitemap.xml',
         policy: [
           {
-            userAgent: "Googlebot",
-            allow: "/",
+            userAgent: 'Googlebot',
+            allow: '/',
             crawlDelay: 2
           },
           {
-            userAgent: "*",
-            allow: "/",
-            crawlDelay: 10,
+            userAgent: '*',
+            allow: '/',
+            crawlDelay: 10
           }
         ]
       }
@@ -64,7 +71,7 @@ module.exports = {
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        cacheTime: 600000,
+        cacheTime: 600000
       }
     },
     {
@@ -75,9 +82,9 @@ module.exports = {
         typeName: 'datoGQL',
 
         headers: {
-          Authorization: `Bearer ${process.env.DATOCMS_API}`,
-        },
-      },
+          Authorization: `Bearer ${process.env.DATOCMS_API}`
+        }
+      }
     },
     {
       use: '@gridsome/source-datocms',
@@ -121,20 +128,20 @@ module.exports = {
     svgRule.uses.clear()
     svgRule
       .oneOf('inline')
-        .resourceQuery(/inline/)
-        .use('babel-loader')
-        .loader('babel-loader')
-        .end()
+      .resourceQuery(/inline/)
+      .use('babel-loader')
+      .loader('babel-loader')
+      .end()
       .use('vue-svg-loader')
-        .loader('vue-svg-loader')
+      .loader('vue-svg-loader')
       .end()
       .end()
       .oneOf('external')
       .use('file-loader')
       .loader('file-loader')
       .options({
-        name: 'assets/img/[name].[hash:8].[ext]',
-      });
+        name: 'assets/img/[name].[hash:8].[ext]'
+      })
 
     const imgRule = config.module.rule('images')
     imgRule.test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
@@ -148,21 +155,21 @@ module.exports = {
           quality: 65
         },
         optipng: {
-          enabled: false,
+          enabled: false
         },
         pngquant: {
           quality: [0.65, 0.90],
           speed: 4
         },
         gifsicle: {
-          interlaced: false,
+          interlaced: false
         },
         // the webp option will enable WEBP
         webp: {
           quality: 75
         },
-        name: 'assets/img/[name].[hash:8].[ext]',
-      });
+        name: 'assets/img/[name].[hash:8].[ext]'
+      })
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
     // or if you use scss
@@ -174,8 +181,11 @@ module.exports = {
     loaderOptions: {
       sass: {
         data: `@import "@/assets/scss/variables.scss";`
+      },
+      postcss: {
+        plugins: postcssPlugins
       }
     }
   }
 
-};
+}
