@@ -180,7 +180,7 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: `@import "@/assets/scss/variables.scss";`
+        data: `@import "@/assets/scss/variables.scss";@import "@/assets/scss/override.scss";`,
       },
       postcss: {
         plugins: postcssPlugins

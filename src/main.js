@@ -1,7 +1,7 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
-import DefaultLayout from '~/layouts/Default.vue'
+import DefaultLayout from '@/layouts/Default.vue'
 import Buefy from 'buefy'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css'
@@ -11,12 +11,12 @@ import { faFacebook, faFacebookMessenger, faInstagram, faYoutube } from '@fortaw
 import VueMarkdown from 'vue-markdown'
 
 import 'buefy/dist/buefy.css'
-import '~/assets/scss/main.scss'
+import '@/assets/scss/main.scss'
 import { DatocmsImagePlugin, toHead } from 'vue-datocms'
 import VueLazyload from 'vue-lazyload'
 import VueMq from 'vue-mq'
 
-import VueLazyLoadBackgroundImage from '~/components/VueLazyLoadBackgroundImage'
+import VueLazyLoadBackgroundImage from '@/components/VueLazyLoadBackgroundImage'
 
 library.add(faYoutube, faFacebook, faFacebookMessenger, faInstagram, faTree, faEnvelope, faPhone,
   faChevronLeft, faChevronRight, faAngleRight, faAngleLeft)

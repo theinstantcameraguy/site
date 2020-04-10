@@ -50,9 +50,6 @@
 </static-query>
 
 <script>
-  // import { mapMutations } from 'vuex'
-  import axios from "axios";
-
   export default {
     name: 'Instaposts',
     computed:{

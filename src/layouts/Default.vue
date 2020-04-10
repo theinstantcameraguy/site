@@ -91,6 +91,7 @@ query {
 </static-query>
 
 <style lang="scss" scoped>
+  @import "src/assets/scss/main";
   html {
     font-size: 16px;
     word-spacing: 1px;
