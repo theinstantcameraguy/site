@@ -29,14 +29,10 @@ require('typeface-righteous')
 
 export default function (Vue, { router, head, isClient }) {
   head.link.push(
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css?family=Helvetica+Neue:400,700&display=swap'
-    },
   { rel: "preconnect",
     href: "https://www.datocms-assets.com"
   }
-)
+  )
 
   head.meta.push(
     { charset: 'utf-8' },
@@ -46,7 +42,7 @@ export default function (Vue, { router, head, isClient }) {
         'restoration and modification of classic Polaroid cameras and Graflex 4x5 cameras.' },
     { name: 'title', content: 'The Instant 📷 Guy' }
   )
-  head.link.push({ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' })
+  head.link.push({ rel: 'icon', type: 'image/x-icon', href: '~/src/assets/favicon.ico' })
   Vue.component('Layout', DefaultLayout)
 
   Vue.use(VueMarkdown)

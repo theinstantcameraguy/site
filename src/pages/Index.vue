@@ -38,9 +38,9 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <g-image
+                  <img
                     class="is-rounded"
-                    :src="photosSVG"
+                    v-lazy="photosSVG"
                     alt=" Picture of Photographs"
                   />
                 </figure>
@@ -54,7 +54,7 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <g-image :src="cameraSVG" class="is-rounded" alt="Picture of a Camera"/>
+                  <img v-lazy="cameraSVG" class="is-rounded" alt="Picture of a Camera"/>
                 </figure>
                 <p class="title">Repair, Service, Modify</p>
                 <p class="heading">
@@ -65,9 +65,9 @@
             </div>
             <div class="column is-3 has-text-centered">
               <figure class="image is-128x128 has-image-centered">
-                <g-image
+                <img
                   class="is-rounded"
-                  :src="droneSVG"
+                  v-lazy="droneSVG"
                   alt="Picture of a drone delivering goods"
                 />
               </figure>
@@ -87,11 +87,11 @@
             <h1 id="about-text" class="is-medium has-text-left title">
               <em class="has-text-primary"># </em>About
             </h1>
-            <h2 class="is-medium  title">
+            <h2 class="is-medium title">
               THE INSTANT CAMERA GUY
             </h2>
             <div class="columns">
-              <div class="column">
+              <div class="column is-centered ">
                   <datocms-image :data="aboutImage"
                                  class="is-square"
                                  :root-style="rootStyle"

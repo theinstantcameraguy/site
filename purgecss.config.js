@@ -17,6 +17,7 @@ module.exports = {
     'g-image',
     'g-image--lazy',
     'g-image--loaded',
+    'svg-inline--fa',
     'vue-lazyload-bg-img',
     'vue-markdown',
     'datocms-img',
@@ -30,7 +31,8 @@ module.exports = {
     /^navbar-/,
     /^has-text-/,
     /^fa-/,
-    /^has-numberinput-/
+    /^has-numberinput-/,
+    /shiki/
   ],
   defaultExtractor (content) {
     const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
