@@ -93,8 +93,9 @@
             <div class="columns">
               <div class="column is-centered ">
                   <datocms-image :data="aboutImage"
-                                 class="is-square"
+                                 class="is-square is-flex"
                                  :root-style="rootStyle"
+                                 picture-class="is-centered"
                                  />
               </div>
               <div class="column is-three-quarters has-text-justified">
@@ -185,7 +186,7 @@
     },
     data: () => ({
       loading: 0,
-      rootStyle: { height: 480},
+      rootStyle: { height: 480 },
       hero: {
         url:"https://www.datocms-assets.com/12178/1586437876-favicon.png",
         lg: "?q=90&auto=format&&w=500&height=500",
@@ -335,8 +336,11 @@
     justify-content: center;
     align-items: center;
   }
+  .hero-img {
+    background-position: center / 35%;
+  }
   @media screen and (max-width: 1024px - 1px) {
-    #hero-img {
+    .hero-img {
       background-position: center/80%;
     }
   }
