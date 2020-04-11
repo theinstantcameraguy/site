@@ -14,46 +14,32 @@ $grey:         hsl(0, 0%, 48%) !default
 $grey-light:   hsl(0, 0%, 71%) !default
 $grey-lighter: hsl(0, 0%, 86%) !default
 
-$white-ter:    hsl(0, 0%, 96%) !default
-$white-bis:    hsl(0, 0%, 98%) !default
-$white:        hsl(0, 0%, 100%) !default
-
 $turquoise:    hsl(171, 100%, 41%) !default
 $cyan:         hsl(204, 86%,  53%) !default
-
-
 $yellow:       #ffd500;
 $green:        #02B875;
 $blue:         #45b2d3;
 $red:          #d9534f;
 $tan: #dccdbf;
-$tan2: hsl(37, 25%,  74%) !default;
-
+$tan2: hsl(37, 25%,  74%);
 
 $link: #4582EC ;
 $danger: $green;
 $primary: $red;
 
-
-$apple: $tan2 !default
-$apple-invert: findColorInvert($apple) !default
-
+//Atlantic colour scheme
+$apple: $tan2;
 $fuschia: #CC3D7A;
-$fuschia-invert: findColorInvert($fuschia);
-
 $gold : #cca33d;
-$gold-invert: findColorInvert($gold);
 $cyan : #00b8e6;
-$cyan-invert: findColorInvert($cyan);
 $beige : #F0B67F;
-$beige-invert: findColorInvert($beige);
 
+//Color scheme old apple
 $cape-cod-grey: #484d4b;
 $blanc-brown: #d4ccb9;
 $silver-chalice-grey: #b0b0ab;
 $bison-hide-grey: #b1a48e;
 $eggplant: #862754;
-$eggplant-invert: findColorInvert($eggplant);
 $blue: #3D81DA;
 $apple-red: #9F1E17;
 $burnt-orange: #F4581F;
@@ -65,23 +51,28 @@ $polaroid_orange : #ff8200;
 $polaroid_red : #da291c;
 $polaroid_pink : #f00095;
 
-
 $navbar-background-color: $cape-cod-grey;
 $background: $blanc-brown;
 $scheme-main: $blanc-brown;
 $footer-background-color:  $silver-chalice-grey;
-$custom-colors: (
-  "apple": ($apple, $apple-invert),
-  "egglplant": ($eggplant, $eggplant-invert),
-  "fuschia": ($fuschia, $fuschia-invert),
-  "gold": ($gold, $gold-invert),
-  "cyan": ($cyan, $cyan-invert),
-);
+
 $carousel-indicator-color: $polaroid_green;
 $carousel-arrow-background: $polaroid_orange;
 $carousel-arrow-color: $polaroid_green;
 
-$header-text-gradient-atlantic: linear-gradient($fuschia 30%, $gold 45%, $cyan 60%, $eggplant 75%);
+//$header-text-gradient-atlantic: linear-gradient($fuschia 30%, $gold 45%, $cyan 60%, $eggplant 75%);
 $header-text-gradient: linear-gradient(to right, $polaroid_blue 20%, $polaroid_green 38%, $polaroid_gold 46%,
   $polaroid_orange 54%,$polaroid_red 62%, $polaroid_pink 80% );
-// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+
+
+$colors: (
+  "white": ($tan, $black),
+  "black": ($black, $white),
+  "light": ($light, $light-invert),
+  "dark": ($dark, $dark-invert),
+  "primary": ($polaroid_red, $polaroid_red),
+  "info": ($polaroid_blue, $polaroid_blue),
+  "success": ($success, $success-invert),
+  "warning": ($warning, $warning-invert),
+  "danger": ($danger, $danger-invert),
+);

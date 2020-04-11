@@ -12,7 +12,8 @@ import VueMarkdown from 'vue-markdown'
 
 import 'buefy/dist/buefy.css'
 import '@/assets/scss/main.scss'
-import { DatocmsImagePlugin, toHead } from 'vue-datocms'
+
+import { DatocmsImagePlugin } from 'vue-datocms'
 import VueLazyload from 'vue-lazyload'
 import VueMq from 'vue-mq'
 
@@ -21,11 +22,16 @@ import VueLazyLoadBackgroundImage from '@/components/VueLazyLoadBackgroundImage'
 library.add(faYoutube, faFacebook, faFacebookMessenger, faInstagram, faTree, faEnvelope, faPhone,
   faChevronLeft, faChevronRight, faAngleRight, faAngleLeft)
 
+// add web fonts
+require('typeface-source-sans-pro')
+require('typeface-roboto')
+require('typeface-righteous')
+
 export default function (Vue, { router, head, isClient }) {
   head.link.push(
     {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css?family=Roboto:400,700&family=Righteous:400&family=Helvetica+Neue:400,700&family=Source+Sans+Pro:400,700&display=swap'
+      href: 'https://fonts.googleapis.com/css?family=Helvetica+Neue:400,700display=swap'
     }
   )
 

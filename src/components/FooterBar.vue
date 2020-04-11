@@ -35,7 +35,7 @@
             </p>
             <div class="columns">
               <div class="content is-flex footer-item-row is-size-6 is-centered">
-                <div class="column is-centered">
+                <div class="column is-centered align-items-center-mobile">
                   <div>
                     <a href="https://www.facebook.com/instantcameraguy/">
                    <span> <b-icon icon="facebook" pack="fab" slot="marker" type="is-info"> </b-icon>
