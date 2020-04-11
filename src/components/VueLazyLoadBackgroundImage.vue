@@ -82,7 +82,7 @@
         }[this.$mq]
       },
       backgroundPos(){
-        return this.$mq === 'sm'? 'center/80%' : 'center'
+        return 'center'
       },
       computedStyle() {
         if (this.imageState === 'loading') {
