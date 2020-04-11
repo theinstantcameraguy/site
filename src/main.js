@@ -31,9 +31,12 @@ export default function (Vue, { router, head, isClient }) {
   head.link.push(
     {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css?family=Helvetica+Neue:400,700display=swap'
-    }
-  )
+      href: 'https://fonts.googleapis.com/css?family=Helvetica+Neue:400,700&display=swap'
+    },
+  { rel: "preconnect",
+    href: "https://www.datocms-assets.com"
+  }
+)
 
   head.meta.push(
     { charset: 'utf-8' },
