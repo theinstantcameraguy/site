@@ -54,7 +54,7 @@ export default function (Vue, { router, head, isClient }) {
 
   Vue.component('vue-lazyload-bg-img', VueLazyLoadBackgroundImage)
   Vue.use(VueLazyload, {
-    loading: '~/src/assets/760.gif',
+    loading: '760.gif',
   })
   Vue.use(DatocmsImagePlugin)
 

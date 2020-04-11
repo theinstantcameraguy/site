@@ -82,7 +82,7 @@
         }[this.$mq]
       },
       backgroundPos(){
-        return 'center'
+        return  'center'
       },
       computedStyle() {
         if (this.imageState === 'loading') {
