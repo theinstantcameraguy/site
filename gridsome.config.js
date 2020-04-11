@@ -128,7 +128,7 @@ module.exports = {
         shortName: 'T.I.📷.G',
         themeColor: '#00B140',
         backgroundColor: '#ffffff',
-        icon: 'src/favicon.png', // must be provided like 'src/favicon.png'
+        icon: 'src/assets/img/favicon.png', // must be provided like 'src/favicon.png'
         msTileImage: '',
         msTileColor: '#00B140'
       }

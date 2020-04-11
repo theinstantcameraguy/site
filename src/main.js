@@ -31,7 +31,10 @@ export default function (Vue, { router, head, isClient }) {
   head.link.push(
   { rel: "preconnect",
     href: "https://www.datocms-assets.com"
-  }
+  },
+    { rel: "preconnect",
+    href: "https://storage.googleapis.com"
+  },
   )
 
   head.meta.push(
