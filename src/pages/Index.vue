@@ -288,28 +288,6 @@
   }
   }
   }
-  allSocial: allDatoCmsSocialProfile {
-  edges {
-  node {
-  position
-  profileType
-  slug
-  url
-  }
-  }
-  }
-  allService: allDatoCmsService {
-  edges {
-  node {
-  id
-  heading
-  serviceItems {
-  id
-  itemDescription
-  }
-  }
-  }
-  }
   aboutPage {
   bio
   photo {

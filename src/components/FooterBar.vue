@@ -1,41 +1,36 @@
 <template>
-  <footer class="footer" id="footer">
-    <div class="container footer-cont is-flex">
-      <div class="left">
-        <div class="item">
-          <div>
+  <div>
+    <footer class="footer" id="footer">
+      <div class="container is-centered align-items-center-mobile align-center">
+        <div class="columns">
+          <div class="column">
             <p class="is-size-3 has-text-centered">
               Contact
             </p>
-            <div class="content is-flex footer-item">
-              <a href="hrefPhone">
-                <b-icon icon="phone" slot="marker" type="is-danger"></b-icon>
-                {{ $static.home.edges[0].node.phoneNumber }}
-              </a>
-              <p>
-                <a href="mailto:theinstantcameraguy@hotmail.com">
-                  <b-icon icon="envelope" slot="marker" type="is-danger"></b-icon>
-                  theinstantcameraguy@hotmail.com</a
-                >
-              </p>
-              <a
-                href="http://www.abr.business.gov.au/SearchByAbn.aspx?abn=93161449237"
-              >
-                ABN: 93 161 449 237</a
-              >
+            <div class="columns has-text-centered">
+              <div class="column">
+                <a href="hrefPhone">
+                  <b-icon icon="phone" slot="marker" type="is-danger"></b-icon>
+                  {{ $static.home.edges[0].node.phoneNumber }}
+                </a>
+                <p>
+                  <a href="mailto:theinstantcameraguy@hotmail.com">
+                    <b-icon icon="envelope" slot="marker" type="is-danger"></b-icon>
+                    theinstantcameraguy@hotmail.com</a
+                  >
+                </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="right">
-        <div class="item">
-          <div class="social-links">
-            <p class="is-size-4 has-text-centered">
-              Socials
-            </p>
-            <div class="columns">
-              <div class="content is-flex footer-item-row is-size-6 is-centered">
-                <div class="column is-centered align-items-center-mobile">
+        <div class="columns">
+          <div class="column is-centered align-items-center-mobile social-links">
+            <div class="social-links">
+              <p class="is-size-4 has-text-centered">
+                Socials
+              </p>
+              <div class="columns">
+                <div class="column is-size-6 is-centered has-text-centered">
                   <div>
                     <a href="https://www.facebook.com/instantcameraguy/">
                    <span> <b-icon icon="facebook" pack="fab" slot="marker" type="is-info"> </b-icon>
@@ -79,9 +74,27 @@
             </div>
           </div>
         </div>
+        <div class="columns">
+          <div class="column">
+            <div class="level">
+              <div class="level-item has-text-centered">
+                <a
+                  href="http://www.abr.business.gov.au/SearchByAbn.aspx?abn=93161449237"
+                >
+                  <p>ABN: 93 161 449 237 </p></a
+                >
+              </div>
+              <div class="level-item has-text-centered">
+                <p>
+                  {{ $static.home.edges[0].node.copyright }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </template>
 
 <script>
@@ -97,35 +110,7 @@
   }
 </script>
 
-<style lang="scss">
-
-  .footer-cont {
-    justify-content: space-between;
-    align-content: center;
-    flex-flow: row wrap;
-    align-self: center;
-  }
-
-  .footer-item {
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-  }
-
-  @media all and (max-width: 768px) {
-    .footer-cont {
-      /* On small screens, we are no longer using row direction but column */
-      flex-direction: column;
-      align-content: center;
-      justify-content: center;
-    }
-
-    .footer-item-row {
-      flex-direction: row;
-      align-content: center;
-      justify-content: space-between;
-    }
-  }
+<style lang="scss" scoped>
 </style>
 
 <static-query>
@@ -149,6 +134,16 @@
   subtitle
   title
   phoneNumber
+  }
+  }
+  }
+  allSocial: allDatoCmsSocialProfile {
+  edges {
+  node {
+  position
+  profileType
+  icon
+  url
   }
   }
   }
