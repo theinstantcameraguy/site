@@ -19,7 +19,7 @@ export default {
   props: {
     serviceItems: { type: Array, default: () => [] },
     header: { type: String, default: '', required: true },
-    service: { type: Object, default: () => {} }
-  }
+    service: { type: Object, default: () => {} },
+  },
 }
 </script>

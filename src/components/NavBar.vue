@@ -77,7 +77,7 @@ export default {
   computed: {
     hrefPhone() {
       return 'tel:+61431 845 455'
-    }
+    },
   },
 }
 </script>

@@ -9,19 +9,18 @@ export async function request({ query, variables, preview }) {
     endpoint,
     {
       query,
-      variables
+      variables,
     },
     {
       headers: {
-        Authorization:
-          `Bearer ${process.env.DATOCMS_API}`
-      }
+        Authorization: `Bearer ${process.env.DATOCMS_API}`,
+      },
     }
   )
 
   if (data.errors) {
-    throw JSON.stringify(data.errors);
+    throw JSON.stringify(data.errors)
   }
 
-  return data.data;
+  return data.data
 }

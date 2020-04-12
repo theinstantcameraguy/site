@@ -37,14 +37,14 @@
               class="has-text-weight-bold navbar-item"
               data-menuanchor="about"
               href="#about"
-            >About</a
+              >About</a
             >
             <a
               id="repair-nav"
               class="has-text-weight-bold navbar-item"
               data-menuanchor="repairs"
               href="#repairs"
-            >Repairs</a
+              >Repairs</a
             >
             <a
               id="logo"
@@ -57,139 +57,136 @@
               class="has-text-weight-bold navbar-item"
               data-menuanchor="photos"
               href="#instaposts"
-            >Photos</a
+              >Photos</a
             >
             <a
               id="contact-nav"
               class="has-text-weight-bold navbar-item"
               data-menuanchor="contact"
               href="#footer"
-            >Contact</a
+              >Contact</a
             >
           </div>
         </div>
       </nav>
     </header>
-    <slot/>
+    <slot />
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return { showNav: false }
-    },
-  }
+export default {
+  data() {
+    return { showNav: false }
+  },
+}
 </script>
 
 <static-query>
-query {
-  metadata {
-    siteName
+  query {
+    metadata {
+      siteName
+    }
   }
-}
 </static-query>
 
 <style lang="scss" scoped>
-  @import "src/assets/scss/main";
-  html {
-    font-size: 16px;
-    word-spacing: 1px;
-    -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
-  }
+@import 'src/assets/scss/main';
+html {
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  body,
-  p,
-  .content {
-    font-family: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+body,
+p,
+.content {
+  font-family: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans',
     Geneva, Arial, sans-serif;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  h7,
-  .title,
-  .subtitle {
-    font-family: 'Righteous', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7,
+.title,
+.subtitle {
+  font-family: 'Righteous', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  }
+}
 
+#map {
+  height: 260px;
+}
 
+#about-nav {
+  color: $polaroid_blue;
+}
+#repair-nav {
+  color: $polaroid_green;
+}
+#photos-nav {
+  color: $polaroid_gold;
+}
+#contact-nav {
+  color: $polaroid_red;
+}
+.brand-nav {
+  font-family: Righteous, $family-heading;
+}
 
-  #map {
-    height: 260px;
-  }
+.navbar-start {
+  flex-grow: 1 !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
 
-
-  #about-nav {
-    color: $polaroid_blue;
+@media screen and (max-width: 1024px - 1px) {
+  #logo {
+    display: none !important;
   }
-  #repair-nav {
-    color: $polaroid_green;
+  .force-center {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
   }
-  #photos-nav {
-    color: $polaroid_gold;
-  }
-  #contact-nav {
-    color: $polaroid_red;
-  }
-  .brand-nav {
-    font-family: Righteous, $family-heading;
-  }
-
-  .navbar-start {
-    flex-grow: 1 !important;
+  .navbar-end {
+    display: flex !important;
     justify-content: center !important;
-    text-align: center !important;
   }
+}
 
-  @media screen and (max-width: 1024px - 1px) {
-    #logo {
-      display: none !important;
-    }
-    .force-center {
-      position: absolute !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-    }
-    .navbar-end {
-      display: flex !important;
-      justify-content: center !important;
-    }
+@media screen and (min-width: 1024px) {
+  .navbar-brand {
+    display: none !important;
   }
-
-  @media screen and (min-width: 1024px) {
-    .navbar-brand {
-      display: none !important;
-    }
-  }
-  #post-content {
-    justify-content: space-between;
-    align-content: center;
-    flex-flow: row wrap;
-    align-self: center;
-  }
-  .has-image-centered {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
+}
+#post-content {
+  justify-content: space-between;
+  align-content: center;
+  flex-flow: row wrap;
+  align-self: center;
+}
+.has-image-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+$family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
   'Lucida Sans', Geneva, Arial, sans-serif;
 
-  $family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+$family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
-  $navbar-height: 5rem;
+$navbar-height: 5rem;
 </style>

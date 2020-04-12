@@ -5,15 +5,14 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const filter = require('lodash/filter');
-const intersection = require('lodash/intersection');
-const slice = require('lodash/slice');
-const values = require('lodash/values');
-const axios = require('axios');
+const filter = require('lodash/filter')
+const intersection = require('lodash/intersection')
+const slice = require('lodash/slice')
+const values = require('lodash/values')
+const axios = require('axios')
 
 module.exports = function (api) {
-
-  api.loadSource(async({ addCollection, addSchemaTypes }) => {
+  api.loadSource(async ({ addCollection, addSchemaTypes }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
     addSchemaTypes(`
     type InstagramPost implements Node @infer {
@@ -51,18 +50,18 @@ module.exports = function (api) {
       username: String
     }
     `)
-    const collection = addCollection('InstagramPost');
-    let count = 9;
-    let mediaType = 'image';
+    const collection = addCollection('InstagramPost')
+    let count = 9
+    let mediaType = 'image'
     axios
       .get(`https://api.instagram.com/v1/users/self/media/recent`, {
         headers: { 'Access-Control-Allow-Origin': '*' },
         params: {
           access_token: process.env.INSTATOKEN,
-          count
-        }
+          count,
+        },
       })
-      .then(response => {
+      .then((response) => {
         let feeds = []
         if (response.data.meta.code === 400) this.error = response.data.meta
         if (response.data.meta.code === 200) {
@@ -70,14 +69,14 @@ module.exports = function (api) {
             let { data } = response.data
             const types = ['image', 'video']
             if (mediaType && types.includes(mediaType)) {
-              data = filter(data, item => mediaType === item.type)
+              data = filter(data, (item) => mediaType === item.type)
             }
             feeds = slice(values(data), 0, count)
             return feeds
           }
         }
       })
-      .then(feeds => {
+      .then((feeds) => {
         for (const item of feeds) {
           collection.addNode({
             id: item.id,
@@ -93,10 +92,10 @@ module.exports = function (api) {
           })
         }
       })
-      .catch(error => {
+      .catch((error) => {
         throw error
       })
-  });
+  })
 
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/

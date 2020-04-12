@@ -1,47 +1,44 @@
 <template>
   <Layout>
-
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <div>
-      <section id="hero" class="hero is-fullheight is-dark">
+      <section class="hero is-fullheight is-dark" id="hero">
         <ClientOnly>
-        <vue-lazyload-bg-img
-          id="hero-img"
-          image-class="hero-body"
-          :datasrc="hero.url"
-          :lgSuffix="hero.lg"
-          :mdSuffix="hero.md"
-          :smSuffix="hero.sm"
-          background-size="auto"
-          :imageSource="hero.url"
-          loadingImage="760.gif"
-          errorImage="polaroid.jpg"
-        >
-          <div id="hero-body" class="container">
-            <h2
-              id="subtitle"
-              :data-text="home.subtitle"
-              class="title has-text-centered has-text-weight-light is-1"
-            >
-              {{ home.subtitle }}
-            </h2>
-          </div>
-        </vue-lazyload-bg-img>
+          <vue-lazyload-bg-img
+            :datasrc="hero.url"
+            :imageSource="hero.url"
+            :lgSuffix="hero.lg"
+            :mdSuffix="hero.md"
+            :smSuffix="hero.sm"
+            background-size="auto"
+            :backgroundColor="heroBgColor"
+            errorImage="polaroid.jpg"
+            id="hero-img"
+            image-class="hero-body"
+            :loadingImage="herobase64"
+          >
+            <div class="container" id="hero-body">
+              <h2
+                :data-text="home.subtitle"
+                class="title has-text-centered has-text-weight-light is-1"
+                id="subtitle"
+              >
+                {{ home.subtitle }}
+              </h2>
+            </div>
+          </vue-lazyload-bg-img>
         </ClientOnly>
       </section>
-      <section
-        id="about-level"
-        class="section is-medium"
-      >
-        <div id="post-hero" class="container is-flex ">
-          <div id="post-content" class="item columns">
+      <section class="section is-medium" id="about-level">
+        <div class="container is-flex" id="post-hero">
+          <div class="item columns" id="post-content">
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
                   <img
+                    alt=" Picture of Photographs"
                     class="is-rounded"
                     v-lazy="photosSVG"
-                    alt=" Picture of Photographs"
                   />
                 </figure>
                 <p class="title">Experience</p>
@@ -54,7 +51,11 @@
             <div class="column is-3 has-text-centered">
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
-                  <img v-lazy="cameraSVG" class="is-rounded" alt="Picture of a Camera"/>
+                  <img
+                    alt="Picture of a Camera"
+                    class="is-rounded"
+                    v-lazy="cameraSVG"
+                  />
                 </figure>
                 <p class="title">Repair, Service, Modify</p>
                 <p class="heading">
@@ -66,9 +67,9 @@
             <div class="column is-3 has-text-centered">
               <figure class="image is-128x128 has-image-centered">
                 <img
+                  alt="Picture of a drone delivering goods"
                   class="is-rounded"
                   v-lazy="droneSVG"
-                  alt="Picture of a drone delivering goods"
                 />
               </figure>
               <p class="title">Ship Australia Wide</p>
@@ -81,22 +82,26 @@
         </div>
       </section>
 
-      <section id="background_section" class="section is-medium section-feature-grey">
+      <section
+        class="section is-medium section-feature-grey"
+        id="background_section"
+      >
         <div class="container">
           <div class="content">
-            <h1 id="about-text" class="is-medium has-text-left title">
+            <h1 class="is-medium has-text-left title" id="about-text">
               <em class="has-text-primary"># </em>About
             </h1>
             <h2 class="is-medium title">
               THE INSTANT CAMERA GUY
             </h2>
             <div class="columns">
-              <div class="column is-centered ">
-                  <datocms-image :data="aboutImage"
-                                 class="is-square is-flex"
-                                 :root-style="rootStyle"
-                                 picture-class="is-centered"
-                                 />
+              <div class="column is-centered">
+                <datocms-image
+                  :data="aboutImage"
+                  :root-style="rootStyle"
+                  class="is-square is-flex"
+                  picture-class="is-centered"
+                />
               </div>
               <div class="column is-three-quarters has-text-justified">
                 <vue-markdown>{{ aboutText }}</vue-markdown>
@@ -105,10 +110,10 @@
           </div>
         </div>
       </section>
-      <section id="repairs" class="section is-medium">
+      <section class="section is-medium" id="repairs">
         <div class="container">
           <div class="content">
-            <h1 id="repair" class="is-medium has-text-left title">
+            <h1 class="is-medium has-text-left title" id="repair">
               <em class="has-text-primary"># </em>Repairs & Modification
             </h1>
             <div class="columns">
@@ -125,334 +130,368 @@
               <RepairList />
             </div>
           </div>
-
         </div>
       </section>
-      <section id="instaposts" class="section is-medium">
+      <section class="section is-medium" id="instaposts">
         <div class="container">
           <div class="content">
-            <h1 id="photos" class="is-medium has-text-left title">
+            <h1 class="is-medium has-text-left title" id="photos">
               <em class="has-text-primary"># </em>Photos
             </h1>
           </div>
-          <instaposts/>
+          <instaposts />
         </div>
       </section>
-      <section id="coming-soon" class="section is-large">
+      <section class="section is-large" id="coming-soon">
         <div class="container">
           <div class="content">
-            <h1
-              id="coming-soon-title"
-              class="title has-text-centered  is-1"
-            >
+            <h1 class="title has-text-centered is-1" id="coming-soon-title">
               More to Come ...
             </h1>
-            <h2 id="coming-soon-subtitle"
-                class="subtitle has-text-centered has-text-weight-light is-3"
+            <h2
+              class="subtitle has-text-centered has-text-weight-light is-3"
+              id="coming-soon-subtitle"
             >
-              Blog Posts, Previous Work and projects will be coming soon. Stay Tuned !
+              Blog Posts, Previous Work and projects will be coming soon. Stay
+              Tuned !
             </h2>
           </div>
         </div>
       </section>
-      <footer-bar/>
+      <footer-bar />
     </div>
-
   </Layout>
 </template>
 
 <script>
-  import FooterBar from '~/components/FooterBar'
-  import Instaposts from '~/components/Instaposts'
-  import DroneDelivery from '~/assets/img/undraw_drone_delivery_5vrm.svg'
-  import Camera from '~/assets/img/undraw_camera_mg5h.svg'
-  import Photos from '~/assets/img/undraw_photos_1nui.svg'
-  import VueMarkdown from 'vue-markdown'
+import FooterBar from '~/components/FooterBar'
+import Instaposts from '~/components/Instaposts'
+import DroneDelivery from '~/assets/img/undraw_drone_delivery_5vrm.svg'
+import Camera from '~/assets/img/undraw_camera_mg5h.svg'
+import Photos from '~/assets/img/undraw_photos_1nui.svg'
+import VueMarkdown from 'vue-markdown'
 
-  import dedent from 'dedent'
-  import RepairList from '../components/RepairList'
-  import { toHead } from 'vue-datocms'
+import dedent from 'dedent'
+import RepairList from '../components/RepairList'
+import { toHead } from 'vue-datocms'
 
-  export default {
-    metaInfo ()  {
-      return toHead(this.$page.site.seo, this.$page.site.favicon)
+export default {
+  metaInfo() {
+    return toHead(this.$page.site.seo, this.$page.site.favicon)
+  },
+
+  components: {
+    RepairList,
+    FooterBar,
+    VueMarkdown,
+    Instaposts,
+  },
+  data: () => ({
+    loading: 0,
+    rootStyle: { height: 480 },
+    hero: {
+      url: 'https://www.datocms-assets.com/12178/1586437876-favicon.png',
+      lg: '?q=90&auto=format&&w=500&height=500',
+      md: '?q=80&auto=format&&w=300&height=300',
+      sm: '?q=70&auto=format&&w=120height=120',
     },
-
-    components: {
-      RepairList,
-      FooterBar,
-      VueMarkdown,
-      Instaposts
+  }),
+  computed: {
+    herobase64() {
+      return this.$page.home.heroBlur.base64
     },
-    data: () => ({
-      loading: 0,
-      rootStyle: { height: 480 },
-      hero: {
-        url:"https://www.datocms-assets.com/12178/1586437876-favicon.png",
-        lg: "?q=90&auto=format&&w=500&height=500",
-        md: "?q=80&auto=format&&w=300&height=300",
-        sm: "?q=60&auto=format&&w=250height=250",
-      }
-
-    }),
-    computed: {
-      home() {
-        return this.$page.home.edges[0].node
-      },
-      cameraSVG() {
-        return Camera
-      },
-      photosSVG() {
-        return Photos
-      },
-      droneSVG() {
-        return DroneDelivery
-      },
-      coordinates() {
-        return [this.home.pagelocation.longitude, this.home.pagelocation.latitude]
-      },
-      hrefPhone() {
-        return this.home.phoneNumber.startsWith('0')
-          ? 'tel:+61' + this.home.phoneNumber.replace(/^0/, '')
-          : this.home.phoneNumber
-      },
-      aboutText() {
-        return dedent(this.home.introText)
-      },
-      aboutImage() {
-        return (
-          this.$page.aboutPage.photo.responsiveImage
-        )
-      },
-      repairText() {
-        return dedent(this.$page.repairPage.edges[0].node.description)
-      },
-
+    heroBgColor() {
+      return this.$page.home.heroBlur.bgcolor
     },
-  }
+    home() {
+      return this.$page.home
+    },
+    cameraSVG() {
+      return Camera
+    },
+    photosSVG() {
+      return Photos
+    },
+    droneSVG() {
+      return DroneDelivery
+    },
+    hrefPhone() {
+      return this.home.phoneNumber.startsWith('0')
+        ? 'tel:+61' + this.home.phoneNumber.replace(/^0/, '')
+        : this.home.phoneNumber
+    },
+    aboutText() {
+      return dedent(this.home.introText)
+    },
+    aboutImage() {
+      return this.$page.aboutPage.photo.responsiveImage
+    },
+    repairText() {
+      return dedent(this.$page.repairPage.edges[0].node.description)
+    },
+  },
+}
 </script>
 
 <page-query>
   query {
-  site: _site {
-  seo: globalSeo {
-  facebookPageUrl
-  fallbackSeo {
-  description
-  title
-  }
-  siteName
-  titleSuffix
-  },
-  favicon: faviconMetaTags {
-  attributes
-  content
-  tag
-  }
-  }
-  home: allDatoCmsHomePage {
-  edges {
-  node {
-  copyright
-  heroimage {
-  url
-  }
-  introText
-  pagelocation {
-  latitude
-  longitude
-  }
-  seoSettings {
-  description
-  title
-  image {
-  url
-  }
-  }
-  subtitle
-  title
-  phoneNumber
-  }
-  }
-  }
-  repairPage: allDatoCmsRepairPage {
-  edges {
-  node {
-  description
-  headings
-  example {
-  description
-  photo {
-  url
-  }
-  }
-  }
-  }
-  }
-  aboutPage {
-  bio
-  photo {
-  url
-  responsiveImage(
-  imgixParams: { fpY:0.18, mask:"ellipse" fit: crop, ar:"200:200", h:200, w:200, auto: format }
-  ) {
-  # HTML5 src/srcset/sizes attributes
-  srcSet
-  webpSrcSet
-  sizes
-  src
+    site: _site {
+      seo: globalSeo {
+        facebookPageUrl
+        fallbackSeo {
+          description
+          title
+        }
+        siteName
+        titleSuffix
+      }
+      favicon: faviconMetaTags {
+        attributes
+        content
+        tag
+      }
+    }
+    home {
+      copyright
+      heroBlur: heroimage {
+        responsiveImage(imgixParams: { h: 44, w: 22, auto: format }) {
+          # HTML5 src/srcset/sizes attributes
+          # background color placeholder or...
+          bgColor
 
-  # size information (post-transformations)
-  width
-  height
-  aspectRatio
+          # blur-up placeholder, JPEG format, base64-encoded
+          base64
+        }
+      }
+      heroimage {
+        responsiveImage(imgixParams: { auto: format }) {
+          # HTML5 src/srcset/sizes attributes
+          srcSet
+          webpSrcSet
+          sizes
+          src
 
-  # SEO attributes
-  alt
-  title
+          # size information (post-transformations)
+          width
+          height
+          aspectRatio
 
-  # background color placeholder or...
-  bgColor
+          # SEO attributes
+          alt
+          title
 
-  # blur-up placeholder, JPEG format, base64-encoded
-  base64
-  }
-  }
-  subtitle
-  }
-  allPostheros(orderBy: _createdAt_ASC) {
-  title
-  heading
-  image {
-  url
-  }
-  }
+          # background color placeholder or...
+          bgColor
+
+          # blur-up placeholder, JPEG format, base64-encoded
+          base64
+        }
+      }
+      introText
+      pagelocation {
+        latitude
+        longitude
+      }
+      seoSettings {
+        description
+        title
+        image {
+          url
+        }
+      }
+      subtitle
+      title
+      phoneNumber
+    }
+    repairPage: allDatoCmsRepairPage {
+      edges {
+        node {
+          description
+          headings
+          example {
+            description
+            photo {
+              url
+            }
+          }
+        }
+      }
+    }
+    aboutPage {
+      bio
+      photo {
+        url
+        responsiveImage(
+          imgixParams: {
+            fpY: 0.18
+            mask: "ellipse"
+            fit: crop
+            ar: "200:200"
+            h: 200
+            w: 200
+            auto: format
+          }
+        ) {
+          # HTML5 src/srcset/sizes attributes
+          srcSet
+          webpSrcSet
+          sizes
+          src
+
+          # size information (post-transformations)
+          width
+          height
+          aspectRatio
+
+          # SEO attributes
+          alt
+          title
+
+          # background color placeholder or...
+          bgColor
+
+          # blur-up placeholder, JPEG format, base64-encoded
+          base64
+        }
+      }
+      subtitle
+    }
+    allPostheros(orderBy: _createdAt_ASC) {
+      title
+      heading
+      image {
+        url
+      }
+    }
   }
 </page-query>
 
 <style lang="scss" scoped>
-  #hero {
-    background-color: $grey-darker;
-    justify-content: center;
-    align-items: center;
-  }
+#hero {
+  background-color: $grey-darker;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  background-position: center / 35%;
+}
+
+@media screen and (max-width: 1024px - 1px) {
   .hero-img {
-    background-position: center / 35%;
+    background-position: center/80%;
   }
-  @media screen and (max-width: 1024px - 1px) {
-    .hero-img {
-      background-position: center/80%;
-    }
-  }
+}
 
-  .hero-body {
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-  }
-  #title {
-    letter-spacing: 1px;
-    font-size: 5rem !important;
-    background: $header-text-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-    font-family: Righteous, $family-heading;
-  }
+.hero-body {
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  #hero-body {
-    align-self: center;
-    justify-self: center;
-  }
-  #subtitle {
-    background-image: $header-text-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    word-spacing: 5px;
-    font-size: 4rem !important;
-    z-index: 6;
-    stroke-width: 0.5px;
-    -webkit-text-stroke-color: $black;
-    -webkit-text-stroke-width: 0.5px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-    font-family: Righteous, $family-heading;
-  }
+#title {
+  letter-spacing: 1px;
+  font-size: 5rem !important;
+  background: $header-text-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  font-family: Righteous, $family-heading;
+}
 
-  .card,
-  .hero-body {
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-  }
+#hero-body {
+  align-self: center;
+  justify-self: center;
+}
 
-  #title {
-    letter-spacing: 1px;
-    font-size: 5rem !important;
-    background: $header-text-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    position: relative;
-  }
+#subtitle {
+  background-image: $header-text-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  word-spacing: 5px;
+  font-size: 4rem !important;
+  z-index: 6;
+  stroke-width: 0.5px;
+  -webkit-text-stroke-color: $black;
+  -webkit-text-stroke-width: 0.5px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  font-family: Righteous, $family-heading;
+}
 
-  #hero-body {
-    align-self: center;
-    justify-self: center;
-  }
+.card,
+.hero-body {
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
 
-  #subtitle {
-    background-image: $header-text-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    word-spacing: 5px;
-    font-size: 4rem !important;
-    z-index: 6;
-    stroke-width: 0.5px;
-    -webkit-text-stroke-color: $black;
-    -webkit-text-stroke-width: 0.5px;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-  }
+#title {
+  letter-spacing: 1px;
+  font-size: 5rem !important;
+  background: $header-text-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
 
-  #map {
-    height: 260px;
-  }
+#hero-body {
+  align-self: center;
+  justify-self: center;
+}
 
-  #post-content {
-    justify-content: space-between;
-    align-content: center;
-    flex-flow: row wrap;
-    align-self: center;
-  }
+#subtitle {
+  background-image: $header-text-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  word-spacing: 5px;
+  font-size: 4rem !important;
+  z-index: 6;
+  stroke-width: 0.5px;
+  -webkit-text-stroke-color: $black;
+  -webkit-text-stroke-width: 0.5px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
 
-  .has-image-centered {
-    margin-left: auto;
-    margin-right: auto;
-  }
+#map {
+  height: 260px;
+}
 
-  $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
+#post-content {
+  justify-content: space-between;
+  align-content: center;
+  flex-flow: row wrap;
+  align-self: center;
+}
+
+.has-image-centered {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+$family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
   'Lucida Sans', Geneva, Arial, sans-serif;
 
-  $family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
+$family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
-  $navbar-height: 5rem;
+$navbar-height: 5rem;
 
-  #about-text {
-    color: $polaroid_blue;
-  }
+#about-text {
+  color: $polaroid_blue;
+}
 
-  #photos {
-    color: $polaroid_red;
-  }
+#photos {
+  color: $polaroid_red;
+}
 
-  #about-level {
-    background-color: $polaroid_blue;
-  }
+#about-level {
+  background-color: $polaroid_blue;
+}
 
-  #repairs {
-    background-color: $polaroid_green;
-  }
+#repairs {
+  background-color: $polaroid_green;
+}
 
-
-  #coming-soon {
-    background-color: $polaroid_red;
-  }
+#coming-soon {
+  background-color: $polaroid_red;
+}
 </style>

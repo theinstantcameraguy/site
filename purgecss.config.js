@@ -6,8 +6,7 @@ module.exports = {
     './src/**/*.html',
     './src/**/*.pug',
     './src/**/*.md',
-    './node_modules/buefy/src/components/icon/*.vue',
-    './node_modules/buefy/src/components/carousel/*.vue',
+    './node_modules/buefy/**/*.@(vue|js)',
   ],
   whitelist: [
     'body',
@@ -21,10 +20,9 @@ module.exports = {
     'vue-lazyload-bg-img',
     'vue-markdown',
     'datocms-img',
-    'b-carousel',
-    'b-carousel-item'
   ],
-  whitelistPatterns: [ /-(leave|enter|appear)(|-(to|from|active))$/,
+  whitelistPatterns: [
+    /-(leave|enter|appear)(|-(to|from|active))$/,
     /^(?!(|.*?:)cursor-move).+-move$/,
     /^router-link(|-exact)-active$/,
     /data-v-.*/,
@@ -32,15 +30,21 @@ module.exports = {
     /^has-text-/,
     /^fa-/,
     /^has-numberinput-/,
-    /shiki/
+    /shiki/,
+    /^b-.*/,
   ],
-  defaultExtractor (content) {
-    const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '')
-    return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
+  defaultExtractor(content) {
+    const contentWithoutStyleBlocks = content.replace(
+      /<style[^]+?<\/style>/gi,
+      ''
+    )
+    return (
+      contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
+    )
   },
   extractors: [
     {
-      extractor: content => content.match(/[A-z0-9-:\\/]+/g),
+      extractor: (content) => content.match(/[A-z0-9-:\\/]+/g),
       extensions: ['vue', 'js', 'jsx', 'md', 'html'],
     },
   ],

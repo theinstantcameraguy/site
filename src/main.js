@@ -6,8 +6,21 @@ import Buefy from 'buefy'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import '@fortawesome/fontawesome-svg-core/styles.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faAngleRight, faAngleLeft, faChevronRight, faChevronLeft, faEnvelope, faPhone, faTree } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faFacebookMessenger, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import {
+  faAngleRight,
+  faAngleLeft,
+  faChevronRight,
+  faChevronLeft,
+  faEnvelope,
+  faPhone,
+  faTree,
+} from '@fortawesome/free-solid-svg-icons'
+import {
+  faFacebook,
+  faFacebookMessenger,
+  faInstagram,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons'
 import VueMarkdown from 'vue-markdown'
 
 import 'buefy/dist/buefy.css'
@@ -19,8 +32,19 @@ import VueMq from 'vue-mq'
 
 import VueLazyLoadBackgroundImage from '@/components/VueLazyLoadBackgroundImage'
 
-library.add(faYoutube, faFacebook, faFacebookMessenger, faInstagram, faTree, faEnvelope, faPhone,
-  faChevronLeft, faChevronRight, faAngleRight, faAngleLeft)
+library.add(
+  faYoutube,
+  faFacebook,
+  faFacebookMessenger,
+  faInstagram,
+  faTree,
+  faEnvelope,
+  faPhone,
+  faChevronLeft,
+  faChevronRight,
+  faAngleRight,
+  faAngleLeft
+)
 
 // add web fonts
 require('typeface-source-sans-pro')
@@ -29,30 +53,37 @@ require('typeface-righteous')
 
 export default function (Vue, { router, head, isClient }) {
   head.link.push(
-  { rel: "preconnect",
-    href: "https://www.datocms-assets.com"
-  },
-    { rel: "preconnect",
-    href: "https://storage.googleapis.com"
-  },
+    { rel: 'preconnect', href: 'https://www.datocms-assets.com' },
+    { rel: 'preconnect', href: 'https://storage.googleapis.com' }
   )
 
   head.meta.push(
     { charset: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    { name: 'keywords', content: 'camera, servicing, repair, melbourne, polaroid, graflex' },
-    { name: 'description', content: 'Camera servicing and repairs by Jake Bright. Specializing in the sales, servicing' +
-        'restoration and modification of classic Polaroid cameras and Graflex 4x5 cameras.' },
+    {
+      name: 'keywords',
+      content: 'camera, servicing, repair, melbourne, polaroid, graflex',
+    },
+    {
+      name: 'description',
+      content:
+        'Camera servicing and repairs by Jake Bright. Specializing in the sales, servicing' +
+        'restoration and modification of classic Polaroid cameras and Graflex 4x5 cameras.',
+    },
     { name: 'title', content: 'The Instant 📷 Guy' }
   )
-  head.link.push({ rel: 'icon', type: 'image/x-icon', href: '~/src/assets/favicon.ico' })
+  head.link.push({
+    rel: 'icon',
+    type: 'image/x-icon',
+    href: '~/src/assets/favicon.ico',
+  })
   Vue.component('Layout', DefaultLayout)
 
   Vue.use(VueMarkdown)
   Vue.component('vue-fontawesome', FontAwesomeIcon)
   Vue.use(Buefy, {
     defaultIconComponent: 'vue-fontawesome',
-    defaultIconPack: 'fas'
+    defaultIconPack: 'fas',
   })
 
   Vue.component('vue-lazyload-bg-img', VueLazyLoadBackgroundImage)
@@ -60,7 +91,6 @@ export default function (Vue, { router, head, isClient }) {
     loading: '760.gif',
   })
   Vue.use(DatocmsImagePlugin)
-
 
   Vue.use(VueMq)
 }

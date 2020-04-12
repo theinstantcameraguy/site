@@ -5,45 +5,43 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const path = require('path')
 
-function getAssetPath (filePath) {
+function getAssetPath(filePath) {
   return path.posix.join('./src/assets', filePath)
 }
 
-function addStyleResource (rule) {
-  rule.use('style-resource')
+function addStyleResource(rule) {
+  rule
+    .use('style-resource')
     .loader('style-resources-loader')
     .options({
-      patterns: [
-        path.resolve(__dirname, './src/assets/scss/main.scss')
-      ]
+      patterns: [path.resolve(__dirname, './src/assets/scss/main.scss')],
     })
 }
 
 const inlineLimit = 4096
 
-const genAssetSubPath = dir => {
-  return getAssetPath(
-    `${dir}/[name].[hash:8]' : ''}.[ext]`
-  )
+const genAssetSubPath = (dir) => {
+  return getAssetPath(`${dir}/[name].[hash:8]' : ''}.[ext]`)
 }
 
-const genUrlLoaderOptions = dir => {
+const genUrlLoaderOptions = (dir) => {
   return {
     limit: inlineLimit,
     // use explicit fallback to avoid regression in url-loader>=1.1.0
     fallback: {
       loader: require.resolve('file-loader'),
       options: {
-        name: genAssetSubPath(dir)
-      }
-    }
+        name: genAssetSubPath(dir),
+      },
+    },
   }
 }
 const purgecss = require('@fullhuman/postcss-purgecss')
 
 const postcssPlugins = []
 
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss(require('./purgecss.config.js')))
+if (process.env.NODE_ENV === 'production')
+  postcssPlugins.push(purgecss(require('./purgecss.config.js')))
 
 module.exports = {
   siteName: 'The Instant Camera Guy',
@@ -57,22 +55,22 @@ module.exports = {
         policy: [
           {
             userAgent: 'Googlebot',
-            allow: '/',
-            crawlDelay: 2
+            allow: '*',
+            crawlDelay: 2,
           },
           {
             userAgent: '*',
-            allow: '/',
-            crawlDelay: 10
-          }
-        ]
-      }
+            allow: '*',
+            crawlDelay: 10,
+          },
+        ],
+      },
     },
     {
       use: '@gridsome/plugin-sitemap',
       options: {
-        cacheTime: 600000
-      }
+        cacheTime: 600000,
+      },
     },
     {
       use: 'gridsome-source-graphql',
@@ -82,9 +80,9 @@ module.exports = {
         typeName: 'datoGQL',
 
         headers: {
-          Authorization: `Bearer ${process.env.DATOCMS_API}`
-        }
-      }
+          Authorization: `Bearer ${process.env.DATOCMS_API}`,
+        },
+      },
     },
     {
       use: '@gridsome/source-datocms',
@@ -92,23 +90,23 @@ module.exports = {
         apiToken: 'ba33398bd4b097bda2e657817bea1b', // required
         previewMode: false,
         apiUrl: 'https://site-api.datocms.com',
-        typeName: 'DatoCms'
-      }
+        typeName: 'DatoCms',
+      },
     },
     {
       use: '@gridsome/plugin-critical',
       options: {
         paths: ['/'],
         width: 1300,
-        height: 900
-      }
+        height: 900,
+      },
     },
     {
-      use: "gridsome-plugin-service-worker",
+      use: 'gridsome-plugin-service-worker',
       options: {
         networkFirst: {
           routes: [
-            "/",
+            '/',
             /\.(js|css|png|svg|gif)$/, // means "every JS, CSS, and PNG images"
           ],
         },
@@ -130,39 +128,40 @@ module.exports = {
         backgroundColor: '#ffffff',
         icon: 'src/assets/img/favicon.png', // must be provided like 'src/favicon.png'
         msTileImage: '',
-        msTileColor: '#00B140'
-      }
-    }
+        msTileColor: '#00B140',
+      },
+    },
   ],
-  chainWebpack: config => {
-
-
+  chainWebpack: (config) => {
     const imgRule = config.module.rule('images')
-    imgRule.test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
+    imgRule
+      .test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
       .use('url-loader')
       .loader('url-loader')
-      .options(genUrlLoaderOptions('img')).end()
-      .use('file-loader').loader('image-webpack-loader')
+      .options(genUrlLoaderOptions('img'))
+      .end()
+      .use('file-loader')
+      .loader('image-webpack-loader')
       .options({
         mozjpeg: {
           progressive: true,
-          quality: 65
+          quality: 65,
         },
         optipng: {
-          enabled: false
+          enabled: false,
         },
         pngquant: {
-          quality: [0.65, 0.90],
-          speed: 4
+          quality: [0.65, 0.9],
+          speed: 4,
         },
         gifsicle: {
-          interlaced: false
+          interlaced: false,
         },
         // the webp option will enable WEBP
         webp: {
-          quality: 75
+          quality: 75,
         },
-        name: 'assets/img/[name].[hash:8].[ext]'
+        name: 'assets/img/[name].[hash:8].[ext]',
       })
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
@@ -180,12 +179,12 @@ module.exports = {
       .use('file-loader')
       .loader('file-loader')
       .options({
-        name: 'assets/img/[name].[hash:8].[ext]'
+        name: 'assets/img/[name].[hash:8].[ext]',
       })
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
     // or if you use scss
-    types.forEach(type => {
+    types.forEach((type) => {
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
   },
@@ -195,9 +194,8 @@ module.exports = {
         data: `@import "@/assets/scss/variables.scss";@import "@/assets/scss/override.scss";`,
       },
       postcss: {
-        plugins: postcssPlugins
-      }
-    }
-  }
-
+        plugins: postcssPlugins,
+      },
+    },
+  },
 }
