@@ -36,7 +36,7 @@
               <div class="is-centered">
                 <figure class="image is-128x128 has-image-centered">
                   <img
-                    alt=" Picture of Photographs"
+                    alt="Picture of Photographs"
                     class="is-rounded"
                     v-lazy="photosSVG"
                   />
@@ -397,11 +397,6 @@ export default {
   -webkit-text-fill-color: transparent;
   position: relative;
   font-family: Righteous, $family-heading;
-}
-
-#hero-body {
-  align-self: center;
-  justify-self: center;
 }
 
 #subtitle {

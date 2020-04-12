@@ -87,9 +87,6 @@ export default {
         lg: this.lgSuffix,
       }[this.$mq]
     },
-    backgroundPos() {
-      return 'center'
-    },
     computedStyle() {
       if (this.imageState === 'loading') {
         return (
@@ -99,9 +96,7 @@ export default {
           this.backgroundSize +
           '; background-repeat: ' +
           this.backgroundRepeat +
-          '; background-position: ' +
-          this.backgroundPos +
-          ' ;'
+          '; background-position: center;'
         )
       }
 
@@ -113,9 +108,7 @@ export default {
           this.backgroundSize +
           '; background-repeat: ' +
           this.backgroundRepeat +
-          '; background-position: ' +
-          this.backgroundPos +
-          ' ;'
+          '; background-position: center ;'
         )
       }
 
@@ -127,9 +120,7 @@ export default {
           this.backgroundSize +
           '; background-repeat: ' +
           this.backgroundRepeat +
-          '; background-position: ' +
-          this.backgroundPos +
-          ' ;'
+          '; background-position: center ;'
         )
       }
 
