@@ -62,13 +62,16 @@ export default function (Vue, { router, head, isClient }) {
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
       name: 'keywords',
-      content: 'camera, servicing, repair, melbourne, polaroid, graflex',
+      content:
+        'camera, polaroid, graflex, servicing, repair, melbourne, victoria, australia, hawthorn',
     },
     {
       name: 'description',
       content:
-        'Camera servicing and repairs by Jake Bright. Specializing in the sales, servicing' +
-        'restoration and modification of classic Polaroid cameras and Graflex 4x5 cameras.',
+        'Camera servicing and repairs by Jake Bright.' +
+        'Specializing in the sales, servicing, restoration and modification of classic ' +
+        'Polaroid cameras and Graflex 4x5 cameras. I am located in Hawthorn, Australia, but I accepts requests ' +
+        'from the rest of  Australia and International customers.',
     },
     { name: 'title', content: 'The Instant 📷 Guy' }
   )

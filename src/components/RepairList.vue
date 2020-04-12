@@ -13,7 +13,7 @@
     :icon-next="iconNext"
     :interval="5000"
   >
-    <b-carousel-item v-for="(carousel, i) in carouselData" :key="i">
+    <b-carousel-item v-for="(carousel, i) in carouselData" :key="carousel.id">
       <section :class="`hero is-medium repair-carousel`">
         <div class="hero-body">
           <div class="container">
