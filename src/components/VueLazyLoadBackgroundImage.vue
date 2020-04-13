@@ -17,21 +17,6 @@ export default {
       type: String,
       required: true,
     },
-    lgSuffix: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    mdSuffix: {
-      type: String,
-      required: false,
-      default: '',
-    },
-    smSuffix: {
-      type: String,
-      required: false,
-      default: '',
-    },
     imageClass: {
       type: String,
       required: false,
@@ -80,50 +65,18 @@ export default {
     }
   },
   computed: {
-    imageURL() {
-      return {
-        sm: this.smSuffix,
-        md: this.mdSuffix,
-        lg: this.lgSuffix,
-      }[this.$mq]
-    },
     computedStyle() {
       if (this.imageState === 'loading') {
-        return (
-          'background-image: url(' +
-          this.loadingImage +
-          '); background-size: ' +
-          this.backgroundSize +
-          '; background-repeat: ' +
-          this.backgroundRepeat +
-          '; background-position: center;'
-        )
+        return `background-image: url(${this.loadingImage}); background-size: ${this.backgroundSize}; background-repeat: ${this.backgroundRepeat}; background-position: center;`
       }
 
       if (this.imageState === 'error') {
-        return (
-          'background-image: url(' +
-          this.errorImage +
-          '); background-size: ' +
-          this.backgroundSize +
-          '; background-repeat: ' +
-          this.backgroundRepeat +
-          '; background-position: center ;'
-        )
+        return `background-image: url(${this.errorImage}); background-size: ${this.backgroundSize}; background-repeat: ${this.backgroundRepeat}; background-position: center ;`
       }
 
       if (this.imageState === 'loaded') {
-        return (
-          'background-image: url(' +
-          this.asyncImage.src +
-          '); background-size: ' +
-          this.backgroundSize +
-          '; background-repeat: ' +
-          this.backgroundRepeat +
-          '; background-position: center ;'
-        )
+        return `background-image: url(${this.asyncImage.src}; background-size: ${this.backgroundSize};  background-repeat: ${this.backgroundRepeat}; background-position: center ;`
       }
-
       return ''
     },
   },
@@ -132,7 +85,7 @@ export default {
       this.asyncImage.onload = this.imageOnLoad
       this.asyncImage.onerror = this.imageOnError
       this.imageState = 'loading'
-      this.asyncImage.src = this.imageSource + this.imageURL
+      this.asyncImage.src = this.imageSource
     },
     imageOnLoad(success) {
       this.imageState = 'loaded'

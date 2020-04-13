@@ -19,7 +19,7 @@
           <div class="container">
             <div class="columns is-mobile is-centered has-text-centered">
               <div class="column is-three-quarters">
-                <h1 class="title">{{ carousel.title }}</h1>
+                <h1 class="title carousel-tile">{{ carousel.title }}</h1>
                 <p class="subtitle">
                   <vue-markdown>{{ carousel.subtitle }} </vue-markdown>
                 </p>
@@ -95,18 +95,6 @@ export default {
     },
   },
   computed: {
-    repairImage1() {
-      return (
-        this.$static.repairPage.edges[0].node.example[0].photo.url +
-        '?fp-x=.35&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=00b140&fill=solid&fill-color=00b140'
-      )
-    },
-    repairImage2() {
-      return (
-        this.$static.repairPage.edges[0].node.example[1].photo.url +
-        '?fp-x=.65&fp-y=.5&fp-z=1.5&mask=corners&w=480&h=480&fit=crop&w=300&h=300&maskbg=00b140&fill=solid&fill-color=00b140'
-      )
-    },
     carouselData() {
       return this.$static.allServices.map((serviceNode, i) => {
         return {
@@ -122,19 +110,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.hero-body {
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
+.carousel-title {
+  word-break: normal !important;
 }
-.hero {
-  justify-content: center;
-  align-items: center;
-}
-$family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
-  'Lucida Sans', Geneva, Arial, sans-serif;
-
-$family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
-
-$navbar-height: 5rem;
 </style>

@@ -50,17 +50,17 @@ module.exports = {
     {
       use: 'gridsome-plugin-robots-txt',
       options: {
-        host: 'https://theinstantcameraguy.com',
-        sitemap: 'https://theinstantcameraguy.com/sitemap.xml',
+        host: 'https://www.theinstantcameraguy.com',
+        sitemap: 'https://www.theinstantcameraguy.com/sitemap.xml',
         policy: [
           {
             userAgent: 'Googlebot',
-            allow: '*',
+            disallow: '',
             crawlDelay: 2,
           },
           {
             userAgent: '*',
-            allow: '*',
+            disallow: '*',
             crawlDelay: 10,
           },
         ],

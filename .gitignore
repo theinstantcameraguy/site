@@ -17,3 +17,6 @@ sw.*
 
 # graphql config
 .graphqlconfig
+
+# google credentials file
+scripts/credentials.json
