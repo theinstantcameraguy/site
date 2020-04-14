@@ -344,6 +344,12 @@ export default {
   font-family: Righteous, $family-heading;
   word-break: break-word;
   z-index: 6;
+  font-size: 4rem;
+}
+@media screen and (max-width: 1024px - 1px) {
+  #title {
+    font-size: 3rem;
+  }
 }
 
 #subtitle {
