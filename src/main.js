@@ -51,7 +51,8 @@ require('typeface-source-sans-pro')
 require('typeface-roboto')
 require('typeface-righteous')
 
-export default function (Vue, { router, head, isClient }) {
+// Can also access { router, head, isClient }
+export default function (Vue, { head }) {
   head.link.push(
     { rel: 'preconnect', href: 'https://www.datocms-assets.com' },
     { rel: 'preconnect', href: 'https://storage.googleapis.com' }
@@ -64,14 +65,6 @@ export default function (Vue, { router, head, isClient }) {
       name: 'keywords',
       content:
         'camera, polaroid, graflex, servicing, repair, melbourne, victoria, australia, hawthorn',
-    },
-    {
-      name: 'description',
-      content:
-        'Camera servicing and repairs by Jake Bright.' +
-        'Specializing in the sales, servicing, restoration and modification of classic ' +
-        'Polaroid cameras and Graflex 4x5 cameras. I am located in Hawthorn, Australia, but I accepts requests ' +
-        'from the rest of  Australia and International customers.',
     },
     { name: 'title', content: 'The Instant 📷 Guy' }
   )
@@ -95,5 +88,11 @@ export default function (Vue, { router, head, isClient }) {
   })
   Vue.use(DatocmsImagePlugin)
 
-  Vue.use(VueMq)
+  Vue.use(VueMq, {
+    breakpoints: {
+      sm: 768,
+      md: 1023,
+      lg: Infinity,
+    },
+  })
 }

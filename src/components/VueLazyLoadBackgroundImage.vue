@@ -43,12 +43,12 @@ export default {
     backgroundSize: {
       type: String,
       required: false,
-      default: 'cover',
+      default: 'auto',
     },
-    backgroundColor: {
+    backgroundPosition: {
       type: String,
       required: false,
-      default: '',
+      default: 'center',
     },
     backgroundRepeat: {
       type: String,
@@ -67,15 +67,15 @@ export default {
   computed: {
     computedStyle() {
       if (this.imageState === 'loading') {
-        return `background-image: url(${this.loadingImage}); background-size: ${this.backgroundSize}; background-repeat: ${this.backgroundRepeat}; background-position: center;`
+        return `background-image: url(${this.loadingImage}); background-size: ${this.backgroundSize}};background-repeat: ${this.backgroundRepeat};  background-position: ${this.backgroundPosition};`
       }
 
       if (this.imageState === 'error') {
-        return `background-image: url(${this.errorImage}); background-size: ${this.backgroundSize}; background-repeat: ${this.backgroundRepeat}; background-position: center ;`
+        return `background-image: url(${this.errorImage}); background-size: ${this.backgroundSize}; background-repeat: ${this.backgroundRepeat}; background-position: ${this.backgroundPosition} ;`
       }
 
       if (this.imageState === 'loaded') {
-        return `background-image: url(${this.asyncImage.src}; background-size: ${this.backgroundSize};  background-repeat: ${this.backgroundRepeat}; background-position: center ;`
+        return `background-image: url(${this.asyncImage.src}; background-size: ${this.backgroundSize};  background-repeat: ${this.backgroundRepeat}; background-position: ${this.backgroundPosition} ;`
       }
       return ''
     },
@@ -97,6 +97,10 @@ export default {
       this.imageState = 'error'
       this.imageErrorCallback()
     },
+  },
+  watch: {
+    imageSource: ['fetchImage'],
+    backgroundSize: ['fetchImage'],
   },
   mounted() {
     this.$nextTick(() => {

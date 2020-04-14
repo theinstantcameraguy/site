@@ -7,7 +7,7 @@
           <vue-lazyload-bg-img
             :datasrc="hero.url"
             :imageSource="hero.url"
-            :backgroundSize="hero.backgroundSize"
+            :backgroundPosition="hero.backgroundPosition"
             :backgroundColor="heroBgColor"
             errorImage="polaroid.jpg"
             id="hero-img"
@@ -17,8 +17,8 @@
             <div class="container" id="hero-body">
               <h2
                 :data-text="this.$page.home.subtitle"
-                class="subtitle has-text-centered has-text-weight-light is-1"
-                id="subtitle"
+                class="title has-text-centered has-text-weight-light is-1 is-5-mobile"
+                id="title"
               >
                 {{ this.$page.home.subtitle }}
               </h2>
@@ -264,16 +264,14 @@ export default {
   computed: {
     hero() {
       return {
-        url: `https://www.datocms-assets.com/12178/1586437876-favicon.png${
+        url: `https://www.datocms-assets.com/12178/1586864128-heroicon.png${
           {
-            sm: '?q=70&auto=format&&w=120height=120',
-            md: '?q=80&auto=format&&w=300&height=300',
-            lg: '?q=90&auto=format&&w=500&height=500',
+            sm: '?q=70&auto=format&w=250&h=250&fit=clip',
+            md: '?q=80&auto=format&w=400&h=400&fit=clip',
+            lg: '?q=90&auto=format&w=500&h=500&fit=clip',
           }[this.$mq]
         }`,
-        backgroundSize: `${
-          this.$mq === 'sm' ? 'background-size: 85%' : 'background-size: auto'
-        }`,
+        backgroundPosition: `${this.$mq === 'sm' ? '55% 85%' : '55% 65%'}`,
       }
     },
     postheros() {
@@ -327,7 +325,7 @@ export default {
 
 @media screen and (max-width: 1024px - 1px) {
   .hero-img {
-    background-position: center/80%;
+    background-position: 55% center;
   }
 }
 
@@ -339,12 +337,13 @@ export default {
 
 #title {
   letter-spacing: 1px;
-  font-size: 5rem !important;
   background: $header-text-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
   font-family: Righteous, $family-heading;
+  word-break: break-word;
+  z-index: 6;
 }
 
 #subtitle {
@@ -352,11 +351,7 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   word-spacing: 5px;
-  font-size: 4rem !important;
   z-index: 6;
-  stroke-width: 0.5px;
-  -webkit-text-stroke-color: $black;
-  -webkit-text-stroke-width: 0.5px;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   font-family: Righteous, $family-heading;
   word-break: break-word;
@@ -369,31 +364,9 @@ export default {
   align-items: center;
 }
 
-#title {
-  letter-spacing: 1px;
-  font-size: 5rem !important;
-  background: $header-text-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-}
-
 #hero-body {
   align-self: center;
   justify-self: center;
-}
-
-#subtitle {
-  background-image: $header-text-gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  word-spacing: 5px;
-  font-size: 4rem !important;
-  z-index: 6;
-  stroke-width: 0.5px;
-  -webkit-text-stroke-color: $black;
-  -webkit-text-stroke-width: 0.5px;
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 #map {
