@@ -74,7 +74,7 @@ export default {
       indicatorPosition: 'is-top',
       indicatorStyle: 'is-lines',
       autoPlay: true,
-      pauseHover: false,
+      pauseHover: true,
       pauseInfo: false,
       iconPack: 'fas',
       iconNext: 'chevron-right',
