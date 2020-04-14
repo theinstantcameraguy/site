@@ -271,7 +271,7 @@ export default {
             lg: '?q=90&auto=format&w=500&h=500&fit=clip',
           }[this.$mq]
         }`,
-        backgroundPosition: `${this.$mq === 'sm' ? '55% 85%' : '55% 65%'}`,
+        backgroundPosition: `${this.$mq === 'sm' ? '65% 85%' : '55% 65%'}`,
       }
     },
     postheros() {
