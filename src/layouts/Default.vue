@@ -127,10 +127,6 @@ h7,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
-#map {
-  height: 260px;
-}
-
 #about-nav {
   color: $polaroid_blue;
 }

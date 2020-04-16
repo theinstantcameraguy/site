@@ -40,6 +40,8 @@ $blanc-brown: #d4ccb9;
 $silver-chalice-grey: #b0b0ab;
 $bison-hide-grey: #b1a48e;
 $eggplant: #862754;
+$eggplant_invert: findColorInvert($eggplant);
+$eggplant_light: #864d69;
 $blue: #3D81DA;
 $apple-red: #9F1E17;
 $burnt-orange: #F4581F;
@@ -47,11 +49,13 @@ $burnt-orange: #F4581F;
 $polaroid_blue : #37a3e0;
 $polaroid_green : #00b140;
 $polaroid_gold : #ffb500;
+$polaroid_gold_light : #ffd975;
 $polaroid_orange : #ff8200;
 $polaroid_red : #da291c;
 $polaroid_pink : #f00095;
+$polaroid_red_invert: findColorInvert($polaroid_red);
 
-$navbar-background-color: $cape-cod-grey;
+$navbar-background-color: $eggplant;
 $background: $blanc-brown;
 $scheme-main: $blanc-brown;
 $footer-background-color:  $silver-chalice-grey;
@@ -70,9 +74,11 @@ $colors: (
   "black": ($black, $white),
   "light": ($light, $light-invert),
   "dark": ($dark, $dark-invert),
-  "primary": ($polaroid_red, $polaroid_red),
+  "primary": ($polaroid_red, $polaroid_red_invert),
   "info": ($polaroid_blue, $polaroid_blue),
   "success": ($success, $success-invert),
   "warning": ($warning, $warning-invert),
   "danger": ($danger, $danger-invert),
+  "eggplant": ($eggplant, $danger-invert),
+  "eggplant-lite": ($eggplant_light, $danger-invert),
 );

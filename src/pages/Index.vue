@@ -271,7 +271,7 @@ export default {
             lg: '?q=90&auto=format&w=500&h=500&fit=clip',
           }[this.$mq]
         }`,
-        backgroundPosition: `${this.$mq === 'sm' ? '65% 85%' : '55% 65%'}`,
+        backgroundPosition: `${this.$mq === 'sm' ? '65% 85%' : '55% 70%'}`,
       }
     },
     postheros() {
@@ -283,7 +283,7 @@ export default {
       return this.$page.home.heroimage.responsiveImage.base64 || '760.gif'
     },
     heroBgColor() {
-      return this.$page.home.heroimage.responsiveImage.bgColor || '#363636'
+      return this.$page.home.heroimage.responsiveImage.bgColor || '#ff8200'
     },
     hrefPhone() {
       return this.$page.home.phoneNumber.startsWith('0')
@@ -330,6 +330,7 @@ export default {
 }
 
 .hero-body {
+  padding-top: 1rem;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
@@ -341,6 +342,7 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
+  color: $blue;
   font-family: Righteous, $family-heading;
   word-break: break-word;
   z-index: 6;
@@ -395,8 +397,6 @@ $family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
   'Lucida Sans', Geneva, Arial, sans-serif;
 
 $family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
-
-$navbar-height: 5rem;
 
 #about-text {
   color: $polaroid_blue;

@@ -1,35 +1,37 @@
 <template>
-  <b-carousel
-    :indicator="indicator"
-    :indicator-background="indicatorBackground"
-    :indicator-inside="indicatorInside"
-    :indicator-mode="indicatorMode"
-    :indicator-position="indicatorPosition"
-    :indicator-style="indicatorStyle"
-    :autoplay="autoPlay"
-    :pause-hover="pauseHover"
-    :pause-info="pauseInfo"
-    :icon-prev="iconPrev"
-    :icon-next="iconNext"
-    :interval="5000"
-  >
-    <b-carousel-item v-for="(carousel, i) in carouselData" :key="carousel.id">
-      <section :class="`hero is-medium repair-carousel`">
-        <div class="hero-body">
-          <div class="container">
-            <div class="columns is-mobile is-centered has-text-centered">
-              <div class="column is-three-quarters">
-                <h1 class="title carousel-tile">{{ carousel.title }}</h1>
-                <p class="subtitle">
-                  <vue-markdown>{{ carousel.subtitle }} </vue-markdown>
-                </p>
+  <client-only>
+    <b-carousel
+      :indicator="indicator"
+      :indicator-background="indicatorBackground"
+      :indicator-inside="indicatorInside"
+      :indicator-mode="indicatorMode"
+      :indicator-position="indicatorPosition"
+      :indicator-style="indicatorStyle"
+      :autoplay="autoPlay"
+      :pause-hover="pauseHover"
+      :pause-info="pauseInfo"
+      :icon-prev="iconPrev"
+      :icon-next="iconNext"
+      :interval="5000"
+    >
+      <b-carousel-item v-for="(carousel, i) in carouselData" :key="carousel.id">
+        <section :class="`hero is-medium repair-carousel`">
+          <div class="hero-body">
+            <div class="container">
+              <div class="columns is-mobile is-centered has-text-centered">
+                <div class="column is-three-quarters">
+                  <h1 class="title carousel-tile">{{ carousel.title }}</h1>
+                  <p class="subtitle">
+                    <vue-markdown>{{ carousel.subtitle }} </vue-markdown>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </b-carousel-item>
-  </b-carousel>
+        </section>
+      </b-carousel-item>
+    </b-carousel>
+  </client-only>
 </template>
 
 <static-query>
