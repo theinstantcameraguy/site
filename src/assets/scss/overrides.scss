@@ -1,13 +1,3 @@
-$grey-darker:  #363636;
-$grey-dark:    #373a3c;
-$grey:         #55595c;
-$grey-light:   #818a91;
-$grey-lighter: #d9dee2;
-
-$black:        hsl(0, 0%, 4%) !default
-$black-bis:    hsl(0, 0%, 7%) !default
-$black-ter:    hsl(0, 0%, 14%) !default
-
 $grey-darker: hsl(0, 0%, 21%) !default
 $grey-dark:    hsl(0, 0%, 29%) !default
 $grey:         hsl(0, 0%, 48%) !default
@@ -55,7 +45,7 @@ $polaroid_red : #da291c;
 $polaroid_pink : #f00095;
 $polaroid_red_invert: findColorInvert($polaroid_red);
 
-$navbar-background-color: $eggplant;
+$navbar-background-color: $cape-cod-grey;
 $background: $blanc-brown;
 $scheme-main: $blanc-brown;
 $footer-background-color:  $silver-chalice-grey;

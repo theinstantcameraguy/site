@@ -246,15 +246,6 @@ import dedent from 'dedent'
 import RepairList from '../components/RepairList'
 
 export default {
-  metaInfo: {
-    meta: [
-      {
-        key: 'description',
-        name: 'description',
-        content: this.$page.site.seo.fallbackSeo.description,
-      },
-    ],
-  },
   components: {
     RepairList,
     FooterBar,
@@ -266,6 +257,17 @@ export default {
     rootStyle: { height: 480 },
   }),
   computed: {
+    metaInfo() {
+      return {
+        meta: [
+          {
+            key: 'description',
+            name: 'description',
+            content: this.$page.site.seo.fallbackSeo.description,
+          },
+        ],
+      }
+    },
     hero() {
       return {
         url: `https://www.datocms-assets.com/12178/1587113885-sx70.png${
@@ -282,9 +284,6 @@ export default {
       return this.$page.allPostheros.map((item, i) => {
         return { ...item, ...this.getSVG(i) }
       })
-    },
-    herobase64() {
-      return this.$page.home.heroimage.responsiveImage.base64 || '760.gif'
     },
     heroBgColor() {
       return this.$page.home.heroimage.responsiveImage.bgColor || '#ff8200'
@@ -352,6 +351,7 @@ export default {
   z-index: 6;
   font-size: 4rem;
 }
+
 @media screen and (max-width: 1024px - 1px) {
   #title {
     font-size: 3rem;

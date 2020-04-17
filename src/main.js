@@ -20,6 +20,7 @@ import {
   faFacebookMessenger,
   faInstagram,
   faYoutube,
+  faFlickr,
 } from '@fortawesome/free-brands-svg-icons'
 import VueMarkdown from 'vue-markdown'
 
@@ -43,7 +44,8 @@ library.add(
   faChevronLeft,
   faChevronRight,
   faAngleRight,
-  faAngleLeft
+  faAngleLeft,
+  faFlickr
 )
 
 // add web fonts

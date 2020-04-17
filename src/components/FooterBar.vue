@@ -23,6 +23,25 @@
                     theinstantcameraguy@hotmail.com</a
                   >
                 </p>
+                <p>
+                  <a href="https://m.me/instantcameraguy">
+                    <b-icon
+                      icon="facebook-messenger"
+                      pack="fab"
+                      slot="marker"
+                      type="is-danger"
+                    ></b-icon>
+                    Facebook messenger</a
+                  >
+                </p>
+                <p>
+                  <a
+                    href="http://www.gumtree.com.au/s-seller/Instant%20Camera%20Guy/56661163"
+                  >
+                    <GumTree class="is-danger icon" />
+                    Visit My Store on Gumtree</a
+                  >
+                </p>
               </div>
             </div>
           </div>
@@ -35,79 +54,21 @@
               <p class="is-size-4 has-text-centered">
                 Socials
               </p>
-              <div class="columns">
-                <div class="column is-size-6 is-centered has-text-centered">
-                  <div>
-                    <a href="https://www.facebook.com/instantcameraguy/">
-                      <span>
-                        <b-icon
-                          icon="facebook"
-                          pack="fab"
-                          slot="marker"
-                          type="is-info"
-                        >
-                        </b-icon>
-                        Facebook</span
-                      >
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      href="https://www.youtube.com/playlist?list=PLwtSwDOf9bZr7eI1SN6eN2rorTG-W8pV8"
-                      ><span>
-                        <b-icon
-                          icon="youtube"
-                          pack="fab"
-                          slot="marker"
-                          type="is-info"
-                        ></b-icon>
-                        Youtube
-                      </span>
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      href="https://www.instagram.com/theinstantcameraguy/?hl=en"
-                      ><span>
-                        <b-icon
-                          icon="instagram"
-                          pack="fab"
-                          slot="marker"
-                          type="is-info"
-                        ></b-icon
-                        >Instagram</span
-                      ></a
-                    >
-                  </div>
-                  <div>
-                    <a
-                      href="http://www.gumtree.com.au/s-seller/Instant%20Camera%20Guy/56661163"
-                      ><span>
-                        <b-icon
-                          icon="tree"
-                          slot="marker"
-                          type="is-info"
-                        ></b-icon>
-                        Gumtree
-                      </span>
-                    </a>
-                  </div>
-                  <div>
-                    <a href="https://m.me/instantcameraguy">
-                      <span
-                        ><b-icon
-                          icon="facebook-messenger"
-                          pack="fab"
-                          slot="marker"
-                          type="is-info"
-                        >
-                        </b-icon
-                        >Messenger
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <h2 class="subtitle is-size-3 has-text-centered">
+                <a
+                  v-for="social in this.$static.allSocial.edges"
+                  :href="social.node.url"
+                >
+                  <b-icon
+                    :icon="social.node.icon"
+                    :pack="social.node.pack"
+                    slot="marker"
+                    type="is-eggplant"
+                    class="social-icon"
+                    >{{ social.node.profileType }}</b-icon
+                  >
+                </a>
+              </h2>
             </div>
           </div>
         </div>
@@ -135,8 +96,12 @@
 </template>
 
 <script>
+import GumTree from '~/assets/img/gumtree.svg?inline'
 export default {
   name: 'FooterBar',
+  components: {
+    GumTree,
+  },
   computed: {
     hrefPhone() {
       return this.$static.home.edges[0].node.phoneNumber.startsWith('0')
@@ -148,7 +113,11 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.social-icon {
+  margin: 0.25em;
+}
+</style>
 
 <static-query>
   query {
@@ -181,6 +150,8 @@ export default {
           profileType
           icon
           url
+          pack
+          ordering
         }
       }
     }

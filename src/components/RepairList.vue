@@ -83,19 +83,6 @@ export default {
       iconPrev: 'chevron-left',
     }
   },
-  methods: {
-    activeColor(index) {
-      const colors = [
-        '#3777b4',
-        '#00983c',
-        '#df9700',
-        '#e47200',
-        '#b92518',
-        '#b40070',
-      ]
-      return colors[index % colors.length]
-    },
-  },
   computed: {
     carouselData() {
       return this.$static.allServices.map((serviceNode, i) => {
