@@ -9,10 +9,10 @@
             :imageSource="hero.url"
             :backgroundPosition="hero.backgroundPosition"
             :backgroundColor="heroBgColor"
-            errorImage="polaroid.jpg"
+            error-image="sx_70.jpg"
             id="hero-img"
             image-class="hero-body"
-            :loadingImage="herobase64"
+            loading-image="760.gif"
           >
             <div class="container" id="hero-body">
               <h2
@@ -264,7 +264,7 @@ export default {
   computed: {
     hero() {
       return {
-        url: `https://www.datocms-assets.com/12178/1586864128-heroicon.png${
+        url: `https://www.datocms-assets.com/12178/1587113885-sx70.png${
           {
             sm: '?q=70&auto=format&w=250&h=250&fit=clip',
             md: '?q=80&auto=format&w=400&h=400&fit=clip',
