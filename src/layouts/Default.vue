@@ -82,16 +82,7 @@ export default {
 }
 </script>
 
-<static-query>
-  query {
-    metadata {
-      siteName
-    }
-  }
-</static-query>
-
 <style lang="scss" scoped>
-@import 'src/assets/scss/main';
 html {
   font-size: 16px;
   word-spacing: 1px;
@@ -179,10 +170,4 @@ h7,
   margin-left: auto;
   margin-right: auto;
 }
-$family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
-  'Lucida Sans', Geneva, Arial, sans-serif;
-
-$family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
-
-$navbar-height: 5rem;
 </style>

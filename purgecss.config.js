@@ -4,8 +4,6 @@ module.exports = {
     './src/**/*.js',
     './src/**/*.jsx',
     './src/**/*.html',
-    './src/**/*.pug',
-    './src/**/*.md',
     './node_modules/buefy/**/*.@(vue|js)',
   ],
   whitelist: [
@@ -26,15 +24,8 @@ module.exports = {
     /^(?!(|.*?:)cursor-move).+-move$/,
     /^router-link(|-exact)-active$/,
     /data-v-.*/,
-    /^navbar.*/,
-    /^footer.*/,
     /^has-text-/,
     /^fa-.*/,
-    /^has-numberinput-/,
-    /column/,
-    /shiki/,
-    /shiki/,
-    /^b-.*/,
   ],
   defaultExtractor(content) {
     const contentWithoutStyleBlocks = content.replace(
@@ -45,10 +36,4 @@ module.exports = {
       contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || []
     )
   },
-  extractors: [
-    {
-      extractor: (content) => content.match(/[A-z0-9-:\\/]+/g),
-      extensions: ['vue', 'js', 'jsx', 'md', 'html'],
-    },
-  ],
 }

@@ -68,6 +68,12 @@ export default function (Vue, { head }) {
       content:
         'camera, polaroid, graflex, servicing, repair, melbourne, victoria, australia, hawthorn',
     },
+    {
+      name: 'description',
+      content:
+        'Australia’s home for Polaroid and Instant Camera Repairs. Specializing in the servicing, restoration and ' +
+        'modification of  Polaroid cameras and classic cameras.',
+    },
     { name: 'title', content: 'The Instant 📷 Guy' }
   )
   head.link.push({

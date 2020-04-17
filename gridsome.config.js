@@ -38,11 +38,6 @@ const genUrlLoaderOptions = (dir) => {
 }
 const purgecss = require('@fullhuman/postcss-purgecss')
 
-const postcssPlugins = []
-
-if (process.env.NODE_ENV === 'production')
-  postcssPlugins.push(purgecss(require('./purgecss.config.js')))
-
 module.exports = {
   siteName: 'The Instant Camera Guy',
   siteUrl: 'https://theinstantcameraguy.com',
@@ -126,7 +121,7 @@ module.exports = {
         shortName: 'T.I.📷.G',
         themeColor: '#00B140',
         backgroundColor: '#ffffff',
-        icon: 'src/assets/img/favicon.png', // must be provided like 'src/favicon.png'
+        icon: 'src/assets/img/sx_70.png', // must be provided like 'src/favicon.png'
         msTileImage: '',
         msTileColor: '#00B140',
       },
@@ -189,9 +184,10 @@ module.exports = {
     })
   },
   css: {
+    split: true,
     loaderOptions: {
       postcss: {
-        plugins: postcssPlugins,
+        plugins: [purgecss(require('./purgecss.config.js'))],
       },
     },
   },

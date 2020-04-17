@@ -259,6 +259,7 @@ export default {
   computed: {
     metaInfo() {
       return {
+        title: this.$page.site.seo.fallbackSeo.title,
         meta: [
           {
             key: 'description',
