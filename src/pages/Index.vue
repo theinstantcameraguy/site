@@ -244,13 +244,17 @@ import VueMarkdown from 'vue-markdown'
 
 import dedent from 'dedent'
 import RepairList from '../components/RepairList'
-import { toHead } from 'vue-datocms'
 
 export default {
-  metaInfo() {
-    return toHead(this.$page.site.seo, this.$page.site.favicon)
+  metaInfo: {
+    meta: [
+      {
+        key: 'description',
+        name: 'description',
+        content: this.$page.site.seo.fallbackSeo.description,
+      },
+    ],
   },
-
   components: {
     RepairList,
     FooterBar,
