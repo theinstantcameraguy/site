@@ -84,8 +84,8 @@
             </h1>
           </div>
           <div class="columns is-centered">
-            <div class="column has-text-centered is-9 is-centered">
-              <p>{{ repairText }}</p>
+            <div class="column has-text-centered is-10 is-centered">
+              <p class="has-padding-10">{{ repairText }}</p>
               <RepairColumns />
             </div>
           </div>

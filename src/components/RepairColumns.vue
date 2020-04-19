@@ -1,6 +1,6 @@
 <template>
   <div
-    class="columns is-multiline is-6 is-3-mobile is-centered has-text-centered has-padding-10"
+    class="columns is-multiline is-11 is-3-mobile is-centered has-text-centered has-padding-11"
   >
     <div
       class="column is-one-third"
@@ -8,7 +8,7 @@
       :key="carousel.id"
     >
       <vue-fontawesome
-        class="fa-3x is-orange"
+        class="fa-3x is-orange has-padding-5"
         :icon="carousel.icon"
         :pack="carousel.pack"
         size="is-large"
