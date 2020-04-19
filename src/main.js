@@ -112,8 +112,7 @@ export default function (Vue, { head }) {
     customIconPacks: {
       fas: {
         sizes: {
-          default: 'sm',
-          'is-small': 'xs',
+          'is-small': 'sm',
           'is-medium': '2x',
           'is-large': '4x',
         },

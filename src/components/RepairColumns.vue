@@ -7,14 +7,13 @@
       v-for="(carousel, i) in carouselData"
       :key="carousel.id"
     >
-      <b-icon
-        class="fa-3x"
+      <vue-fontawesome
+        class="fa-3x is-orange"
         :icon="carousel.icon"
         :pack="carousel.pack"
-        type="is-orange"
         size="is-large"
-        custom-class="serviceIcons"
-      ></b-icon>
+        :style="{ color: '#ff8200' }"
+      ></vue-fontawesome>
       <h3 class="title is-size-5 has-text-weight-semi-bold">
         {{ carousel.title }}
       </h3>
@@ -40,6 +39,8 @@
 </static-query>
 
 <style lang="scss" scoped>
+$icon-svg-width: 3rem;
+$icon-svg-height: 3rem;
 .icon {
   svg {
     height: 3rem !important;
