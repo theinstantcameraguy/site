@@ -82,14 +82,19 @@
             <h1 class="is-medium has-text-left title" id="repair">
               <em class="has-text-primary"># </em>Repairs & Modification
             </h1>
-            <div class="columns">
-              <div class="column is-centered">
-                <p>{{ repairText }}</p>
-              </div>
+          </div>
+          <div class="columns is-centered">
+            <div class="column has-text-centered is-9 is-centered">
+              <p>{{ repairText }}</p>
+              <RepairColumns />
             </div>
-            <div class="container">
-              <RepairList />
-            </div>
+          </div>
+          <div class="content is-pulled-right">
+            <h1 class="has-text-orange">
+              <g-link class="repair-link has-text-orange" to="/repair/"
+                >More info...</g-link
+              >
+            </h1>
           </div>
         </div>
       </section>
@@ -244,9 +249,11 @@ import VueMarkdown from 'vue-markdown'
 
 import dedent from 'dedent'
 import RepairList from '../components/RepairList'
+import RepairColumns from '../components/RepairColumns'
 
 export default {
   components: {
+    RepairColumns,
     RepairList,
     FooterBar,
     VueMarkdown,
@@ -271,14 +278,16 @@ export default {
     },
     hero() {
       return {
-        url: `https://www.datocms-assets.com/12178/1587113885-sx70.png${
+        url: `https://www.datocms-assets.com/12178/1587301302-sx70.png${
           {
-            sm: '?q=70&auto=format&w=250&h=250&fit=clip',
-            md: '?q=80&auto=format&w=400&h=400&fit=clip',
-            lg: '?q=90&auto=format&w=500&h=500&fit=clip',
+            sm: '?q=70&auto=format&w=400&h=400&fit=clip',
+            md: '?q=80&auto=format&w=600&h=600&fit=clip',
+            lg: '?q=90&auto=format&w=800&h=800&fit=clip',
           }[this.$mq]
         }`,
-        backgroundPosition: `${this.$mq === 'sm' ? '65% 85%' : '55% 70%'}`,
+        backgroundPosition: `${
+          this.$mq === 'sm' ? 'center 85%' : 'center 70%'
+        }`,
       }
     },
     postheros() {
@@ -317,6 +326,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.repair-link {
+  a {
+    color: $polaroid_orange;
+  }
+}
+
 #hero {
   background-color: $grey-darker;
   justify-content: center;
@@ -382,10 +397,6 @@ export default {
   justify-self: center;
 }
 
-#map {
-  height: 260px;
-}
-
 #post-content {
   justify-content: space-between;
   align-content: center;
@@ -397,11 +408,6 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-
-$family-heading: 'Raleway', 'Lucida Grande', 'Lucida Sans Unicode',
-  'Lucida Sans', Geneva, Arial, sans-serif;
-
-$family-serif: Georgia, Cambria, 'Times New Roman', Times, serif;
 
 #about-text {
   color: $polaroid_blue;

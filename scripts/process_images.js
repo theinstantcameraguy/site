@@ -3,7 +3,7 @@ const imageminJpegtran = require('imagemin-jpegtran')
 const imageminPngquant = require('imagemin-pngquant')
 
 ;(async () => {
-  const files = await imagemin(['static/*cropped.{jpg,png}'], {
+  const files = await imagemin(['static/sx_70.{jpg,png}'], {
     destination: 'src/assets/img/',
     plugins: [
       imageminJpegtran(),

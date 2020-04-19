@@ -10,7 +10,7 @@
             <div class="columns has-text-centered">
               <div class="column">
                 <a href="hrefPhone">
-                  <b-icon icon="phone" slot="marker" type="is-danger"></b-icon>
+                  <b-icon icon="phone" slot="marker" type="is-orange"></b-icon>
                   {{ $static.home.edges[0].node.phoneNumber }}
                 </a>
                 <p>
@@ -18,7 +18,7 @@
                     <b-icon
                       icon="envelope"
                       slot="marker"
-                      type="is-danger"
+                      type="is-orange"
                     ></b-icon>
                     theinstantcameraguy@hotmail.com</a
                   >
@@ -29,7 +29,7 @@
                       icon="facebook-messenger"
                       pack="fab"
                       slot="marker"
-                      type="is-danger"
+                      type="is-orange"
                     ></b-icon>
                     Facebook messenger</a
                   >
@@ -38,7 +38,7 @@
                   <a
                     href="http://www.gumtree.com.au/s-seller/Instant%20Camera%20Guy/56661163"
                   >
-                    <GumTree class="is-danger icon" />
+                    <GumTree class="is-orange icon" />
                     Visit My Store on Gumtree</a
                   >
                 </p>

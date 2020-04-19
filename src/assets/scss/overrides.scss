@@ -1,15 +1,3 @@
-$grey-darker: hsl(0, 0%, 21%) !default
-$grey-dark:    hsl(0, 0%, 29%) !default
-$grey:         hsl(0, 0%, 48%) !default
-$grey-light:   hsl(0, 0%, 71%) !default
-$grey-lighter: hsl(0, 0%, 86%) !default
-
-$turquoise:    hsl(171, 100%, 41%) !default
-$cyan:         hsl(204, 86%,  53%) !default
-$yellow:       #ffd500;
-$green:        #02B875;
-$blue:         #45b2d3;
-$red:          #d9534f;
 $tan: #dccdbf;
 $tan2: hsl(37, 25%,  74%);
 
@@ -46,8 +34,8 @@ $polaroid_pink : #f00095;
 $polaroid_red_invert: findColorInvert($polaroid_red);
 
 $navbar-background-color: $cape-cod-grey;
-$background: $blanc-brown;
-$scheme-main: $blanc-brown;
+$background: $white;
+$scheme-main: $white;
 $footer-background-color:  $silver-chalice-grey;
 
 $carousel-indicator-color: $polaroid_green;
@@ -71,4 +59,5 @@ $colors: (
   "danger": ($danger, $danger-invert),
   "eggplant": ($eggplant, $danger-invert),
   "eggplant-lite": ($eggplant_light, $danger-invert),
+  "orange": ($polaroid_orange, $polaroid_orange),
 );

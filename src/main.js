@@ -2,30 +2,38 @@
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
 import DefaultLayout from '@/layouts/Default.vue'
-import Buefy from 'buefy'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+config.autoAddCss = false
 import {
-  faAngleRight,
+  faAdjust,
   faAngleLeft,
-  faChevronRight,
+  faAngleRight,
+  faCamera,
+  faCameraRetro,
+  faCarBattery,
   faChevronLeft,
+  faChevronRight,
   faEnvelope,
+  faEye,
+  faHandSparkles,
   faPhone,
+  faSync,
+  faTools,
   faTree,
 } from '@fortawesome/free-solid-svg-icons'
 import {
   faFacebook,
   faFacebookMessenger,
+  faFlickr,
   faInstagram,
   faYoutube,
-  faFlickr,
 } from '@fortawesome/free-brands-svg-icons'
 import VueMarkdown from 'vue-markdown'
 
+import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
-import '@/assets/scss/main.scss'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { DatocmsImagePlugin } from 'vue-datocms'
 import VueLazyload from 'vue-lazyload'
@@ -45,7 +53,15 @@ library.add(
   faChevronRight,
   faAngleRight,
   faAngleLeft,
-  faFlickr
+  faFlickr,
+  faEye,
+  faHandSparkles,
+  faCameraRetro,
+  faCamera,
+  faCarBattery,
+  faSync,
+  faAdjust,
+  faTools
 )
 
 // add web fonts
@@ -77,6 +93,11 @@ export default function (Vue, { head }) {
     { name: 'title', content: 'The Instant 📷 Guy' }
   )
   head.link.push({
+    rel: 'stylesheet',
+    href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+  })
+
+  head.link.push({
     rel: 'icon',
     type: 'image/x-icon',
     href: '~/src/assets/favicon.ico',
@@ -88,6 +109,16 @@ export default function (Vue, { head }) {
   Vue.use(Buefy, {
     defaultIconComponent: 'vue-fontawesome',
     defaultIconPack: 'fas',
+    customIconPacks: {
+      fas: {
+        sizes: {
+          default: 'sm',
+          'is-small': 'xs',
+          'is-medium': '2x',
+          'is-large': '4x',
+        },
+      },
+    },
   })
 
   Vue.component('vue-lazyload-bg-img', VueLazyLoadBackgroundImage)
