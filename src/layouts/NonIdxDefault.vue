@@ -33,40 +33,12 @@
         >
           <div class="navbar-start">
             <g-link
-              id="about-nav"
-              class="has-text-weight-bold navbar-item"
-              data-menuanchor="about"
-              href="#about"
-              >About</g-link
-            >
-            <g-link
-              id="repair-nav"
-              class="has-text-weight-bold navbar-item"
-              data-menuanchor="repairs"
-              href="#repairs"
-              >Repairs</g-link
-            >
-            <g-link
               id="logo"
               class="has-text-weight-bold has-text-white navbar-item force-center brand-nav is-size-4 has-text-centered"
               to="/"
             >
               The Instant 📷 Guy
             </g-link>
-            <g-link
-              id="photos-nav"
-              class="has-text-weight-bold navbar-item"
-              data-menuanchor="photos"
-              href="/#instaposts"
-              >Photos</g-link
-            >
-            <g-link
-              id="contact-nav"
-              class="has-text-weight-bold navbar-item"
-              data-menuanchor="contact"
-              href="#footer"
-              >Contact</g-link
-            >
           </div>
         </div>
       </nav>

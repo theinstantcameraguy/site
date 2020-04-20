@@ -1,7 +1,8 @@
 // This is the main.js file. Import global CSS and scripts here.
 // The Client API can be used here. Learn more: gridsome.org/docs/client-api
 
-import DefaultLayout from '@/layouts/Default.vue'
+import DefaultLayout from '~/layouts/Default.vue'
+import NonIdxDefaultLayout from '~/layouts/NonIdxDefault.vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 config.autoAddCss = false
@@ -103,6 +104,7 @@ export default function (Vue, { head }) {
     href: '~/src/assets/favicon.ico',
   })
   Vue.component('Layout', DefaultLayout)
+  Vue.component('NILayout', NonIdxDefaultLayout)
 
   Vue.use(VueMarkdown)
   Vue.component('vue-fontawesome', FontAwesomeIcon)
@@ -125,6 +127,7 @@ export default function (Vue, { head }) {
     loading: '760.gif',
   })
   Vue.use(DatocmsImagePlugin)
+  Vue.use(VueMarkdown)
 
   Vue.use(VueMq, {
     breakpoints: {

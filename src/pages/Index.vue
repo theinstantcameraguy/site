@@ -9,7 +9,7 @@
             :imageSource="hero.url"
             :backgroundPosition="hero.backgroundPosition"
             :backgroundColor="heroBgColor"
-            error-image="sx_70.jpg"
+            error-image="760.gif"
             id="hero-img"
             image-class="hero-body"
             loading-image="760.gif"
@@ -248,13 +248,11 @@ import Photos from '~/assets/img/undraw_photos_1nui.svg'
 import VueMarkdown from 'vue-markdown'
 
 import dedent from 'dedent'
-import RepairList from '../components/RepairList'
 import RepairColumns from '../components/RepairColumns'
 
 export default {
   components: {
     RepairColumns,
-    RepairList,
     FooterBar,
     VueMarkdown,
     Instaposts,
