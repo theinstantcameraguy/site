@@ -178,13 +178,11 @@ module.exports = {
       })
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
 
-    // or if you use scss
     types.forEach((type) => {
       addStyleResource(config.module.rule('scss').oneOf(type))
     })
   },
   css: {
-    split: true,
     loaderOptions: {
       postcss: {
         plugins: [purgecss(require('./purgecss.config.js'))],
