@@ -32,7 +32,7 @@
     "dedent": "^0.7.0",
     "graphql-tag": "^2.10.3",
     "gridsome": "^0.7.13",
-    "gridsome-plugin-pwa": "0.0.14",
+    "gridsome-plugin-pwa": "0.0.18",
     "gridsome-plugin-robots-txt": "^1.0.2",
     "gridsome-source-graphql": "^1.0.2",
     "imagemin": "^7.0.1",
