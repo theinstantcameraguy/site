@@ -5,18 +5,22 @@ export async function request({ query, variables, preview }) {
     ? `https://graphql.datocms.com/preview`
     : `https://graphql.datocms.com/`
 
-  const { data } = await axios.post(
-    endpoint,
-    {
-      query,
-      variables,
-    },
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.DATOCMS_API}`,
+  const { data } = await axios
+    .post(
+      endpoint,
+      {
+        query,
+        variables,
       },
-    }
-  )
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.DATOCMS_API}`,
+        },
+      }
+    )
+    .catch((error) => {
+      throw error
+    })
 
   if (data.errors) {
     throw JSON.stringify(data.errors)
