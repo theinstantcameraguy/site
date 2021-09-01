@@ -24,7 +24,7 @@
     "@gridsome/plugin-sitemap": "^0.2.3",
     "@gridsome/source-datocms": "^0.3.0",
     "@gridsome/transformer-remark": "^0.5.0",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "buefy": "^0.8.15",
     "bulma": "^0.8.2",
     "bulma-helpers": "^0.3.10",
