@@ -98,16 +98,6 @@
           </div>
         </div>
       </section>
-      <section class="section is-medium" id="instaposts">
-        <div class="container">
-          <div class="content">
-            <h1 class="is-medium has-text-left title" id="photos">
-              <em class="has-text-primary"># </em>Photos
-            </h1>
-          </div>
-          <instaposts />
-        </div>
-      </section>
       <section class="section is-large" id="coming-soon">
         <div class="container">
           <div class="content">

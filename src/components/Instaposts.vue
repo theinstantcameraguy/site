@@ -15,56 +15,9 @@
   </div>
 </template>
 
-<static-query>
-  query {
-    posts: allInstagramPost {
-      edges {
-        node {
-          id
-          user {
-            profile_picture
-            username
-          }
-          images {
-            standard_resolution {
-              url
-              height
-              width
-            }
-          }
-          caption {
-            text
-          }
-          comments {
-            count
-          }
-          tags
-          likes {
-            count
-          }
-        }
-      }
-    }
-  }
-</static-query>
-
 <script>
 export default {
   name: 'Instaposts',
-  computed: {
-    images() {
-      return this.$static.posts.edges.map((post) => {
-        return {
-          id: post.id,
-          imageObj: {
-            src: post.node.images.standard_resolution.url,
-            loading: '760.gif',
-          },
-          alt: post.node.caption.text,
-        }
-      })
-    },
-  },
 }
 </script>
 
