@@ -247,18 +247,7 @@ export default {
     VueMarkdown,
     Instaposts,
   },
-    head() {
-    return {
-      script: [
-        {
-          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3013870299047719",
-          async: true,
-          crossorigin: 'anonymous',
-        },
-      ],
-      // Optionally, add any additional meta tags, links, or scripts
-    };
-  },
+
   data: () => ({
     loading: 0,
     rootStyle: { height: 480 },

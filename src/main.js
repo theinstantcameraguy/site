@@ -97,6 +97,11 @@ export default function (Vue, { head }) {
     rel: 'stylesheet',
     href: 'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
   })
+  head.script.push({
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3013870299047719",
+          async: true,
+          crossorigin: 'anonymous',
+        })
 
   head.link.push({
     rel: 'icon',
